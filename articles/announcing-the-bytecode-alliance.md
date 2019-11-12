@@ -98,6 +98,11 @@ Fastly is very happy to help bring the Bytecode Alliance to the community. Lucet
 </blockquote>
 
 <blockquote>
+  <p>“Intel is joining the Bytecode Alliance as a founding member to help extend WebAssembly’s performance and security benefits beyond the browser to a wide range of applications and servers. Bytecode Alliance technologies can help developers extend software using a wide selection of languages, building upon the full capabilities of leading-edge compute platforms”</p>
+  <cite>— Mark Skarpness; VP, Intel Architecture, Graphics, and Software; Director, Data-Centric System Stacks</cite>
+</blockquote>
+
+<blockquote>
   <p>Red Hat believes deeply in the role open source technologies play in helping provide the foundation for computing from the operating system to the browser to the open hybrid cloud. Wasmtime is an exciting development that helps move WebAssembly out of the browser into the server space where we are experimenting with it to change the trust model for applications, and we are happy to be involved in helping it grow into a mature, community-based project.</p>
   <cite>— Chris Wright, senior vice president and Chief Technology Officer at Red Hat</cite>
 </blockquote>

@@ -19,7 +19,7 @@ We're already putting these solutions to work on real world problems, and those 
 
 ## Why
 
-As an industry, we're putting our users at risk more and more every day. We're building massively modular applications, where 80% of the code base comes from package registries like npm, Pypy, and crates.io.
+As an industry, we're putting our users at risk more and more every day. We're building massively modular applications, where 80% of the code base comes from package registries like npm, PyPI, and crates.io.
 
 Making use of these flourishing ecosystems isn't bad. In fact, it's good! 
 
@@ -115,7 +115,7 @@ To learn more about what we're building together, read on.
 
 The way that we architect software has radically changed over the past 20 years. In 2003, companies had a hard time getting developers to reuse code. 
 
-Now 80% of your average code base is built with modules downloaded from registries like JavaScript's npm, Python's Pypy, Rust's crates.io, and others. Even C++ is moving towards enabling an ecosystem of composable modules.
+Now 80% of your average code base is built with modules downloaded from registries like JavaScript's npm, Python's PyPI, Rust's crates.io, and others. Even C++ is moving towards enabling an ecosystem of composable modules.
 
 <img src="img/02-01-ecosystem-stats.png" alt="" />
 

@@ -295,7 +295,7 @@ There's a problem here, though. By default, WebAssembly only has a handful of nu
 
 <img src="img/04-04-nanoprocess-comms.png" alt="Two nanoprocesses passing numbers to each other, but can't pass more complex data in memory" />
 
-Here's where the third feature comes in—the [interface type proposal](https://hacks.mozilla.org/2019/08/webassembly-interface-types/) which we demoed in August. With interface types, modules can communicate using more complex values—things like like strings, sequences, records, variants, and nested combinations of these. 
+Here's where the third feature comes in—the [interface type proposal](https://hacks.mozilla.org/2019/08/webassembly-interface-types/) which we demoed in August. With interface types, modules can communicate using more complex values—things like strings, sequences, records, variants, and nested combinations of these. 
 
 That makes it easy for two modules to exchange data, but in a way that's secure and fast. The WebAssembly engine can do direct copies between the caller and the callee's memories, without having to serialize and deserialize the data. And this works even if the two modules aren't compiled from the same language. 
 

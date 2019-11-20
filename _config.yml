@@ -28,9 +28,15 @@ twitter: "username"
 
 # Build settings
 markdown: kramdown
+permalink: /articles/:title
 # theme: minima
 # plugins:
 #   - jekyll-feed
+plugins:
+  - jekyll-avatar
+
+kramdown:
+  input: GFM
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,13 +1,11 @@
 ---
-layout: default
+layout: article
+title: "Announcing the Bytecode Alliance: Building a secure by default, composable future for WebAssembly"
+date: 2019-11-12
+author: "Lin Clark"
+github_name: linclark
 feature-img: "/articles/img/featured-image.png"
 ---
-
-<section class="cartoon">
-    <div class="container w-container">
-        <div class="width-container" markdown="1">
-
-# Announcing the Bytecode Alliance: Building a secure by default, composable future for WebAssembly
 
 Today we announce the formation of the Bytecode Alliance, a new industry partnership coming together to forge WebAssembly's outside-the-browser future by collaborating on implementing standards and proposing new ones. Our founding members are Mozilla, Fastly, Intel, and Red Hat, and we're looking forward to welcoming many more.
 
@@ -439,7 +437,3 @@ With wasm, we can replace microservices with nanoprocesses and get the same secu
 So that's the vision we have for a safer future for our users. We believe that WebAssembly doesn't just have the opportunity but the responsibility to provide this kind of safety. 
 
 And we hope that you'll join us!
-
-</div>
-</div>
-</section>

@@ -29,14 +29,18 @@ twitter: "username"
 # Build settings
 markdown: kramdown
 permalink: /articles/:title
-# theme: minima
-# plugins:
-#   - jekyll-feed
 plugins:
   - jekyll-avatar
+  - jekyll-feed
 
 kramdown:
   input: GFM
+
+defaults:
+- scope:
+    path: "_posts"
+  values:
+    layout: "article"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

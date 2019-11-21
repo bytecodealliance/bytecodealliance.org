@@ -177,6 +177,10 @@ article img {
   padding: 1em 1em 1.5em;
 }
 
+.post-meta {
+  font-size: 75%;
+}
+
 .w-col-6 h2,
 .w-col-6 h4
 {

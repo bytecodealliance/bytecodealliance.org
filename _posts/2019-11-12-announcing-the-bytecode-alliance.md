@@ -1,7 +1,5 @@
 ---
-layout: article
 title: "Announcing the Bytecode Alliance: Building a secure by default, composable future for WebAssembly"
-date: 2019-11-12
 author: "Lin Clark"
 github_name: linclark
 feature-img: "/articles/img/featured-image.png"

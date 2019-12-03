@@ -27,6 +27,7 @@ avatar: "images/avatar.png"
 twitter: "username"
 
 # Build settings
+future: true
 markdown: kramdown
 permalink: /articles/:title
 plugins:

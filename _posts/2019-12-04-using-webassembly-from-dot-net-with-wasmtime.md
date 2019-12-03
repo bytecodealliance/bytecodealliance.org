@@ -30,11 +30,15 @@ The [WebAssembly interface types proposal](https://hacks.mozilla.org/2019/08/web
 
 When support for interface types is eventually implemented by the Wasmtime for .NET API, it will enable a more natural way to call into WebAssembly code from .NET.
 
-Unfortunately, until that time, some glue code will be required to pass anything other than an integer or a float back and forth between WebAssembly and .NET.
-
 ## Diving into using WebAssembly from .NET
 
 In this article we'll dive into using a Rust library compiled to WebAssembly from .NET with the Wasmtime for .NET API, so it will help to be a little familiar with the C# programming language to follow along.
+
+The Wasmtime for .NET API described here is fairly low-level. That means that there is quite a bit of glue code required for conceptually simple operations such as passing or receiving a string value.
+
+In the future we'll also provide a higher-level API based on [WebAssembly interface types](https://hacks.mozilla.org/2019/08/webassembly-interface-types/) which will significantly reduce the code required for the same operations. Using that API will enable interacting with a WebAssembly module from .NET as easily as you would a .NET assembly.
+
+Note also that the API is still under active development and will change in backwards-incompatible ways. We're aiming to stabilize it as we stabilize Wasmtime itself.
 
 If you're reading this and you aren't a .NET developer, that's okay! Check out the [Wasmtime Demos](https://github.com/bytecodealliance/wasmtime-demos) repository for corresponding implementations for Python, Node.js, and Rust too!
 

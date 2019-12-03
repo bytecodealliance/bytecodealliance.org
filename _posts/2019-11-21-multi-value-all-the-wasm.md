@@ -181,7 +181,7 @@ And then additionally, when targeting Wasm, we also use a few more moving parts:
 
 Here's a summary of the toolchain's pipeline, showing the inputs and outputs between tools:
 
-<a href="/articles/img/rust-wasm-toolchain.svg"><img src="/articles/img/rust-wasm-toolchain.svg" alt="A diagram showing the pipeline of the Rust and Wasm toolchain." width="1088" height="143" class="alignleft size-full wp-image-34027"  role="img" /></a>
+<a href="{{ site.baseurl }}/articles/img/rust-wasm-toolchain.svg"><img src="{{ site.baseurl }}/articles/img/rust-wasm-toolchain.svg" alt="A diagram showing the pipeline of the Rust and Wasm toolchain." width="1088" height="143" class="alignleft size-full wp-image-34027"  role="img" /></a>
 
 My goal is to unlock interface types with multi-value functions. For now, I haven't been focusing on code size wins from generating multi-value blocks. For my purposes, I only need to introduce multi-value functions at the edges of the Wasm module that talk to interface adapters; I don't need to make all function bodies use the optimal multi-value instruction sequence constructs. Therefore, I decided to have `wasm-bindgen`'s post-processor rewrite certain functions to use multi-value returns, rather than add support in LLVM.<sup id="back-llvm-multi-value">[0](#foot-note-llvm-multi-value)</sup> With this approach I only needed to add support to the following tools:
 
@@ -518,7 +518,7 @@ Ok, so at this point, we can generate multi-value Wasm binaries with the Rust an
 
 Enter [Wasmtime][], the WebAssembly runtime built on top of [the Cranelift code generator][cranelift]. Wasmtime translates WebAssembly into Cranelift's IR with the `cranelift-wasm` crate, and then Cranelift compiles the IR down to native machine code.
 
-<a href="/articles/img/wasmtime-and-cranelift.svg"><img src="/articles/img/wasmtime-and-cranelift.svg" alt="Pipeline from a Wasm binary through Wasmtime and Cranelift to native code" width="887" height="169" class="alignleft size-full wp-image-34026"  role="img" /></a>
+<a href="img/wasmtime-and-cranelift.svg"><img src="img/wasmtime-and-cranelift.svg" alt="Pipeline from a Wasm binary through Wasmtime and Cranelift to native code" width="887" height="169" class="alignleft size-full wp-image-34026"  role="img" /></a>
 
 Implementing multi-value Wasm support in Wasmtime and Cranelift roughly involved two steps:
 

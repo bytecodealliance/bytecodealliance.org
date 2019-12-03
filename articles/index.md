@@ -7,7 +7,7 @@ layout: article
     <li>
       {% avatar user=post.github_name size=75 %}
       <div>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
         {{ post.excerpt }}
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <aside>Posted on {{ post.date | date: date_format }}</aside>

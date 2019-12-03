@@ -3,7 +3,7 @@ layout: default
 ---
 
 <header id="hero" class="section-hero">
-    <div class="container w-container"><img src="/images/bytecode-alliance-logo.svg" width="730" alt="Bytecode Alliance logo"></div>
+    <div class="container w-container"><img src="images/bytecode-alliance-logo.svg" width="730" alt="Bytecode Alliance logo"></div>
 </header>
 
 <section>
@@ -20,10 +20,10 @@ We have a [vision](/articles/announcing-the-bytecode-alliance) for a secure-by-d
 
 Our founding members are:
 
-<img src="/images/mozilla-logo.svg" class="founder-logo" alt="Mozilla Logo">
-<img src="/images/fastly-logo.svg" class="founder-logo" alt="Fastly Logo">
-<img src="/images/intel-logo.svg" class="founder-logo vert" alt="Intel Logo">
-<img src="/images/red-hat-logo.svg" class="founder-logo" alt="Red Hat Logo">
+<img src="images/mozilla-logo.svg" class="founder-logo" alt="Mozilla Logo">
+<img src="images/fastly-logo.svg" class="founder-logo" alt="Fastly Logo">
+<img src="images/intel-logo.svg" class="founder-logo vert" alt="Intel Logo">
+<img src="images/red-hat-logo.svg" class="founder-logo" alt="Red Hat Logo">
 
 </div>
 </div>
@@ -31,8 +31,8 @@ Our founding members are:
 <section class="section section-tinted">
     <div class="container w-container">
         <div class="w-row">
-            <div class="nopadding w-col w-col-6 w-col-medium-6"><img src="/images/illustration.png"
-                    srcset="/images/illustration-p-500.png 500w, /images/illustration.png 894w"
+            <div class="nopadding w-col w-col-6 w-col-medium-6"><img src="images/illustration.png"
+                    srcset="images/illustration-p-500.png 500w, images/illustration.png 894w"
                     sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, 49vw" alt="" class="illustration">
             </div>
             <div class="nopadding w-col w-col-6 w-col-medium-6" markdown="1">
@@ -61,8 +61,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>What is the Bytecode Alliance?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -79,8 +79,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>Why is this an important focus right now?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -101,8 +101,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>Why does this require a cross-industry effort?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -117,8 +117,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>How does this relate to standardization bodies like the W3C’s WebAssembly CG?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -137,8 +137,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>What projects are already a part of this?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -180,8 +180,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>How are these projects licensed?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -193,8 +193,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>How do developers get involved?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -213,8 +213,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>How do organizations join the Alliance?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -238,8 +238,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>How will the Alliance be governed?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -253,8 +253,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>Which architectures and OS platforms are supported?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">
@@ -276,8 +276,8 @@ If you want to start a conversation about how best to use our projects, particip
                     <h3>Which execution modes are supported?</h3>
                     <div class="faq-icon">
                         <div class="line vertical"></div>
-                        <div class="line"></div><img src="/images/circle.svg" alt="" class="icon-circle"><img
-                            src="/images/smaller-circle.svg" alt="" class="icon-circle m-circle">
+                        <div class="line"></div><img src="images/circle.svg" alt="" class="icon-circle"><img
+                            src="images/smaller-circle.svg" alt="" class="icon-circle m-circle">
                     </div>
                 </div>
                 <div class="answer-wrapper">

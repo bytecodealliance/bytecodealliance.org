@@ -4,17 +4,17 @@ author: "Peter Huene"
 github_name: peterhuene
 ---
 
-[Wasmtime](https://github.com/bytecodealliance/wasmtime/), the WebAssembly runtime from the [Bytecode Alliance](https://bytecodealliance.org/articles/announcing-the-bytecode-alliance), recently added an early preview of an API for .NET Core, Microsoft's free, open-source, and cross-platform application runtime. This API enables developers to programmatically load and execute WebAssembly code directly from their .NET programs.
+[Wasmtime](https://github.com/bytecodealliance/wasmtime/), the WebAssembly runtime from the [Bytecode Alliance](https://bytecodealliance.org/articles/announcing-the-bytecode-alliance), recently added an early preview of an API for [.NET Core](https://docs.microsoft.com/en-us/dotnet/core), Microsoft's free, open-source, and cross-platform application runtime. This API enables developers to programmatically load and execute WebAssembly code directly from their .NET programs.
 
 .NET Core is already a cross-platform runtime, so why should .NET developers pay any attention to WebAssembly?
 
-There are several reasons to be excited about WebAssembly if you're a .NET developer:
+There are several reasons to be excited about WebAssembly if you're a .NET developer, such as sharing the same executable code across platforms, being able to securely isolate untrusted code, and having a seamless interop experience with the upcoming WebAssembly interface types proposal.
 
 ### Share more code across platforms
 
 .NET assemblies can already be built for cross-platform use, but using a *native library* (for example, a library written in C or Rust) can be difficult because it requires native interop and distributing a platform-specific build of the library for each supported platform.
 
-However, if the native library were compiled to WebAssembly, the same WebAssembly module could be used across many different platforms and programming environments, including .NET; this would simplify the distribution of the library code.
+However, if the native library were compiled to WebAssembly, the same WebAssembly module could be used across many different platforms and programming environments, including .NET; this would simplify the distribution of the library and the applications that depend on it.
 
 ### Securely isolate untrusted code
 
@@ -28,13 +28,13 @@ A WebAssembly module can only call the external functions it explicitly imports 
 
 The [WebAssembly interface types proposal](https://hacks.mozilla.org/2019/08/webassembly-interface-types/) introduces a way for WebAssembly to better integrate with programming languages by reducing the amount of glue code that is necessary to pass more complex types back and forth between the hosting application and a WebAssembly module.
 
-When support for interface types is eventually implemented by the Wasmtime for .NET API, it will enable a more natural way to call into WebAssembly code from .NET.
+When support for interface types is eventually implemented by the Wasmtime for .NET API, it will enable a seamless experience for exchanging complex types between WebAssembly and .NET.
 
 ## Diving into using WebAssembly from .NET
 
 In this article we'll dive into using a Rust library compiled to WebAssembly from .NET with the Wasmtime for .NET API, so it will help to be a little familiar with the C# programming language to follow along.
 
-The Wasmtime for .NET API described here is fairly low-level. That means that there is quite a bit of glue code required for conceptually simple operations such as passing or receiving a string value.
+The API described here is fairly low-level. That means that there is quite a bit of glue code required for conceptually simple operations, such as passing or receiving a string value.
 
 In the future we'll also provide a higher-level API based on [WebAssembly interface types](https://hacks.mozilla.org/2019/08/webassembly-interface-types/) which will significantly reduce the code required for the same operations. Using that API will enable interacting with a WebAssembly module from .NET as easily as you would a .NET assembly.
 
@@ -105,7 +105,7 @@ wasm2wat markdown.wasm --enable-multi-value > markdown.wat
 
 #### What the module needs from a host
 
-The module's imports are needed from the host for the module to work.
+The module's imports define what the host should provide for the module to work.
 
 Here are the imports for the `markdown` module:
 
@@ -120,7 +120,7 @@ Shortly we'll implement these functions for a .NET host, but it is important to 
 
 #### What the module offers a host
 
-The module's exports are what it offers the host in terms of its functionality.
+The module's exports define what functionality it offers the host.
 
 Here are the exports for the `markdown` module:
 
@@ -139,11 +139,11 @@ Here are the exports for the `markdown` module:
 (func $__wbindgen_free (param i32 i32) ...)
 ```
 
-First, the module is exporting a *memory*. A WebAssembly memory is the linear address space accessible to the module; **it will be the only region of memory the module can read from or write to**. As the module cannot access any other region of the host's address space directly, the exported memory is where the host will communicate with the WebAssembly module.
+First, the module is exporting a *memory*. A WebAssembly memory is the linear address space accessible to the module; **it will be the only region of memory the module can read from or write to**. As the module cannot access any other region of the host's address space directly, the exported memory is where the host will exchange data with the WebAssembly module.
 
 Second, the module exports the `render` function we implemented in Rust. But wait a second, why does it have two parameters and return two values when the Rust implementation only has one parameter and one return value?
 
-In Rust, both a string slice (`&str`) and an owned string (`String`) are represented in WebAssembly as an address and length (in bytes) pair. Thus, the WebAssembly version of the Rust function both takes an address-length pair for the markdown input string and returns an address-length pair for the rendered HTML string. Here, addresses are represented as integer offsets into the exported memory.
+In Rust, both a string slice (`&str`) and an owned string (`String`) are represented as an address and length (in bytes) pair when compiled to WebAssembly. Thus, the WebAssembly version of the Rust function takes an address-length pair for the markdown input string and returns an address-length pair for the rendered HTML string. Here, addresses are represented as integer offsets into the exported memory.
 
 Note that since the Rust code returns a `String`, which is an *owned* type, the caller of `render` will be responsible for freeing the returned memory containing the rendered string.
 
@@ -230,9 +230,9 @@ Based on the exports of the module, we know it exports a *memory*. From the host
 
 If you randomly write data to a foreign address space, Bad Things Happen&#x2122; because it's quite easy to corrupt the state of the other program and cause undefined behavior, such as a crash or the total protonic reversal of the universe. So how can a host pass data to the WebAssembly module in a safe manner?
 
-Internally the Rust program uses a *memory allocator* to manage its memory. So, for .NET to be able to be a good host to the WebAssembly module, it must also use the *same* memory allocator when allocating and freeing memory accessible to the WebAssembly module.
+Internally the Rust program uses a *memory allocator* to manage its memory. So, for .NET to be a good host to the WebAssembly module, it must also use the *same* memory allocator when allocating and freeing memory accessible to the WebAssembly module.
 
-Thankfully, the [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen) magic, used by the Rust program to export itself as WebAssembly, also exported two functions for that purpose: `__wbindgen_malloc` and `__wbindgen_free`. These two functions are essentially `malloc` and `free` from C, except `__wbindgen_free` needs the size of the previous allocation in addition to the memory address.
+Thankfully, [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen), used by the Rust program to export itself as WebAssembly, also exported two functions for that purpose: `__wbindgen_malloc` and `__wbindgen_free`. These two functions are essentially `malloc` and `free` from C, except `__wbindgen_free` needs the size of the previous allocation in addition to the memory address.
 
 With this in mind, let us write a simple wrapper for these exported functions in C# so we can easily allocate and free memory accessible to the WebAssembly module.
 

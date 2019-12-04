@@ -435,7 +435,7 @@ namespace WasmtimeDemo
 
         static void Main()
         {
-            using var markdown = Wasmtime.LoadModule<Markdown>("markdown.wasm");
+            using var markdown = Module.Load<Markdown>("markdown.wasm");
 
             Console.WriteLine(markdown.Render(MarkdownSource));
         }

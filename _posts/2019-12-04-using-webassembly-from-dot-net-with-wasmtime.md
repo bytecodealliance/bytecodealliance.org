@@ -169,7 +169,7 @@ dotnet new console
 Finally, add a reference to the [Wasmtime NuGet package](https://www.nuget.org/packages/Wasmtime):
 
 ```
-dotnet add package wasmtime --version 0.8.0-preview1
+dotnet add package wasmtime --version 0.8.0-preview2
 ```
 
 That's it! Now we're ready to use the Wasmtime for .NET API to load and execute the `markdown` WebAssembly module.

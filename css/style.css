@@ -1,8 +1,23 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;   
+  overflow: hidden;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #333;
   font-size: 22px;
   font-weight: 400;
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,11 +66,7 @@ p {
 }
 
 #site-nav {
-  position: fixed;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: auto;
+  flex-shrink: 0;
   z-index: 999;
   padding: 0 16px;
   border-bottom: 1px solid #f2f2f2;
@@ -407,10 +418,13 @@ a[href^="#"] {
   display: none;
 }
 
-.faq-item {
-  padding-top: 10px;
+.fentry {
+  display: block;
   padding-bottom: 20px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.fentry > * {
+  cursor: pointer;
 }
 
 .section-footer {
@@ -425,65 +439,89 @@ a[href^="#"] {
   text-align: right;
 }
 
-.faq-heading {
-  position: relative;
-  z-index: 99;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
+#faq-entries {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-.faq-icon {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+#faq-entries > li {
+  position: relative;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.ficon {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 26px;
   height: 26px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  filter: grayscale(100%);
+  transition: filter 0.25s;
 }
 
-.answer-wrapper {
-  width: 100%;
-  padding-right: 20px;
+@media (max-width: 767px) {
+  .ficon {
+    transform: scale(0.85);
+  }
 }
 
-.line {
+.fentry > input {
+  display: none;
+}
+
+.fanswer {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  cursor: inherit;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.fentry:target .fanswer {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  display: block;
+}
+
+.fentry:target .ficon {
+  filter: grayscale(0%);
+}
+
+.ficon .fline {
   position: absolute;
+  top: 12px;
+  left: 7px;
   width: 12px;
   height: 2px;
   border-radius: 99px;
   background-color: #00a0ad;
 }
 
-.line.vertical {
-  position: absolute;
-  height: 2px;
+.ficon .fvertical,
+.ficon .fcircle {
+  transition: transform 0.25s;
 }
 
-.icon-circle.m-circle {
-  display: none;
+.ficon .fvertical {
+  transform: rotate(90deg);
+}
+
+.fentry:target .fvertical {
+  transform: rotate(0deg);
+}
+
+.ficon .fcircle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-142deg);
+}
+
+.fentry:target .fcircle {
+  transform: rotate(0deg);
 }
 
 .m-hero-img-text {
@@ -547,39 +585,6 @@ a[href^="#"] {
 
 .scroll-icon {
   margin-top: 5px;
-}
-
-.utility-page-wrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  max-height: 100%;
-  max-width: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.utility-page-content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 260px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  text-align: center;
 }
 
 ._404-heading {
@@ -698,9 +703,6 @@ cite {
   .mail-icon.smaller {
     display: block;
     width: auto;
-  }
-  .faq-icon {
-    margin-left: 10px;
   }
   .nav--menu {
     display: -webkit-box;
@@ -843,9 +845,6 @@ cite {
   .m-hero-img-img {
     display: block;
     margin-bottom: 26px;
-  }
-  .faq-list {
-    margin-top: -16px;
   }
   .illustration {
     margin-bottom: 30px;

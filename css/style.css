@@ -78,8 +78,12 @@ p {
   font-weight: 500;
 }
 
-#site-nav .container ul {
+#site-nav {
   height: 66px;
+}
+
+#site-nav #nav-entries {
+  position: relative;
 }
 
 #site-nav #menu-button {
@@ -116,8 +120,8 @@ p {
 
 #site-nav ul li {
   list-style: none;
-  display: inline-block;
-  margin: 22px 20px 0 21px;
+  float: left;
+  margin: 22px 18px 0 27px;
 }
 #site-nav ul li a {
   position: relative;
@@ -140,29 +144,13 @@ body[id^="posts-"] nav a[href^="/articles"] {
 }
 
 #site-nav ul li.github-link {
-  position: relative;
-  top: -3px;
-  margin: 0;
-  padding: 0 14px;
+  margin: 18px 14px 0 20px;
+  padding: 0;
 }
 
-#site-nav ul li:hover {
+#site-nav a:hover {
   -webkit-filter: brightness(60%);
   filter: brightness(60%);
-}
-
-#site-nav ul li.w--current {
-  border-bottom: 2px solid #373753;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
-  transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
-  color: #373753;
-}
-
-#site-nav ul li.w--current:hover {
-  -webkit-filter: brightness(80%);
-  filter: brightness(80%);
 }
 
 #site-nav .github-link {
@@ -186,7 +174,31 @@ body[id^="posts-"] nav a[href^="/articles"] {
   filter: brightness(80%);
 }
 
-@media (max-width: 991px) {
+#projects-nav > a {
+  cursor: default;
+}
+
+#projects-nav ul {
+  display: none;
+  float: none;
+  position: absolute;
+  right: 18px;
+  background: white;
+  /* font-size: 90%; */
+}
+
+
+#projects-nav:hover ul {
+  display: block;
+  white-space: nowrap;
+}
+
+#projects-nav ul li {
+  float: none;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+@media (max-width: 870px) {
   #site-nav #menu-button {
     display: block;
   }
@@ -199,7 +211,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
     display: block;
   }
 
-  #site-nav .container ul {
+  #site-nav .container > ul {
     position: relative;
     clear: both;
     float: none;
@@ -211,11 +223,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
   #site-nav ul li,
   #site-nav ul li.github-link {
     position: relative;
-    display: block;
+    float: none;
     margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 34px;
+    padding: 10px 0 10px 34px;
     border-bottom: 1px solid #f2f2f2;
   }
   #site-nav ul li.github-link {
@@ -235,8 +245,21 @@ body[id^="posts-"] nav a[href^="/articles"] {
     width: 20px;
     height: 20px;
   }
+
   #site-nav .github-link span {
     display: inline;
+  }
+
+  #site-nav #projects-nav {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  #projects-nav ul {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    border-top: 1px solid #f2f2f2;
   }
 }
 

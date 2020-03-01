@@ -107,6 +107,7 @@ p {
 #site-nav .brand {
   position: relative;
   float: left;
+  z-index: 1;
   padding: 16px 0;
   text-decoration: none;
   color: #333333;
@@ -270,7 +271,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
 }
 
 section {
-  margin: 80px 16px;
+  margin: 14px 16px 60px;
   -webkit-transition: -webkit-filter 200ms ease;
   transition: -webkit-filter 200ms ease;
   transition: filter 200ms ease;

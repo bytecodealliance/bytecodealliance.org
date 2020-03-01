@@ -704,33 +704,6 @@ cite {
     display: block;
     width: auto;
   }
-  .nav--menu {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-    padding: 10px 18px 18px;
-    background-color: #fff;
-  }
-  .nav--menu.dark {
-    background-color: #101720;
-  }
-  .menu-button.w--open {
-    background-color: #fff;
-    color: #000;
-  }
-  .nav-mobile {
-    display: block;
-  }
-  .nav-mobile.dark {
-    border-bottom-style: none;
-    background-color: #101720;
-  }
-  .separate {
-    height: 1px;
-    background-color: #f2f2f2;
-  }
   ._404-heading {
     font-size: 28px;
   }
@@ -751,10 +724,6 @@ cite {
     margin-top: -5px;
     font-size: 13px;
   }
-  .menu-button-dark.w--open {
-    background-color: #101720;
-    color: #000;
-  }
 }
 
 @media (max-width: 767px) {
@@ -767,14 +736,6 @@ cite {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-  }
-  .nav-link.github {
-    padding-bottom: 16px;
-    background-position: 0% 37%;
-  }
-  .nav-link.m-link {
-    padding-bottom: 16px;
-    background-position: 0% 37%;
   }
   .section-hero {
     min-height: 420px;
@@ -822,11 +783,6 @@ cite {
   .line {
     width: 10px;
   }
-  .nav--menu {
-    padding: 18px;
-    border-top: 1px solid #f2f2f2;
-    border-bottom-style: none;
-  }
   .icon-circle {
     display: none;
     width: 20px;
@@ -852,29 +808,11 @@ cite {
 }
 
 @media (max-width: 479px) {
-  .nav-link {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-position: 0% 38%;
-  }
   .rich-item {
     margin-top: 16px;
   }
   .rich-item.news-item {
     margin-top: 16px;
-  }
-  .nav--menu {
-    padding-top: 8px;
   }
   ._404-heading {
     margin-top: 24px;

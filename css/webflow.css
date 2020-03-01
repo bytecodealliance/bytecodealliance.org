@@ -123,16 +123,6 @@ ol {
     width: 100%;
   }
 }
-@media screen and (max-width: 767px) {
-  .w-nav-brand {
-    padding-left: 10px;
-  }
-}
-.w-nav {
-  position: relative;
-  background: #dddddd;
-  z-index: 1000;
-}
 .w-nav:before,
 .w-nav:after {
   content: " ";
@@ -144,12 +134,6 @@ ol {
 }
 .w-nav:after {
   clear: both;
-}
-.w-nav-brand {
-  position: relative;
-  float: left;
-  text-decoration: none;
-  color: #333333;
 }
 .w-nav-link {
   position: relative;
@@ -220,10 +204,5 @@ ol {
   }
   .w-nav[data-collapse="medium"] .w-nav-button {
     display: block;
-  }
-}
-@media screen and (max-width: 767px) {
-  .w-nav-brand {
-    padding-left: 10px;
   }
 }

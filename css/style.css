@@ -5,10 +5,6 @@ body {
   font-weight: 400;
 }
 
-nav {
-  line-height: 20px;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: Metropolis, sans-serif;
   margin-top: 1em;
@@ -54,44 +50,97 @@ p {
   max-width: 1200px;
 }
 
-.nav {
+#site-nav {
   position: fixed;
   left: 0%;
   top: 0%;
   right: 0%;
   bottom: auto;
   z-index: 999;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 0 16px;
   border-bottom: 1px solid #f2f2f2;
+  line-height: 20px;
   background-color: #fff;
-}
-
-.brand {
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
-.nav-link {
-  margin-right: 20px;
-  margin-left: 20px;
-  padding: 22px 0px;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
-  transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #00a0ad;
   font-size: 18px;
   font-weight: 500;
 }
 
-.nav-link:hover {
+#site-nav .container ul {
+  height: 66px;
+}
+
+#site-nav #menu-button {
+  display: none;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1;
+  background: white;
+  cursor: pointer;
+}
+
+#site-nav #menu-button div {
+  width: 20px;
+  height: 2px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #00a0ad;
+}
+
+#site-nav .brand {
+  position: relative;
+  float: left;
+  padding: 16px 0;
+  text-decoration: none;
+  color: #333333;
+}
+
+#site-nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+#site-nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 22px 20px 0 21px;
+}
+#site-nav ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 22px 0;
+  height: 100%;
+  -webkit-transition: -webkit-filter 200ms ease;
+  transition: -webkit-filter 200ms ease;
+  transition: filter 200ms ease;
+  transition: filter 200ms ease, -webkit-filter 200ms ease;
+}
+
+#mission nav a[href="/mission"],
+body[id^="press"] nav a[href^="/press"],
+body[id^="projects"] nav a[href^="/projects"],
+body[id^="articles"] nav a[href^="/articles"],
+body[id^="posts-"] nav a[href^="/articles"] {
+  border-bottom: 2px solid #373753;
+  color: #373753;
+}
+
+#site-nav ul li.github-link {
+  position: relative;
+  top: -3px;
+  margin: 0;
+  padding: 0 14px;
+}
+
+#site-nav ul li:hover {
   -webkit-filter: brightness(60%);
   filter: brightness(60%);
 }
 
-.nav-link.w--current {
+#site-nav ul li.w--current {
   border-bottom: 2px solid #373753;
   -webkit-transition: -webkit-filter 200ms ease;
   transition: -webkit-filter 200ms ease;
@@ -100,20 +149,90 @@ p {
   color: #373753;
 }
 
-.nav-link.w--current:hover {
+#site-nav ul li.w--current:hover {
   -webkit-filter: brightness(80%);
   filter: brightness(80%);
 }
 
-#home-md a[href="/"],
-#mission-md a[href="/mission"],
-#news-md a[href="/news"] {
-  border-bottom: 2px solid #373753;
-  color: #373753;
+#site-nav .github-link {
+  padding: 10px 14px;
 }
 
-.github-link {
-  padding: 18px 14px;
+#site-nav .github {
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+  -webkit-transition: -webkit-filter 200ms ease;
+  transition: -webkit-filter 200ms ease;
+  transition: filter 200ms ease;
+  transition: filter 200ms ease, -webkit-filter 200ms ease;
+}
+#site-nav .github-link span {
+  display: none;
+}
+
+#site-nav .github:hover {
+  -webkit-filter: brightness(80%);
+  filter: brightness(80%);
+}
+
+@media (max-width: 991px) {
+  #site-nav #menu-button {
+    display: block;
+  }
+
+  #site-nav #nav-entries {
+    display: none;
+  }
+
+  #site-nav #nav-entries.show {
+    display: block;
+  }
+
+  #site-nav .container ul {
+    position: relative;
+    clear: both;
+    float: none;
+    padding-top: 10px;
+    height: auto;
+    background: white;
+  }
+
+  #site-nav ul li,
+  #site-nav ul li.github-link {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 34px;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  #site-nav ul li.github-link {
+    left: -24px;
+    top: 0;
+  }
+  #site-nav ul li a {
+    margin: 0;
+    padding: 0;
+    border-bottom: none !important;
+  }
+
+  #site-nav .github {
+    position: relative;
+    top: -2px;
+    left: -6px;
+    width: 20px;
+    height: 20px;
+  }
+  #site-nav .github-link span {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-nav .brand {
+    padding-left: 10px;
+  }
 }
 
 section {
@@ -363,34 +482,8 @@ a[href^="#"] {
   height: 2px;
 }
 
-.github {
-  -webkit-filter: brightness(100%);
-  filter: brightness(100%);
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
-  transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
-}
-
-.github:hover {
-  -webkit-filter: brightness(80%);
-  filter: brightness(80%);
-}
-
 .icon-circle.m-circle {
   display: none;
-}
-
-.nav-mobile {
-  position: fixed;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: auto;
-  z-index: 999;
-  display: none;
-  border-bottom: 1px solid #f2f2f2;
-  background-color: #fff;
 }
 
 .m-hero-img-text {
@@ -582,61 +675,6 @@ cite {
   .container {
     min-width: auto;
   }
-  .nav {
-    display: none;
-  }
-  .brand {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-  }
-  .nav-link {
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .nav-link.w--current {
-    border-bottom-style: none;
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%);
-  }
-  .nav-link.github {
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-left: 32px;
-    background-image: url('../images/github-icon.svg');
-    background-position: 0% 42%;
-    background-size: 20px;
-    background-repeat: no-repeat;
-    color: #00a0ad;
-  }
-  .nav-link.m-link {
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-left: 32px;
-    background-image: url('../images/Vector.svg');
-    background-position: 0% 41%;
-    background-size: 20px;
-    background-repeat: no-repeat;
-  }
-  .nav-link.m-link.news {
-    background-image: url('../images/Vector-1.svg');
-  }
-  .nav-link.m-link.news.w--current {
-    padding-bottom: 16px;
-    background-image: url('../images/Vector-1.svg');
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%);
-  }
-  .github-link {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding: 10px 20px;
-  }
   section {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -690,13 +728,6 @@ cite {
   .separate {
     height: 1px;
     background-color: #f2f2f2;
-  }
-  .menu--line {
-    width: 20px;
-    height: 2px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    background-color: #00a0ad;
   }
   ._404-heading {
     font-size: 28px;
@@ -822,7 +853,7 @@ cite {
 }
 
 @media (max-width: 479px) {
-  .nav-link.m-link {
+  .nav-link {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

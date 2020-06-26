@@ -55,9 +55,9 @@ Currently, we’re collaborating on:
 
 ### Runtime components:
 
-- **[Cranelift](https://github.com/bytecodealliance/wasmtime/tree/master/cranelift)** is emerging as a state-of-the-art code generator. It is designed to generate optimized machine code very quickly because it parallelizes compilation on a function-by-function level. 
+- **[Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift)** is emerging as a state-of-the-art code generator. It is designed to generate optimized machine code very quickly because it parallelizes compilation on a function-by-function level. 
 
-- **[WASI common](https://github.com/bytecodealliance/wasmtime/tree/master/crates/wasi-common)** is a standalone implementation of the WebAssembly System Interface that runtimes can use. 
+- **[WASI common](https://github.com/bytecodealliance/wasmtime/tree/main/crates/wasi-common)** is a standalone implementation of the WebAssembly System Interface that runtimes can use. 
 
 ### Language tooling
 

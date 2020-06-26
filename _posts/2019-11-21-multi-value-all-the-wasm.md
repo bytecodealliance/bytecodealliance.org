@@ -807,7 +807,7 @@ i32.add         ;; [3]
 
 <small>These stack-y forms can be represented by introducing blocks that don't also introduce labels for control flow branches. You can think of them as sort of similar to Common Lisp's `progn` and `prog0` forms or Scheme's `(begin ...)` [&#x21a9;](#back-stack-and-tree-correspondence)</small>
 
-<small><sup id="foot-cranelift-backend-for-rustc">2</sup> Fun fact: there is also ongoing work to make Cranelift a viable alternative backend for `rustc`!  See the [goals write up](https://github.com/bytecodealliance/wasmtime/tree/master/cranelift/rustc.md) and the [`bjorn3/rustc_codegen_cranelift`](https://github.com/bjorn3/rustc_codegen_cranelift) repo for details. [&#x21a9;](#back-cranelift-backend-for-rustc)</small>
+<small><sup id="foot-cranelift-backend-for-rustc">2</sup> Fun fact: there is also ongoing work to make Cranelift a viable alternative backend for `rustc`!  See the [goals write up](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift/rustc.md) and the [`bjorn3/rustc_codegen_cranelift`](https://github.com/bjorn3/rustc_codegen_cranelift) repo for details. [&#x21a9;](#back-cranelift-backend-for-rustc)</small>
 
 <small><sup id="foot-extended-basic-blocks">3</sup> Originally, Cranelift was designed to use extended basic blocks, rather than regular basic blocks.  Both can only be entered at their head, but basic blocks additionally can only exit at their tail, while extended basic blocks can have conditional exits from the block in their middle. The idea is that extended basic blocks more directly match machine code which falls through untaken conditional branches to continue executing the next instruction. However, Cranelift is in the process of switching over to regular basic blocks, and removing support for extended basic blocks. The reasoning is that all its optimization passes end up essentially constructing and keeping track of basic blocks anyways, which added complexity, and the extended basic blocks weren't ultimately carrying their weight.  [&#x21a9;](#back-extended-basic-blocks)</small>
 
@@ -821,7 +821,7 @@ i32.add         ;; [3]
 [wasmparser]: https://github.com/bytecodealliance/wasmparser
 [wasm-bindgen]: https://github.com/rustwasm/wasm-bindgen
 [wasmtime]: https://wasmtime.dev/
-[cranelift]: https://github.com/bytecodealliance/wasmtime/tree/master/cranelift
+[cranelift]: https://github.com/bytecodealliance/wasmtime/tree/main/cranelift
 [wasm-reduce]: https://github.com/WebAssembly/binaryen/blob/d2550891e41ad0215b1cae46fa711bc1e264166a/src/tools/wasm-reduce.cpp
 [creduce]: http://embed.cs.utah.edu/creduce/
 [binaryen]: https://github.com/WebAssembly/binaryen

@@ -150,7 +150,7 @@ If you want to start a conversation about how best to use our projects, particip
                 </p>
                 <h4>Cranelift</h4>
                 <p>
-                    <a href="https://github.com/bytecodealliance/wasmtime/tree/master/cranelift">Cranelift</a> is a highly optimized code generator, focused on fast compilation. It’s used in
+                    <a href="https://github.com/bytecodealliance/wasmtime/tree/main/cranelift">Cranelift</a> is a highly optimized code generator, focused on fast compilation. It’s used in
                     Wasmtime for both JIT and AOT compilation, and is currently being integrated into Firefox as
                     the optimizing compiler for WebAssembly. It’s also used as an experimental backend for the
                     Rust compiler.

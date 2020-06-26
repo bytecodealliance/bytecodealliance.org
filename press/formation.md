@@ -19,7 +19,7 @@ Founding members are making several open source project contributions to the Byt
 1. [Wasmtime](https://github.com/bytecodealliance/wasmtime), a small and efficient runtime for WebAssembly &amp; WASI
 2. [Lucet](https://github.com/bytecodealliance/lucet), an ahead-of-time compiler and runtime for WebAssembly &amp; WASI focused on low-latency, high-concurrency applications
 3. [WebAssembly Micro Runtime (WAMR)](https://github.com/bytecodealliance/wasm-micro-runtime), an interpreter-based WebAssembly runtime for embedded devices
-4. [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/master/cranelift), a cross-platform code generator with a focus on security and performance, written in Rust
+4. [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift), a cross-platform code generator with a focus on security and performance, written in Rust
 
 
 Modern software applications and services are built from global repositories of shared components and frameworks, which greatly accelerates creation of new and better multi-device experiences but understandably increases concerns about trust, data integrity, and system vulnerability. The Bytecode Alliance is committed to establishing a capable, secure platform that allows application developers and service providers to confidently run untrusted code, on any infrastructure, for any operating system or device, leveraging decades of experience doing so inside web browsers.

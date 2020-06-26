@@ -451,4 +451,4 @@ This is the exciting beginning of using WebAssembly outside of the web browser f
 
 If you're a .NET developer, we hope you'll join us on this journey!
 
-*The .NET demo code from this article can be found in the [Wasmtime Demos repository](https://github.com/bytecodealliance/wasmtime-demos/tree/master/dotnet).*
+*The .NET demo code from this article can be found in the [Wasmtime Demos repository](https://github.com/bytecodealliance/wasmtime-demos/tree/main/dotnet).*

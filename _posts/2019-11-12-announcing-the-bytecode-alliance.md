@@ -347,7 +347,7 @@ If electron-native-notify had asked for these permissions from the start, that w
 
 If the malicious maintainer had tried to slip these access requests in later, sometime after it was already in EasyDEX-GUI, then that would've been a breaking change. The module's signature would have changed, and WebAssembly throws an error when the calling code doesn't provide the imports or parameters that a module expects.
 
-This means there's no way to sneak in acess to a new resource or system call under the radar.
+This means there's no way to sneak in access to a new resource or system call under the radar.
 
 <img src="img/05-02-protection-update.png" alt="A malicious module that is in the dependency tree asking for an upgrade in permissions and its parent module saying 'That doesnt make sense. Let me look at those changes'" />
 
@@ -386,7 +386,7 @@ That makes it impossible for the vulnerable module to carry out the attackers wi
 
 <img src="img/05-04-protection-vunerable.png" alt="A dependency with the ZipSlip vulnerability talking on the phone to an attacker saying 'Oh, I am sorry. I dont have access to that folder. My parent only gave me a handle for the uploads directory'" />
 
-As noted in the caveat above, it is possible that the application developer would pass in a sensitive directory, like the root directory. But for this to work, this mistake would have to be made in the top level package. It can't happen in a transitive dependency. By making all of these accesses explict, it makes it much easier to catch those kinds of sloppy mistakes in review.
+As noted in the caveat above, it is possible that the application developer would pass in a sensitive directory, like the root directory. But for this to work, this mistake would have to be made in the top level package. It can't happen in a transitive dependency. By making all of these accesses explicit, it makes it much easier to catch those kinds of sloppy mistakes in review.
 
 ## Other benefits of nanoprocesses
 

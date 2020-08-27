@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reference Types in Wasm on the Web Demo</title>
+  </head>
+  <body>
+    <button id="call-hello" disabled>Call <code>hello</code></button>
+    <pre><code id="output"></code></pre>
+    <script>
+    const output = document.getElementById("output");
+
+    async function main() {
+      // Define the imports we are giving to the Wasm
+      // module: our WASI polyfill.
+      const imports = {
+        "future-wasi": {
+          write(domNode, address, length) {
+            const memory = new Uint8Array(instance.exports.memory.buffer);
+            const data = memory.subarray(address, address + length);
+            const decoder = new TextDecoder("utf-8");
+            const text = decoder.decode(data);
+            const textNode = document.createTextNode(text);
+            domNode.appendChild(textNode);
+          }
+        }
+      };
+
+      // Fetch and instantiate our Wasm module.
+      const response = await fetch("./hello.wasm");
+      const wasmBytes = await response.arrayBuffer();
+      const { instance } = await WebAssembly.instantiate(wasmBytes, imports);
+
+      // Call its exported `hello` function with a DOM node.
+      instance.exports.hello(output);
+
+      // Every time the button is clicked, call the exported
+      // `hello` function again.
+      const callHello = document.getElementById("call-hello");
+      callHello.removeAttribute("disabled");
+      callHello.addEventListener("click", () => {
+        instance.exports.hello(output);
+      });
+    }
+
+    main().catch(e => {
+      output.textContent = `${e}\n\nStack:\n${e.stack}`;
+    });
+    </script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ Without the reference types proposal, WebAssembly can only manipulate simple
 integer and floating point values. It can't take or return references to the
 host's objects like, for example, a DOM node on a Web page or an open connection
 on a server. There are workarounds: for example, you can store the host objects
-in a side table and refere to them by index, but this adds an extra indirection
+in a side table and refer to them by index, but this adds an extra indirection
 and implementing the side table requires cooperating glue code on the host
 side. That glue code, in particular, is annoying because it is outside of the
 Wasm sandbox, diluting Wasm's safety guarantees, and it is host-specific. If you

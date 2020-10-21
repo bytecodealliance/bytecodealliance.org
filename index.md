@@ -22,7 +22,7 @@ Our founding members are:
 
 <img src="images/mozilla-logo.svg" class="founder-logo" alt="Mozilla Logo">
 <img src="images/fastly-logo.svg" class="founder-logo" alt="Fastly Logo">
-<img src="images/intel-logo.svg" class="founder-logo vert" alt="Intel Logo">
+<img src="images/intel-logo.svg" class="founder-logo" alt="Intel Logo">
 <img src="images/red-hat-logo.svg" class="founder-logo" alt="Red Hat Logo">
 
 </div>

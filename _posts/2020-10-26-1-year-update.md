@@ -61,7 +61,7 @@ On the spec side, that has been identifying and addressing problems with cross-p
 
 On the implementation side, we've done a lot of work to improve the security and reliability of our implementation. Part of this has been developing robust fuzzing measures (which we describe more below). 
 
-Another thing we've done is factored out the security-critical operations into a dedicated library, [`cap-std`](https://github.com/sunfishcode/cap-std). It's a cross-platform library which provides much of the functionality of Rust's standard library in a capabilities-oriented way. This allows us to fully focus on getting those security-critical foundations right on all platforms. As a next step, we'll make use of `cap-std` in our WASI implementation.
+Another thing we've done is factored out the security-critical operations into a dedicated library, [`cap-std`](https://github.com/bytecodealliance/cap-std). It's a cross-platform library which provides much of the functionality of Rust's standard library in a capabilities-oriented way. This allows us to fully focus on getting those security-critical foundations right on all platforms. As a next step, we'll make use of `cap-std` in our WASI implementation.
 
 #### Specialized higher-level host APIs
 For the specialized higher-level host APIs, there has been exciting work on proposals for completely new API modules. 

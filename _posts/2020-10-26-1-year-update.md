@@ -143,7 +143,7 @@ These languages now have support for running WebAssembly in Wasmtime:
 - [Go](https://github.com/bytecodealliance/wasmtime-go)
 - [.NET](https://github.com/bytecodealliance/wasmtime-dotnet)
 - Java (two options: [kawamuray/wasmtime-java](https://github.com/kawamuray/wasmtime-java) or [bluejekyll/wasmtime-java](https://github.com/bluejekyll/wasmtime-java))
-- [Perl](https://github.com/perlwasm/Alien-wasmtime)
+- [Perl](https://metacpan.org/pod/Wasm)
 - [Rust](https://bytecodealliance.github.io/wasmtime/lang-rust.html)
 - [Zig](https://github.com/kubkon/wasmtime-zig)
 - [Ruby](https://github.com/dtcristo/wasmtime-ruby)

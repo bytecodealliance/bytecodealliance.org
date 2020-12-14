@@ -120,7 +120,7 @@ Wasmtime turns on the `wasmtime-wasi-nn` crate that imports the
 OpenVINO&trade; from source, the fastest and most stable route is to build it using existing
 OpenVINO&trade; binaries:
 
-```shell script
+```shell
 $ OPENVINO_INSTALL_DIR=/opt/intel/openvino cargo build -p wasmtime-cli --features wasi-nn
 ```
 
@@ -164,7 +164,7 @@ pub fn main() {
 If we compile the example using the `wasm-wasi32` target, we can see that it will import the
 necessary [wasi-nn] functions:
 
-```shell script
+```shell
 $ cargo build --release --target=wasm32-wasi
 $ wasm2wat target/wasm32-wasi/release/wasi-nn-example.wasm | grep import
     (import "wasi_snapshot_preview1" "proc_exit" (func $__wasi_proc_exit (type 0)))
@@ -180,7 +180,7 @@ $ wasm2wat target/wasm32-wasi/release/wasi-nn-example.wasm | grep import
 
 Now we can run this example using Wasmtime!
 
-```shell script
+```shell
 # Ensure the OpenVINO libraries are on the library path (e.g. LD_LIBRARY_PATH) since they will be dynamically linked:
 $ source /opt/intel/openvino/bin/setupvars.sh
 # Run our example Wasm in Wasmtime with the wasi-nn feature enabled and tell it where to look for the model artifacts (i.e. $ARTIFACTS_DIR)

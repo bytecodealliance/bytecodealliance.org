@@ -9,8 +9,9 @@ The [wasi-nn proposal][wasi-nn] allows WebAssembly programs to access host-provi
 specification, and how to use it in Wasmtime to do machine learning inference. You may find this
 post interesting if you want to execute ML inference in a standalone WebAssembly runtime (i.e. not
 in a browser) or if you would like to understand the process for implementing new WASI
-specifications. In a follow-on post (to be released soon), I will explain how I implemented the
-wasi-nn proposal in [Wasmtime](https://wasmtime.dev/) using
+specifications. In a follow-on post, [Implementing a WASI proposal in
+Wasmtime](https://bytecodealliance.org/articles/implementing-wasi-nn-in-wasmtime), I explain how I
+implemented the wasi-nn proposal in [Wasmtime](https://wasmtime.dev/) using
 [OpenVINO&trade;](https://docs.openvinotoolkit.org/latest/index.html).
 
 
@@ -94,8 +95,9 @@ As it stands today, the wasi-nn specification expects users to:
 ### Use
 
 In its first iteration, the [wasi-nn] specification is implemented in the Wasmtime engine using
-OpenVINO&trade; as the backing implementation. A follow-on post will describe the details of the
-implementation. Here we focus on how to use wasi-nn in Wasmtime.
+OpenVINO&trade; as the backing implementation. A follow-on post, [Implementing a WASI proposal in
+Wasmtime](https://bytecodealliance.org/articles/implementing-wasi-nn-in-wasmtime), describes the
+details of the implementation. Here we focus on how to use wasi-nn in Wasmtime.
 
 The first step is to build or retrieve the ML artifacts. The inputs to OpenVINO&trade; will be a
 model, the model weights, and one or more input tensors. For this example, I generated

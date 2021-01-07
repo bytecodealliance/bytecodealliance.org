@@ -131,6 +131,15 @@ let wasi_root = PathBuf::from("./spec").canonicalize().unwrap();
 println!("cargo:rustc-env=WASI_ROOT={}", wasi_root.display());
 ```
 
+If you are making changes to the WITX specification in-tree, let Cargo know that it should rebuild
+the crate if it observes a WITX change:
+
+```rust
+for entry in walkdir::WalkDir::new(wasi_root) {
+    println!("cargo:rerun-if-changed={}", entry.unwrap().path().display());
+}
+```
+
 I then used `wiggle::from_witx` to bind together the WITX specification to the host structures it
 expects me to create (`WasiNnCtx` and `WasiNnError`):
 

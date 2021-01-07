@@ -131,7 +131,8 @@ let wasi_root = PathBuf::from("./spec").canonicalize().unwrap();
 println!("cargo:rustc-env=WASI_ROOT={}", wasi_root.display());
 ```
 
-If you are making changes to the WITX specification in tree, let Cargo know that it should rebuild the crate if it observes a WITX change:
+If you are making changes to the WITX specification in-tree, let Cargo know that it should rebuild
+the crate if it observes a WITX change:
 
 ```rust
 for entry in walkdir::WalkDir::new(wasi_root) {

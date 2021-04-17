@@ -20,6 +20,10 @@ main {
   overflow-y: auto;
 }
 
+main:focus {
+  outline: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Metropolis, sans-serif;
   margin-top: 1em;

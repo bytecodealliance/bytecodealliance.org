@@ -31,31 +31,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  /* margin-top: 30px; */
+  font-weight: 600;
 }
 
 h2 {
-  /* margin-top: 20px; */
   margin-bottom: 10px;
   color: #000;
-  font-size: 44px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
 }
 
 h3 {
-  /* margin-top: 20px; */
   margin-bottom: 10px;
   color: #000;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h4 {
-  /* margin-top: 10px; */
   margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.4);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 p {
@@ -119,24 +117,22 @@ p {
 
 #site-nav ul {
   float: right;
-  margin: 0;
+  margin-top: 12px;
   padding: 0;
 }
 
 #site-nav ul li {
   list-style: none;
   float: left;
-  margin: 22px 18px 0 27px;
+  position: relative;
+  padding: 2px;
 }
+
 #site-nav ul li a {
   position: relative;
   display: inline-block;
-  padding: 0 0 22px 0;
-  height: 100%;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
+  padding: 8px 21px;
   transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 #mission nav a[href="/mission"],
@@ -148,34 +144,52 @@ body[id^="posts-"] nav a[href^="/articles"] {
   color: #373753;
 }
 
-#site-nav ul li.github-link {
-  margin: 18px 14px 0 20px;
-  padding: 0;
+#membership nav a[href="/membership"] {
+  background: #387E89;
+  text-decoration: underline;
+}
+
+#site-nav ul li.github-link a {
+  padding: 4px 12px;
 }
 
 #site-nav a:hover {
-  -webkit-filter: brightness(60%);
   filter: brightness(60%);
 }
 
-#site-nav .github-link {
-  padding: 10px 14px;
+.join-button {
+  display: inline-block;
+  padding: 2px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #A47ED5 15%, #6BA6DD 40%, #6CE3CC 60%, #3EF699 90%);
 }
 
-#site-nav .github {
-  -webkit-filter: brightness(100%);
-  filter: brightness(100%);
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
-  transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
+.join-button a {
+  color: white;
+  border-radius: 3px;
+  background: #469EAB;
+  transition: background-color 200ms ease !important;
+  display: inline-block;
+  padding: 8px 40px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
 }
+
+.join-button a:hover {
+  filter: none;
+  background: #387E89;
+}
+
+#site-nav .join-button a:hover {
+  filter: none;
+}
+
 #site-nav .github-link span {
   display: none;
 }
 
 #site-nav .github:hover {
-  -webkit-filter: brightness(80%);
   filter: brightness(80%);
 }
 
@@ -187,23 +201,31 @@ body[id^="posts-"] nav a[href^="/articles"] {
   display: none;
   float: none;
   position: absolute;
-  right: 18px;
+  margin-top: -8px;
+  padding: 22px 0 0 0;
+  left: 21px;
   background: white;
-  /* font-size: 90%; */
 }
 
 
 #projects-nav:hover ul {
   display: block;
   white-space: nowrap;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 #projects-nav ul li {
   float: none;
-  border-bottom: 1px solid #f2f2f2;
+  padding: 14px 0;
+  border: 1px none #f2f2f2;
+  border-style: none solid;
 }
 
-@media (max-width: 870px) {
+#projects-nav ul li a {
+  padding: 8px 10px;
+}
+
+@media (max-width: 979px) {
   #site-nav #menu-button {
     display: block;
   }
@@ -216,7 +238,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
     display: block;
   }
 
-  #site-nav .container > ul {
+  #site-nav #nav-entries > ul {
     position: relative;
     clear: both;
     float: none;
@@ -229,7 +251,6 @@ body[id^="posts-"] nav a[href^="/articles"] {
   #site-nav ul li.github-link {
     position: relative;
     float: none;
-    margin: 0;
     padding: 10px 0 10px 34px;
     border-bottom: 1px solid #f2f2f2;
   }
@@ -263,9 +284,31 @@ body[id^="posts-"] nav a[href^="/articles"] {
   #projects-nav ul {
     display: block;
     position: relative;
+    left: 0px;
     margin-top: 10px;
     border-top: 1px solid #f2f2f2;
+    border-bottom: none !important;
+    padding: 0;
   }
+
+  #projects-nav ul li {
+    padding-left: 20px;
+  }
+
+  #site-nav ul li.join-button {
+    display: inline-block;
+    margin-left: 17px;
+    padding: 2px;
+  }
+
+  #site-nav ul li.join-button a {
+    padding: 8px 16px;
+  }
+}
+
+#projects-nav ul li {
+  border-left: none;
+  border-right: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -276,10 +319,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
 
 section {
   margin: 14px 16px 60px;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
   transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 section:first-of-type {
@@ -369,10 +409,7 @@ section.news__hero {
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
   transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 .section-hero._404section {
@@ -408,16 +445,12 @@ section.news__hero {
 }
 
 a {
-  -webkit-transition: -webkit-filter 200ms ease;
-  transition: -webkit-filter 200ms ease;
   transition: filter 200ms ease;
-  transition: filter 200ms ease, -webkit-filter 200ms ease;
   color: #00a0ad;
   text-decoration: none;
 }
 
 a:hover {
-  -webkit-filter: brightness(80%);
   filter: brightness(80%);
   text-decoration: underline;
 }
@@ -619,7 +652,7 @@ a[href^="#"] {
   margin-top: 32px;
   color: #373753;
   font-size: 48px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.06em;
 }
 
@@ -964,3 +997,60 @@ code {
 .highlight .vg { color: #268BD2 } /* Name.Variable.Global */
 .highlight .vi { color: #268BD2 } /* Name.Variable.Instance */
 .highlight .il { color: #2AA198 } /* Literal.Number.Integer.Long */
+
+/* Membership page */
+
+@media (min-width: 1162px) {
+  #membership .container, #membership .width-container {
+    max-width: 1130px;
+  }
+
+  #membership-hero {
+    clear: both;
+    padding-bottom: 1px;
+  }
+
+  #membership-hero-image {
+    position: relative;
+    float: left;
+    background: -348px 0/cover no-repeat url("../images/bytecode-alliance-logo.svg");
+    width: 550px;
+    height: 500px;
+  }
+
+  #membership-intro {
+    float: left;
+    margin-left: 50px;
+    width: 530px;
+  }
+
+  #membership-intro h2 {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  #membership-hero .clear {
+    clear: both;
+  }
+}
+
+#apply-callout {
+  position: relative;
+  margin-top: 80px;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+}
+
+#apply-callout h2 {
+  margin-top: 0;
+}
+
+#apply-callout p {
+  text-align: left;
+}
+
+#join-callout {
+  text-align: center;
+}

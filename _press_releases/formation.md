@@ -1,16 +1,12 @@
 ---
-layout: default
+layout: press_release
+name: "Announcing the Bytecode Alliance"
+date: "2019-11-12"
+title: "New Bytecode Alliance Brings the Security, Ubiquity, and Interoperability of the Web to the World of Pervasive Computing"
+subtitle: "New community effort will create a new cross-platform, cross-device computing runtime based on the unique advantages of WebAssembly"
 ---
 
-<section>
-    <div class="container w-container">
-        <div class="width-container" markdown="1">
-
-## New Bytecode Alliance Brings the Security, Ubiquity, and Interoperability of the Web to the World of Pervasive Computing
-
-#### New community effort will create a new cross-platform, cross-device computing runtime based on the unique advantages of WebAssembly
-
-MOUNTAIN VIEW, California November 12, 2019 -- The Bytecode Alliance is a newly-formed open source community dedicated to creating new software foundations, building on standards such as WebAssembly and WebAssembly System Interface (WASI). Mozilla, Fastly, Intel, and Red Hat are founding members.
+**MOUNTAIN VIEW, California November 12, 2019 --** The Bytecode Alliance is a newly-formed open source community dedicated to creating new software foundations, building on standards such as WebAssembly and WebAssembly System Interface (WASI). Mozilla, Fastly, Intel, and Red Hat are founding members.
 
 The Bytecode Alliance will, through the joint efforts of its contributing members, deliver a state-of-the-art runtime environment and associated language toolchains, where security, efficiency, and modularity can all coexist across the widest possible range of devices and architectures. Technologies contributed and collaboratively evolved through the Alliance leverage established innovation in compilers, runtimes, and tooling, and focus on fine-grained sandboxing, capabilities-based security, modularity, and standards such as WebAssembly and WASI.
 
@@ -45,8 +41,3 @@ Modern software applications and services are built from global repositories of 
 “Red Hat believes deeply in the role open source technologies play in helping provide the foundation for computing, from the operating system to the browser to the open hybrid cloud. Wasmtime is an exciting development that helps move WebAssembly out of the browser into the server space where we are experimenting with it to change the trust model for applications, and we are happy to be involved in helping it grow into a mature, community-based project.”
 <cite>— Chris Wright, senior vice president and Chief Technology Officer at Red Hat</cite>
 </blockquote>
-
-
-</div>
-</div>
-</section>

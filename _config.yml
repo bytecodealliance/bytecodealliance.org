@@ -26,6 +26,11 @@ github_username:  bytecodealliance
 avatar: "images/avatar.png"
 twitter: "username"
 
+collections:
+  press_releases:
+    output: true
+    permalink: /press/:name
+
 # Build settings
 future: true
 markdown: kramdown

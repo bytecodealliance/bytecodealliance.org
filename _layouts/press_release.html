@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section>
+<div class="post h-entry">
+
+  <div class="container w-container">
+    <div class="width-container" markdown="1">
+
+  <header class="post-header">
+    <h2 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h2>
+    <h4>{{ page.subtitle | escape }}</h4>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</div>
+</div>
+</div>
+</section>

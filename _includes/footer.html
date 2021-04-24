@@ -9,5 +9,5 @@
     document.getElementById("menu-button").addEventListener("click", function() {
         document.getElementById("nav-entries").classList.toggle("show");
     });
-    document.querySelector('main').focus();
+    document.querySelector('main').focus({ preventScroll: true });
 </script>

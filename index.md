@@ -16,7 +16,7 @@ The Bytecode Alliance is a nonprofit organization dedicated to creating secure n
 
 The Bytecode Alliance is committed to establishing a capable, secure platform that allows application developers and service providers to confidently run untrusted code, on any infrastructure, for any operating system or device, leveraging decades of experience doing so inside web browsers.
 
-We have a [vision](/articles/announcing-the-bytecode-alliance) for a secure-by-default WebAssembly ecosystem for all platforms.
+We have a [vision]({{ site.baseurl }}/articles/announcing-the-bytecode-alliance) for a secure-by-default WebAssembly ecosystem for all platforms.
 
 </div>
 </div>

@@ -30,13 +30,13 @@ You can think of WASI as the way that the host and a WebAssembly module talk to 
 
 You can think of module linking as the way that two WebAssembly modules talk to each other.
 
-![On the left, a WebAssembly module and host talking to each other using WASI. On the right, two WebAssembly modules talking to each other using module linking.](/articles/img/1-year-update/nanoprocess-wasi-module-linking.png)
+![On the left, a WebAssembly module and host talking to each other using WASI. On the right, two WebAssembly modules talking to each other using module linking.]({{ site.baseurl }}/articles/img/1-year-update/nanoprocess-wasi-module-linking.png)
 
 In both of these cases, the two sides are often written in different source languages. This means they might represent values and handles to resources in different ways. Basically, they speak foreign languages. 
 
 Interface types are like a foreign-language dictionary that the engine uses to help them communicate.
 
-![On both sides, the engine helps the two talk to each other using interface types.](/articles/img/1-year-update/nanoprocess-interface-types.png)
+![On both sides, the engine helps the two talk to each other using interface types.]({{ site.baseurl }}/articles/img/1-year-update/nanoprocess-interface-types.png)
 
 Let's see where the work on these stands today.
 
@@ -46,7 +46,7 @@ _Note: The Bytecode Alliance doesn't host specifications. While BA members are d
 
 When we introduced WASI, we compared it to [POSIX](https://en.wikipedia.org/wiki/POSIX) and other system interfaces. That was a bit of an oversimplification, though.
 
-![A file directory structure on the left, with a protective barrier in the middle containing the operating system kernel, and an application knocking for access on the right](/articles/img/1-year-update/wasi-low-level.png)
+![A file directory structure on the left, with a protective barrier in the middle containing the operating system kernel, and an application knocking for access on the right]({{ site.baseurl }}/articles/img/1-year-update/wasi-low-level.png)
 
 While WASI does aim to provide a set of standardized modules that provide these low-level system interface operations, we also intend to standardize modules for specialized higher-level host APIs.
 
@@ -57,7 +57,7 @@ For the low-level system interface level, the work has been focused on quality o
 
 On the spec side, that has been identifying and addressing problems with cross-platform implementability of the spec. One example of this is the [`wasi-socket`](https://github.com/WebAssembly/WASI/pull/312) API (which was [recently prototyped in Wasmtime](https://radu-matei.com/blog/towards-sockets-networking-wasi/)). In this case, the conversation has centered on the right way to apply capabilities-based security to the handling of sockets.
 
-![A .wasm file running across three different operating systems](/articles/img/1-year-update/portability.png)
+![A .wasm file running across three different operating systems]({{ site.baseurl }}/articles/img/1-year-update/portability.png)
 
 On the implementation side, we've done a lot of work to improve the security and reliability of our implementation. Part of this has been developing robust fuzzing measures (which we describe more below). 
 
@@ -94,7 +94,7 @@ So what's left to do in the short term?
 
 While Interface Types can talk about values, they can't yet talk about [handles to resources](https://github.com/WebAssembly/interface-types/issues/87) and [buffers](https://github.com/WebAssembly/interface-types/issues/68). Both are important to support WASI and other APIs, because things like files should use handles, and it should be possible to read a file and write directly into a buffer.
 
-![On the left, types that are done, including strings, numbers, references, booleans, enums, objects, and unions. On the right, types left to be done: handles and buffers.](/articles/img/1-year-update/interface-types.png)
+![On the left, types that are done, including strings, numbers, references, booleans, enums, objects, and unions. On the right, types left to be done: handles and buffers.]({{ site.baseurl }}/articles/img/1-year-update/interface-types.png)
 
 Once those features are in place, Interface Types will have everything it needs to support both WASI and Module Linking, making it possible for them to talk about values and resources in a source-language independent way. So we'll continue working on the spec in the W3C. 
 
@@ -136,7 +136,7 @@ For example, you might be writing some Python code, but want to do some intensiv
 
 Wasmtime is enabling this for many languages, through embeddings into the language runtimes.
 
-!["Wasmtime in the center, with arrows pointing to logos for all of the languages listed below"](/articles/img/1-year-update/wasmtime-embedding.png)
+!["Wasmtime in the center, with arrows pointing to logos for all of the languages listed below"]({{ site.baseurl }}/articles/img/1-year-update/wasmtime-embedding.png)
 
 These languages now have support for running WebAssembly in Wasmtime:
 - [Python](https://github.com/bytecodealliance/wasmtime-py)
@@ -206,7 +206,7 @@ We'll be putting more effort into this over the coming year.
 
 Merging Lucet and Wasmtime has been the plan since we announced the BA. And it's about to get a lot easier to execute on that plan, since the Wasmtime team is moving to Fastly! 🎉
 
-!["Lucet and Wastime high fiving under a Happy Merge Day banner, while engineers party around them"](/articles/img/1-year-update/merge-day.png)
+!["Lucet and Wastime high fiving under a Happy Merge Day banner, while engineers party around them"]({{ site.baseurl }}/articles/img/1-year-update/merge-day.png)
 
 What does this mean for Bytecode Alliance projects? 
 

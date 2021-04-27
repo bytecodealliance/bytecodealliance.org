@@ -715,13 +715,12 @@ cite {
   margin-top: 0.5em;
 }
 
-.founder-logo {
-  margin-left: 10%;
-  width: 35%;
+.member-logos {
+  text-align: center;
 }
-
-.founder-logo.vert {
-  padding: 0 5%;
+.member-logos img {
+  margin: 5%;
+  width: 20%;
 }
 
 @media (max-width: 991px) {

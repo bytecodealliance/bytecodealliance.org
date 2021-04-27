@@ -12,22 +12,16 @@ layout: default
 
 ## About the Bytecode Alliance
 
-The Bytecode Alliance is an open source community dedicated to creating secure new software foundations, building on standards such as [WebAssembly](https://webassembly.org/) and [WebAssembly System Interface (WASI)](https://wasi.dev).
+The Bytecode Alliance is a nonprofit organization dedicated to creating secure new software foundations, building on standards such as [WebAssembly](https://webassembly.org/) and [WebAssembly System Interface (WASI)](https://wasi.dev).
 
 The Bytecode Alliance is committed to establishing a capable, secure platform that allows application developers and service providers to confidently run untrusted code, on any infrastructure, for any operating system or device, leveraging decades of experience doing so inside web browsers.
 
 We have a [vision](/articles/announcing-the-bytecode-alliance) for a secure-by-default WebAssembly ecosystem for all platforms.
 
-Our founding members are:
-
-<img src="images/mozilla-logo.svg" class="founder-logo" alt="Mozilla Logo">
-<img src="images/fastly-logo.svg" class="founder-logo" alt="Fastly Logo">
-<img src="images/intel-logo.svg" class="founder-logo" alt="Intel Logo">
-<img src="images/red-hat-logo.svg" class="founder-logo" alt="Red Hat Logo">
-
 </div>
 </div>
 </section>
+
 <section class="section section-tinted">
     <div class="container w-container">
         <div class="w-row">
@@ -37,14 +31,36 @@ Our founding members are:
             </div>
             <div class="nopadding w-col w-col-6 w-col-medium-6" markdown="1">
 
-## Join the Alliance
+## Become a member
 
-The Bytecode Alliance welcomes contributions and participation from across the industry.
+The Bytecode Alliance welcomes contributions and participation from across the industry. Join as a member and help drive the future of computing.
 
-If you want to start a conversation about how best to use our projects, participate in specific projects, or you're interested in joining the alliance, please contact us at
+<div id="join-callout"><div class="join-button"><a href="/membership">Join Now</a></div></div>
 
-<a href="mailto:hello@bytecodealliance.org" class="mail--link w-inline-block">hello@bytecodealliance.org</a>
 </div>
+</div>
+</div>
+</section>
+
+<section>
+    <div class="container w-container">
+        <div class="width-container" markdown="1">
+
+## Members
+
+<div class="member-logos">
+<img src="images/member-logos/arm.svg" alt="Arm Logo">
+<img src="images/member-logos/dfinity.svg" alt="DFINITY Logo">
+<img src="images/member-logos/embark-studios.png" alt="Embark Studios Logo">
+<img src="images/member-logos/fastly.svg" alt="Fastly Logo">
+<img src="images/member-logos/google.svg" alt="Google Logo">
+<img src="images/member-logos/intel.svg" alt="Intel Logo">
+<img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
+<img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
+<img src="images/member-logos/shopify.svg" alt="Shopify Logo">
+<img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
+</div>
+
 </div>
 </div>
 </section>

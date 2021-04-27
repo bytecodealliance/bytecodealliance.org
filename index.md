@@ -82,12 +82,11 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     <img src="images/circle.svg" alt="" class="fcircle">
                 </div>
                 <div class="fanswer">
-                    <p>The Bytecode Alliance is a group of projects, organizations, and individuals working to
-                        provide state-of-the-art foundations for the development of runtime environments and
-                        language toolchains where security, efficiency, and modularity can all coexist across a wide
-                        range of devices and architectures. We enable innovation in compilers, runtimes, and
-                        tooling, focusing on fine-grained sandboxing, capabilities-based security, modularity, and
-                        standards such as WebAssembly and WASI.</p>
+                    <p>The Bytecode Alliance is a nonprofit organization working to provide state-of-the-art foundations
+                        for the development of runtime environments and language toolchains where security, efficiency,
+                        and modularity can all coexist across a wide range of devices and architectures. We enable
+                        innovation in compilers, runtimes, and tooling, focusing on fine-grained sandboxing,
+                        capabilities-based security, modularity, and standards such as WebAssembly and WASI.</p>
                 </div>
             </li>
             <li class="fentry" id="why-is-this-important-now">
@@ -105,9 +104,9 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     upon.
                 </p>
                 <p>
-                    With WebAssembly and emerging related standards such as WASI and WebAssembly Interface
-                    Types, this solid foundation is taking shape. By building this foundation, we can address
-                    some persistent fundamental issues of today’s software development practices.
+                    With WebAssembly and emerging related standards such as WASI, WebAssembly Interface
+                    Types, and Module Linking, this solid foundation is taking shape. By building this foundation,
+                    we can address some persistent fundamental issues of today’s software development practices.
                 </p>
                 </div>
             </li>
@@ -200,7 +199,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                 </div>
             </li>
             <li class="fentry" id="how-to-get-involved">
-                <a href="#how-to-get-involved"><h3>How do developers get involved?</h3></a>
+                <a href="#how-to-get-involved"><h3>How do individuals get involved?</h3></a>
                 <input type="checkbox">
                 <div class="ficon">
                     <div class="fline fvertical"></div>
@@ -216,6 +215,12 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     Developers can also join in by integrating the Bytecode Alliance’s projects into their
                     projects and products, and providing feedback based on their use cases.
                 </p>
+                <p>
+                    We're also working on introducing a Technical Steering Committee (TSC) as the top-level body of governance for projects, which is open for participation by all project contributors, and will also choose members for the Bytecode Alliance's highest governance body, the Board of Directors.
+                </p>
+                <p>
+                    Individuals are invited to engage in Bytecode Alliance projects during the current bootstrapping period to participate in elections to the TSC. We'll publish details on the timing for the bootstrapping process as well as eligibility requirements for TSC participation soon.
+                </p>
                 </div>
             </li>
             <li class="fentry" id="how-to-join">
@@ -227,23 +232,18 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     <img src="images/circle.svg" alt="" class="fcircle">
                 </div>
                 <div class="fanswer">
-                <p>Organizations are encouraged to participate in the Alliance’s open source projects, and to
-                    use them in their own projects and products.
+                <p>Organizations can <a href="{{ site.baseurl }}/membership">join the Bytecode Alliance</a> as members, and are encouraged to participate in the Alliance’s open source projects, and to use them in their own projects and products.
                 </p>
                 <p>
-                    We will also have Alliance-wide governance, which will be comprised of organizational
-                    members. Once the Bytecode Alliance has been formally established and a governance model
-                    finalized, organizations that provide strong and ongoing contributions to the Alliance’s
-                    projects will be able to participate in Alliance governance.
-                </p>
-                <p>
-                    If your organization is interested, please get in contact with us at:
-                    <a href="mailto:hello@bytecodealliance.org">hello@bytecodealliance.org</a>
+                    We're currently working on bootstrapping full governance for the Bytecode Alliance, at the end
+                    of which we'll instate a Technical Steering Committee (TSC) as the top-level body of project governance,
+                    and hold elections to both the TSC and to the Board of Directors. Organizations are invited to join
+                    during the bootstrapping period to take part in the Board elections. We'll publish details on the timing for the bootstrapping process soon.
                 </p>
                 </div>
             </li>
             <li class="fentry" id="governance">
-                <a href="#governance"><h3>How will the Alliance be governed?</h3></a>
+                <a href="#governance"><h3>How is the Alliance governed?</h3></a>
                 <input type="checkbox">
                 <div class="ficon">
                     <div class="fline fvertical"></div>
@@ -251,50 +251,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     <img src="images/circle.svg" alt="" class="fcircle">
                 </div>
                 <div class="fanswer">
-                <p>An open governance model consistent with open source best practices and strong community
-                    norms will be established upon formal formation.
-                </p>
-                </div>
-            </li>
-            <li class="fentry" id="supported-platforms">
-                <a href="#supported-platforms"><h3>Which architectures and OS platforms are supported?</h3></a>
-                <input type="checkbox">
-                <div class="ficon">
-                    <div class="fline fvertical"></div>
-                    <div class="fline"></div>
-                    <img src="images/circle.svg" alt="" class="fcircle">
-                </div>
-                <div class="fanswer">
-                <p>The Bytecode Alliance aims to cover as many hardware and OS configurations as possible. Right
-                    now, the architectures covered are:
-                </p>
-                <p>Wasmtime and Cranelift are officially supported and tested on Linux, macOS 10.9+, and Windows 10 on x86_64, and reported to work on FreeBSD on x86_64.
-                </p>
-                <p>
-                    Lucet is officially supported and tested on Linux and macOS 10.9+ on x86_64.
-                </p>
-                <p>
-                    WAMR runs under Linux, macOS, Zephyr, AliOS Things, and VxWorks and has support for x86_32, x86_64, Arm, and MIPS.
-                </p>
-                </div>
-            </li>
-            <li class="fentry" id="supported-execution-modes">
-                <a href="#supported-execution-modes"><h3>Which execution modes are supported?</h3></a>
-                <input type="checkbox">
-                <div class="ficon">
-                    <div class="fline fvertical"></div>
-                    <div class="fline"></div>
-                    <img src="images/circle.svg" alt="" class="fcircle">
-                </div>
-                <div class="fanswer">
-                <p>Different use cases are best served by different execution modes, or a mix of execution modes. Right now, the execution modes covered are:
-                    </p>
-                    <ul>
-                        <li>Interpreter in WAMR</li>
-                        <li>Baseline and optimizing JIT in Wasmtime through Lightbeam and Cranelift</li>
-                        <li>AoT in Wasmtime/Cranelift and in Lucet</li>
-                    </ul>
-                    <p>Full support for all these execution modes, including tiering where applicable, is planned for Wasmtime.</p>
+                <p>The Bytecode Alliance follows an open governance model with a Board of Directors as the top-level body of governance, with seats elected by member organizations, and a Technical Steering Committee (TSC), elected from established project contributors. Our <a href="{{ site.baseurl }}/assets/bylaws.pdf">bylaws</a> define the details of top-level governance, and a detailed charter and procedures for the TSC will be developed as part of a bootstrapping period. We'll publish details on the timing for this process soon.</p>
                 </div>
             </li>
             </ul>

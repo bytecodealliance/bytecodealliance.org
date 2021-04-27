@@ -35,7 +35,7 @@ We have a [vision](/articles/announcing-the-bytecode-alliance) for a secure-by-d
 
 The Bytecode Alliance welcomes contributions and participation from across the industry. Join as a member and help drive the future of computing.
 
-<div id="join-callout"><div class="join-button"><a href="/membership">Join Now</a></div></div>
+<div id="join-callout"><div class="join-button"><a href="{{ site.baseurl }}/membership">Join Now</a></div></div>
 
 </div>
 </div>

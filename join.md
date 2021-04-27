@@ -11,7 +11,7 @@ permalink: /join
 
 Thank you for your interest in joining the Bytecode Alliance. Please have our [Membership Agreement](/assets/membership-agreement.pdf) executed by an authorized representative a copy in PDF form by email to membership@bytecodealliance.org. A countersigned copy will be returned to you by email for your records when your eligibility for membership has been confirmed and an invoice will be delivered as indicated in the agreement. Note that this is not an indication of interest; execution of this Agreement creates an irrevocable, binding obligation for the member company to make the payments provided for and to otherwise perform in accordance with its terms.
 
-<div id="join-callout"><div class="join-button"><a href="/assets/membership-agreement.pdf">Join Now</a></div></div>
+<div id="join-callout"><div class="join-button"><a href="{{ site.baseurl }}/assets/membership-agreement.pdf">Join Now</a></div></div>
 
 ## Further Information
 

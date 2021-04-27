@@ -27,7 +27,7 @@ All organizations eager to support and contribute to the Bytecode Alliance's pro
 
 If you are interested in learning more about organization membership, please [contact us](mailto:membership@bytecodealliance.org) or fill out a [membership application](assets/membership-agreement.pdf)!
 
-<div class="join-button"><a href="/join">Bytecode Alliance Membership Application</a></div>
+<div class="join-button"><a href="{{ site.baseurl }}/join">Bytecode Alliance Membership Application</a></div>
 
 </div>
 

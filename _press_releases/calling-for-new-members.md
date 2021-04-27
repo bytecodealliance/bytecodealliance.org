@@ -1,6 +1,6 @@
 ---
 layout: press_release
-name: "Growing the Bytecode Alliance"
+name: "Bytecode Alliance calling for new members"
 date: "2021-04-28"
 title: "The Bytecode Alliance Calls for New Members In Mission to Build Safer Software Foundations for the Internet"
 subtitle: "The nonprofit focused on building an ecosystem to advance the unique advantages of WebAssembly is seeking new members"

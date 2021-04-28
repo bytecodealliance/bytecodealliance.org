@@ -31,6 +31,18 @@ If you are interested in learning more about organization membership, please [co
 
 </div>
 
+<div markdown=1>
+
+## For Individuals
+
+Strong community representation is a key tenet of our governance model, and not tied to formal membership. We're currently in a bootstrapping period, during which we'll establish a Technical Steering Committee (TSC) as the top-level body of project governance. Participation in the TSC will be open to all individuals who contribute meaningfully to the Bytecode Alliance's projects and mission and become Recognized Contributors, as described in sections 2.5 of our [bylaws]({{ site.baseurl }}/assets/bylaws.pdf). We'll share more details on the criteria for this soon.
+
+Additionally, we're following and building on best practices established by other successful open source communities such as the [OpenJS Foundation](https://openjsf.org/) in ensuring that we'll have strong, independent community representation in all questions of governance. To that end, our governance model provides for multiple Community Directors on the Board of Directors: initially two for the first year, growing to three from then on, as described in section 4.3 of our [bylaws]({{ site.baseurl }}/assets/bylaws.pdf). Furthermore, key decisions, such as changing the bylaws themselves, require a supermajority, defined in section 4.11 to require approval not just of two-thirds of all Directors, but also at least half of the Community Directors.
+
+We encourage all individuals to get involved in Bytecode Alliance projects, and will share details on the formation of the TSC and other aspects of project and community governance soon.
+
+</div>
+
 </div>
 </div>
 </section>

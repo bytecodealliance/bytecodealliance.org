@@ -139,6 +139,7 @@ p {
 body[id^="press"] nav a[href^="/press"],
 body[id^="projects"] nav a[href^="/projects"],
 body[id^="articles"] nav a[href^="/articles"],
+body[id^="security"] nav a[href^="/security"],
 body[id^="posts-"] nav a[href^="/articles"] {
   border-bottom: 2px solid #373753;
   color: #373753;
@@ -225,7 +226,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
   padding: 8px 10px;
 }
 
-@media (max-width: 979px) {
+@media (max-width: 1100px) {
   #site-nav #menu-button {
     display: block;
   }

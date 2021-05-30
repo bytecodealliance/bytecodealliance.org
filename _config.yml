@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 url: "https://bytecodealliance.org" # the base hostname & protocol for your site, e.g. http://example.com
 locale: en_US # language_territory is the default
 twitter_username: bytecodeallies
-github_username:  bytecodealliance
+github_username: bytecodealliance
 
 avatar: "images/avatar.png"
 twitter: "username"
@@ -43,12 +43,14 @@ kramdown:
   input: GFM
   auto_ids: true
 
-defaults:
-- scope:
-    path: "_posts"
-  values:
-    layout: "article"
+sass:
+  style: compressed
 
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "article"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

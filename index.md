@@ -54,10 +54,13 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/embark-studios.png" alt="Embark Studios Logo">
 <img src="images/member-logos/fastly.svg" alt="Fastly Logo">
 <img src="images/member-logos/google.svg" alt="Google Logo">
+<img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
+<img src="images/member-logos/igalia.png" alt="Igalia Logo">
 <img src="images/member-logos/intel.svg" alt="Intel Logo">
 <img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
 <img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
 <img src="images/member-logos/shopify.svg" alt="Shopify Logo">
+<img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
 </div>
 

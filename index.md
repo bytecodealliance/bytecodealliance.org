@@ -63,6 +63,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/siemens.svg" alt="Siemens Logo">
 <img src="images/member-logos/shopify.svg" alt="Shopify Logo">
 <img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
+<img src="images/member-logos/suborbital.png" alt="Suborbital Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
 </div>
 

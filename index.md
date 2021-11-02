@@ -65,6 +65,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
 <img src="images/member-logos/suborbital.png" alt="Suborbital Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
+<img src="images/member-logos/futurewei.png" alt="Futurewei Logo">
 </div>
 
 </div>

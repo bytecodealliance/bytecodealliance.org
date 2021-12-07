@@ -1054,3 +1054,8 @@ code {
 #join-callout {
   text-align: center;
 }
+
+.footnotes, .footnotes p {
+  font-size: 80%;
+  color: gray;
+}

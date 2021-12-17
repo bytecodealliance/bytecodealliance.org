@@ -51,8 +51,10 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <div class="member-logos">
 <img src="images/member-logos/arm.svg" alt="Arm Logo">
 <img src="images/member-logos/dfinity.svg" alt="DFINITY Logo">
+<img src="images/member-logos/edjx.png" alt="EDJX Logo">
 <img src="images/member-logos/embark-studios.png" alt="Embark Studios Logo">
 <img src="images/member-logos/fastly.svg" alt="Fastly Logo">
+<img src="images/member-logos/futurewei.png" alt="Futurewei Logo">
 <img src="images/member-logos/google.svg" alt="Google Logo">
 <img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
 <img src="images/member-logos/igalia.png" alt="Igalia Logo">
@@ -65,7 +67,6 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
 <img src="images/member-logos/suborbital.png" alt="Suborbital Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
-<img src="images/member-logos/futurewei.png" alt="Futurewei Logo">
 </div>
 
 </div>

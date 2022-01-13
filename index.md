@@ -49,8 +49,8 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 ## Members
 
 <div class="member-logos">
-<img src="images/member-logos/arm.svg" alt="Arm Logo">
 <img src="images/member-logos/amazon.png" alt="Amazon Logo">
+<img src="images/member-logos/arm.svg" alt="Arm Logo">
 <img src="images/member-logos/asmnext.svg" alt="AsmNext Logo">
 <img src="images/member-logos/dfinity.svg" alt="DFINITY Logo">
 <img src="images/member-logos/edjx.png" alt="EDJX Logo">

@@ -187,11 +187,6 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     the optimizing compiler for WebAssembly. It’s also used as an experimental backend for the
                     Rust compiler.
                 </p>
-                <h4>Lucet</h4>
-                <p>
-                    <a href="https://github.com/bytecodealliance/lucet">Lucet</a> is an AOT compiler utilizing Cranelift. It is meant specifically for low-latency,
-                    high-concurrency server-based applications of WebAssembly.
-                </p>
                 <h4>WebAssembly Micro-Runtime (WAMR)</h4>
                 <p>
                     <a href="https://github.com/bytecodealliance/wasm-micro-runtime">WAMR</a> is an interpreter based WebAssembly runtime, optimized for embedded and

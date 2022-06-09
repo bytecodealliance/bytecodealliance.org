@@ -49,8 +49,6 @@ Currently, we’re collaborating on:
 
 - **[Wasmtime](https://github.com/bytecodealliance/wasmtime)** is a stand-alone WebAssembly runtime that can be used as a CLI tool or embedded into other systems. It's very configurable and scalable so that it can serve as the base for many use-case specific runtimes, from small IoT devices all the way up to cloud data centers.
 
-- **[Lucet](https://github.com/bytecodealliance/lucet)** is an example of a use-case specific runtime. It's ideal for fast CDNs and Edge Compute, using AOT compilation and other techniques to provide low-latency and high-concurrency. We are refactoring it to use Wasmtime at its core.
-
 - **[WebAssembly Micro Runtime (WAMR)](https://github.com/bytecodealliance/wasm-micro-runtime)** is another use-case specific runtime. It's ideal for small embedded devices that have extremely limited resources. It provides a small footprint and uses an interpreter to keep memory overhead low.
 
 ### Runtime components:

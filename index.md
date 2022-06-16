@@ -63,6 +63,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
 <img src="images/member-logos/igalia.png" alt="Igalia Logo">
 <img src="images/member-logos/intel.svg" alt="Intel Logo">
+<img src="images/member-logos/liquidreply.svg" alt="Liquid Reply Logo">
 <img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
 <img src="images/member-logos/midokura.png" alt="Midokura Logo">
 <img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">

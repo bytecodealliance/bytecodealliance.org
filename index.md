@@ -77,6 +77,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/tangram.svg" alt="Tangram Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
 <img src="images/member-logos/university_luxembourg_snt.png" alt="Univ. of Luxembourg Logo">
+<img src="images/member-logos/vmware.svg" alt="VMWare Logo">
 <img src="images/member-logos/wudun.png" alt="Wudun Logo">
 </div>
 

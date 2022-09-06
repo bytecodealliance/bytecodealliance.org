@@ -426,7 +426,7 @@ to tune the instruction patterns.
 ### Future: Mid-end Optimizations
 
 In the future, we plan to introduce [more advanced mid-end
-optmizations](https://github.com/bytecodealliance/rfcs/pull/27) to
+optimizations](https://github.com/bytecodealliance/rfcs/pull/27) to
 Cranelift. A "mid-end optimizer" is the part of the compiler that
 transforms the program in ways that make it faster *before* it is
 "lowered" into a machine-specific form (that is, before instruction

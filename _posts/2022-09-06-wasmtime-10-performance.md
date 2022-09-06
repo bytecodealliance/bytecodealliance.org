@@ -285,7 +285,7 @@ issues.
       [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
       executable format, and even compiler and linker nerds sometimes
       like to have fun.
-      
+
 To address this issue, we developed a [custom
 stack-walker](https://github.com/bytecodealliance/wasmtime/pull/4431). We
 started with the observation that because we control the compiled

@@ -1059,3 +1059,7 @@ code {
   font-size: 80%;
   color: gray;
 }
+
+.post-content td, .post-content th {
+  padding: 10px;
+}

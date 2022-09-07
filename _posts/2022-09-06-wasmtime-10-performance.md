@@ -400,7 +400,7 @@ discuss below. (Both impacts will be augmented further in the future
 as we adjust Cranelift's code generation to make more use of
 regalloc2's additional features.)
 
-### Better Pattern Maching: New Backends, ISLE, and Ongoing Tuning
+### Better Pattern Matching: New Backends, ISLE, and Ongoing Tuning
 
 The next major set of improvements we have done are in the area of
 *instruction selection*. The instruction-selection problem is that of

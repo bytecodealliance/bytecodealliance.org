@@ -64,7 +64,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
 <img src="images/member-logos/igalia.png" alt="Igalia Logo">
 <img src="images/member-logos/intel.svg" alt="Intel Logo">
-<img src="images/member-logos/liquidreply.svg" alt="Liquid Reply Logo">
+<img src="images/member-logos/liquidreply.png" alt="Liquid Reply Logo">
 <img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
 <img src="images/member-logos/midokura.png" alt="Midokura Logo">
 <img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
@@ -78,6 +78,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/tangram.svg" alt="Tangram Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
 <img src="images/member-logos/university_luxembourg_snt.png" alt="Univ. of Luxembourg Logo">
+<img src="images/member-logos/vmware.svg" alt="VMware Logo">
 <img src="images/member-logos/wudun.png" alt="Wudun Logo">
 </div>
 

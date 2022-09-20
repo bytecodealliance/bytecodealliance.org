@@ -33,7 +33,7 @@ Here are some of our experiences with the new, improved Wasmtime:
   <li>
     <b>DFINITY — 16 months in production</b>
     <p>
-      DFINITY launched its blockchain using Wasmtime in May 2021. Since then, DFINITY has executed over <b>1 quintillion (10^18) instructions for over 150,000 smart contracts</b> without any production issues.
+      DFINITY launched the Internet Computer blockchain using Wasmtime in May 2021. Since then, the Internet Computer has executed <b>1 quintillion (10^18) instructions for over 150,000 smart contracts</b> without any production issues.
     </p>
   </li>
 

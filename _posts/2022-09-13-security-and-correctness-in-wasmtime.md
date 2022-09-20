@@ -347,8 +347,8 @@ execution from leaking information to malicious programs:
   emit explicit bounds checks, we additionally emit mitigation code that
   prevents speculated accesses from escaping the linear memory.
 
-* We've implemented support for some hardware control-flow integrity features,
-  such as [BTI on aarch64], which help mitigate some Spectre attacks.
+* We're implementing support for hardware control-flow integrity features which
+  could help mitigate Spectre attacks, such as [BTI on aarch64].
 
 [BTI on aarch64]: https://github.com/bytecodealliance/rfcs/blob/main/accepted/cfi-improvements-with-pauth-and-bti.md
 

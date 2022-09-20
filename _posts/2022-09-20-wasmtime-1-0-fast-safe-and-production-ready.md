@@ -182,7 +182,7 @@ That's why we put so much effort into the security of Wasmtime itself.
 
 Nick Fitzgerald wrote a [great article about all the different ways we make sure Wasmtime is secure](https://bytecodealliance.org/articles/security-and-correctness-in-wasmtime), and you should read that for more detail, but here are a few examples:
 
-- **We have secured our supply chain using cargo vet.** We're already using a memory-safe language, which helps us avoid introducing vulnerabilities that attackers could exploit. But that safety doesn't necessarily protect us from malicious code that attackers slip into a dependency. To protect against this, we're use [cargo vet](https://mozilla.github.io/cargo-vet/) to ensure that dependencies are manually reviewed by a trusted auditor.
+- **We have secured our supply chain using cargo vet.** We're already using a memory-safe language, which helps us avoid introducing vulnerabilities that attackers could exploit. But that safety doesn't necessarily protect us from malicious code that attackers slip into a dependency. To protect against this, we're using [cargo vet](https://mozilla.github.io/cargo-vet/) to ensure that dependencies are manually reviewed by a trusted auditor.
 
 - **We've put a lot of work into fuzzing.** Fuzzing is a way to find hard-to-reason-through bugs in your code by just throwing a bunch of pseudo-randomly generated input at it. As Nick says, "Our pervasive fuzzing is probably the biggest single contributing factor towards Wasmtime's code quality. We fuzz because writing tests by hand, while necessary, is not enough."
 

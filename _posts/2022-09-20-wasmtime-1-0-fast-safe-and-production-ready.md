@@ -22,7 +22,7 @@ Here are some of our experiences with the new, improved Wasmtime:
       Shopify switched to Wasmtime from another WebAssembly engine in July 2021. With the switch, Shopify saw an <b>average execution performance improvement of ~50%.</b>
     </p>
   </li>
- 
+
   <li>
     <b>Fastly — 6 months in production</b>
     <p>
@@ -36,25 +36,28 @@ Here are some of our experiences with the new, improved Wasmtime:
       DFINITY launched its blockchain using Wasmtime in May 2021. Since then, DFINITY has executed over <b>1 quintillion (10^18) instructions for over 150,000 smart contracts</b> without any production issues.
     </p>
   </li>
- 
+
   <li>
     <b>InfinyOn — 14 months in production</b>
     <p>
       InfinyOn Cloud has been using Wasmtime in production since July 2021. With Wasmtime, InfinyOn has been able to deliver a greater than <b>5x throughput improvement in end-to-end stream processing</b> when compared with Java-based platforms like Kafka.
+    </p>
   </li>
 
   <li>
     <b>Fermyon — 6 months in production</b>
-    <p>Fermyon's Spin has been using Wasmtime since its release in March 2022. Since then, Fermyon has found tens of thousands of WebAssembly binaries can run in a single Spin instance while keeping startup times under a millisecond.</p>
+    <p>
+      Fermyon's Spin has been using Wasmtime since its release in March 2022. Since then, Fermyon has found tens of thousands of WebAssembly binaries can run in a single Spin instance while keeping startup times under a millisecond.
+    </p>
   </li>
- 
+
   <li>
     <b>Embark — 2 years in production</b>
     <p>
       Embark has been using Wasmtime in their game engine since 2020. Since then, Embark has been impressed with Wasmtime's exceptional stability, safety, and performance, keeping games running at 60 FPS.
     </p>
   </li>
-  
+
   <li>
     <b>SingleStore — 3 months in production</b>
     <p>
@@ -92,7 +95,7 @@ For example, it takes the fastest alternative—a JS isolate—about 5ms to star
 
 ### 3rd Party Plugin systems
 
-WebAssembly is great for platforms, where you often want to run 3rd party code so you can support many different specific use cases&mdash;for example, through plug-in marketplaces where developers in the platform's ecosystem can share code with users. 
+WebAssembly is great for platforms, where you often want to run 3rd party code so you can support many different specific use cases&mdash;for example, through plug-in marketplaces where developers in the platform's ecosystem can share code with users.
 
 But running this opens up a trust issue&mdash;can the platform trust the code written by these ecosystem developers?
 

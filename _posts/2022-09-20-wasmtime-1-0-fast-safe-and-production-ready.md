@@ -79,7 +79,7 @@ So I want to tell you about how we made it super fast and super safe. But first,
 
 ## Why use a WebAssembly Runtime?
 
-Webassembly was originally created to make code running in the browser fast. This meant that you could run much more complex applications, like image editing apps or video games, in the browser. So each of the major browsers has its own WebAssembly runtime to run these kinds of applications.
+WebAssembly was originally created to make code running in the browser fast. This meant that you could run much more complex applications, like image editing apps or video games, in the browser. So each of the major browsers has its own WebAssembly runtime to run these kinds of applications.
 
 But WebAssembly opens up lots of use cases outside the browser, too. So in these cases, you need to find a standalone WebAssembly runtime like Wasmtime.
 

@@ -75,7 +75,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/siemens.svg" alt="Siemens Logo">
 <img src="images/member-logos/singlestore.svg" alt="Singlestore Logo">
 <img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
-<img src="images/member-logos/suborbital.png" alt="Suborbital Logo">
+<img src="images/member-logos/suborbital.svg" alt="Suborbital Logo">
 <img src="images/member-logos/tangram.svg" alt="Tangram Logo">
 <img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
 <img src="images/member-logos/university_luxembourg_snt.png" alt="Univ. of Luxembourg Logo">

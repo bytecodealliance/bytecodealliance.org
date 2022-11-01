@@ -56,6 +56,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/cisco.svg" alt="Cisco Logo">
 <img src="images/member-logos/cosmonic.png" alt="Cosmonic Logo">
 <img src="images/member-logos/dfinity.png" alt="DFINITY Logo">
+<img src="images/member-logos/docker.png" alt="Docker Logo">
 <img src="images/member-logos/edjx.png" alt="EDJX Logo">
 <img src="images/member-logos/embark-studios.png" alt="Embark Studios Logo">
 <img src="images/member-logos/fastly.svg" alt="Fastly Logo">

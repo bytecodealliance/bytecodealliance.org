@@ -35,11 +35,9 @@ If you are interested in learning more about organization membership, please [co
 
 ## For Individuals
 
-Strong community representation is a key tenet of our governance model, and not tied to formal membership. Our Technical Steering Committee (TSC) is the top-level body of Bytecode Alliance project governance. Participation in the TSC is open to all individuals who contribute meaningfully to the Bytecode Alliance’s projects and mission and become Recognized Contributors, as described in section 5.5 of our [bylaws]({{ site.baseurl }}/assets/bylaws.pdf). More details on the TSC are provided in its [charter](https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md).
+The core focus of the Bytecode Alliance is the technical development of our hosted projects. This is the most direct way to get involved and help advance our mission, and is open to everyone regardless of affiliation.
 
-Additionally, we’re following and building on best practices established by other successful open source communities such as the [OpenJS Foundation](https://openjsf.org/) in ensuring that we’ll have strong, independent community representation in all questions of governance. To that end, our governance model provides for three Community Directors on the Board of Directors out of a total of eight Directors overall, as described in section 4.3 of our [bylaws]({{ site.baseurl }}/assets/bylaws.pdf). Furthermore, key decisions such as changing the bylaws themselves require a supermajority vote, defined in section 4.11 to mean approval by two-thirds of all Directors, and therefore depends upon support from among the Community Directors.
-
-We encourage all individuals to get involved in Bytecode Alliance projects, as participation and contribution there are always welcome.
+Strong community representation is also a key tenet of our governance philosophy, and not tied to formal membership. The Bytecode Alliance offers representation for individual contributors via the Recognized Contributor Program, as described in section 5.5 of our [bylaws]({{ site.baseurl }}/assets/bylaws.pdf). As a group, the Recognized Contributors elect two directors to the governing Board, as well as delegates for the [Technical Steering Committee (TSC)](https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md).
 
 </div>
 

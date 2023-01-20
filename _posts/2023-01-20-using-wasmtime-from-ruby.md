@@ -4,7 +4,7 @@ author: "Jimmy Bourassa"
 github_name: jbourassa
 ---
 
-We’re happy to announce the release of the [wasmtime Ruby
+We’re happy to announce the release of [the `wasmtime` Ruby
 gem](https://rubygems.org/gems/wasmtime), the official embedding of Wasmtime
 for Ruby.
 
@@ -25,11 +25,11 @@ extension using Wasmtime’s Rust API.
 
 ## Wait – Rust?
 
-_Why pick Rust?_ you may ask, knowing Ruby extensions are normally written in
+_Why pick Rust?_ you may ask, knowing Ruby native extensions are normally written in
 C? That is a fair question, let’s dive into it.
 
-First, Wasmtime’s Rust API is the canonical one. It is more expressive – thanks
-to Rust, and tends to get the features first. Closing the gap between Rust’s
+First, Wasmtime’s Rust API is the canonical one. It is more expressive &mdash; thanks
+to Rust &mdash; and tends to get the features first. Closing the gap between Rust’s
 and C’s API would have increased the scope of work greatly.
 
 Second, Rust is gaining in popularity in the Ruby community, increasing the

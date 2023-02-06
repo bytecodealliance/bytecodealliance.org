@@ -69,7 +69,6 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
 <img src="images/member-logos/midokura.png" alt="Midokura Logo">
 <img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
-<img src="images/member-logos/profian.svg" alt="Profian Logo">
 <img src="images/member-logos/rackner.svg" alt="Rackner Logo">
 <img src="images/member-logos/shopify.svg" alt="Shopify Logo">
 <img src="images/member-logos/siemens.svg" alt="Siemens Logo">

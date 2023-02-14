@@ -168,10 +168,10 @@ Now we can spawn threads, but will threads actually increase performance? I was 
 of the Rust safeguards added to Wasmtime might impact threaded performance and indeed they did:
 after removing sub-optimal copies, performance was back to normal
 ([#5566](https://github.com/bytecodealliance/wasmtime/pull/5566)). The workload I used for this
-performed parallel compression &mdash; the idea is that the work of compressing chunks of a file
-into separate threads can be efficiently split into separate threads. (Why use WebAssembly for this?
-You tell me; I would typically use natively-compiled binaries myself, but for demo purposes `gzip`
-is an easily-parallelizable, recognizable workload).
+performed parallel compression &mdash; the idea is that the work of compressing chunks of a file can
+be efficiently split into separate threads. (Why use WebAssembly for this? You tell me; I would
+typically use natively-compiled binaries myself, but for demo purposes `gzip` is an
+easily-parallelizable, recognizable workload).
 
 ![The components compiled together with wasi-sdk for the parallel compression benchmark.]({{
 site.baseurl }}/articles/img/2023-02-21-wasi-threads/compiled-components.png)

@@ -138,13 +138,14 @@ This set of flags can seem daunting so let's walk through them:
 - `--target=wasm32-wasi-threads` tells the compiler we want to generate wasi-threads compatible
   modules (e.g., with shared memory, atomics support, a thread entry point, a `pthreads`-enabled
   wasi-libc)
-- `-pthreads` adds `pthreads` support, as expected
+- `-pthread` adds `pthreads` support, as expected
 - `-Wl,--import-memory,--export-memory,--max-memory=67108864` tells the linker to import the memory
   (this is required by the wasi-threads specification), then export it (this is a current Wasmtime
   requirement), and make the memory large enough (without enough memory for their stack and TLS,
   threads cannot spawn)
 
-Once we have the compiled `threads.wasm` file, we can run it in a recent version of Wasmtime (you will need Rust installed!):
+Once we have the compiled `threads.wasm` file, we can run it in a recent version of Wasmtime (you
+will need Rust installed!):
 
 ```shell
 $ git clone --recurse-submodules https://github.com/bytecodealliance/wasmtime

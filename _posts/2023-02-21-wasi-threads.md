@@ -70,7 +70,7 @@ threads of execution. And some environments already parallelize execution along 
 dimension &mdash; per incoming HTTP request. In fact, it would be natural for some WebAssembly use
 cases to remain solidly single-threaded. This motivates the *opt-in* aspect of
 wasi-threads &mdash; users who need maximum performance from their WebAssembly host should be able
-use it and others should be able to ignore it.
+to use it and others should be able to ignore it.
 
 It has been difficult to estimate the need for wasi-threads due to lack of tooling, preventing
 experimentation &mdash; but this is changing. Until now, users could not compile `pthreads`

@@ -225,7 +225,7 @@ implementing wasi-threads; you may also be interested in trying out the examples
 contributing, please contact one of us; a good start might be to look at the open thread-related
 [issues](https://github.com/bytecodealliance/wasmtime/issues?q=is%3Aissue+is%3Aopen+threads+label%3Awasm-proposal%3Athreads).
 
-Finally, I want to give a a special thanks to Alexandru Ene, Marcin Loganek, Takashi Yamamoto for
-all of the joint work on the wasi-threads specification. To Sam Clegg and Dan Gohman, thank you for
-all of the toolchain help on `wasi-libc` and `wasi-sdk`. And to Alex Crichton, thank you for all of
-the in-depth help making Wasmtime threads-friendly.
+Finally, I want to give a a special thanks to Alexandru Ene, Marcin Kolny, Takashi Yamamoto for all
+of the joint work on the wasi-threads specification. To Sam Clegg and Dan Gohman, thank you for all
+of the toolchain help on `wasi-libc` and `wasi-sdk`. And to Alex Crichton, thank you for all of the
+in-depth help making Wasmtime threads-friendly.

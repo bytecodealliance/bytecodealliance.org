@@ -45,7 +45,7 @@ WebAssembly world, there is some interesting previous work to mention (a non-exh
     post](https://blog.tensorflow.org/2020/09/supercharging-tensorflowjs-webassembly.html))
 -   in 2022, Alexandru Ene proposed wasi-threads largely based on the `pthreads` API
 
-Out of this Alexandru's initial proposal, an informal working group gathered to hash out the
+Building on Alexandru's initial proposal, an informal working group gathered to hash out the
 details. These discussions pared down the API to a single call, `wasi_thread_spawn`, with some
 simple parameters (e.g., see the [simpler
 version](https://github.com/WebAssembly/wasi-threads/blob/main/wasi-threads.wit.md)). The current

@@ -25,7 +25,7 @@ adds support for three major features:
 -   `wait` and `notify`
 
 Significantly, the WebAssembly threads proposal did not specify a mechanism for creating new
-threads. A future vision for this might work is described in [Weakening
+threads. A future vision for how this might work is described in [Weakening
 WebAssembly](https://dl.acm.org/doi/10.1145/3360559), but, for practical reasons, the proposal left
 this "spawn" detail up to implementors. After all, WebAssembly engines [in
 browsers](https://webassembly.org/roadmap/) could already spawn new threads using Web Workers (see

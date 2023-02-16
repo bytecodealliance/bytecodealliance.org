@@ -149,7 +149,7 @@ WAMR [^wamr]):
 
 ```shell
 $ git clone --recurse-submodules https://github.com/bytecodealliance/wasmtime
-$ cargo build --release --features=wasi-threads
+$ cargo build --release
 $ target/release/wasmtime run --wasm-features=threads --wasi-modules=experimental-wasi-threads threads.wasm
   in thread 4
   in thread 2

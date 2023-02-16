@@ -200,12 +200,15 @@ $ make benchmark NUM_THREADS=1
 $ make benchmark NUM_THREADS=8
 ```
 
-Using eight threads to compress 100MB of random bytes, I see linear speedups (\\~8x for eight
-threads) when compared to a single thread! I am interested in your results as well; contact me on
+Using eight threads to compress 100MB of random bytes, I see linear speedups when compared to a
+single thread! With Wasm, ~8x improvement for eight threads is actually higher than the ~6x
+improvement I see using the natively-compiled `pigz` binary (i.e., eight threads versus a single
+thread but using `pigz`'s default `Makefile`). More investigation is needed, but note that the
+benchmarking setup in the [sample repository](https://github.com/abrown/wasm-parallel-gzip) is
+intentionally rough (e.g., `time`). I hope in the future to integrate the parallel compression
+workload more carefully into the [Sightglass](https://github.com/bytecodealliance/sightglass/)
+benchmark suite. I am interested in the results you observe on your system as well; contact me on
 [Zulip](https://bytecodealliance.zulipchat.com/#narrow/stream/349267-wasi-threads) to discuss more!
-Note that the benchmarking setup in the repository is intentionally rough (e.g., `time`). I hope in
-the future to integrate this more carefully into the
-[Sightglass](https://github.com/bytecodealliance/sightglass/) benchmark suite.
 
 ## Future
 

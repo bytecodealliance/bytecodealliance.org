@@ -140,9 +140,9 @@ This set of flags can seem daunting so let's walk through them:
   wasi-libc)
 - `-pthread` adds `pthreads` support, as expected
 - `-Wl,--import-memory,--export-memory,--max-memory=67108864` tells the linker to import the memory
-  (this is required by the wasi-threads specification), then export it (this is a current Wasmtime
-  requirement), and make the memory large enough (without enough memory for their stack and TLS,
-  threads cannot spawn)
+  (this is required by the wasi-threads specification), then export it (this is required by other
+  WASI specifications), and make the memory large enough (without enough memory for their stack and
+  TLS, threads cannot spawn)
 
 Once we have the compiled `threads.wasm` file, we can run it in a recent version of Wasmtime (you
 will need Rust installed!):

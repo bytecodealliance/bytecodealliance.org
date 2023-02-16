@@ -144,8 +144,8 @@ This set of flags can seem daunting so let's walk through them:
   WASI specifications), and make the memory large enough (without enough memory for their stack and
   TLS, threads cannot spawn)
 
-Once we have the compiled `threads.wasm` file, we can run it in a recent version of Wasmtime (you
-will need Rust installed!):
+Once we have the compiled `threads.wasm` file, we can run it in a recent version of Wasmtime (or
+WAMR [^wamr]):
 
 ```shell
 $ git clone --recurse-submodules https://github.com/bytecodealliance/wasmtime
@@ -162,6 +162,15 @@ $ target/release/wasmtime run --wasm-features=threads --wasi-modules=experimenta
   in thread 8
   in thread 9
 ```
+
+[^wamr]: To run the `threads.wasm` example in WAMR:
+
+    ```shell
+    $ git clone https://github.com/bytecodealliance/wasm-micro-runtime.git -b dev/wasi_threads
+    $ cd wasm-micro-runtime/product-mini/platforms/linux
+    $ cmake -DWAMR_BUILD_LIB_WASI_THREADS=1 .
+    $ ./iwasm threads.wasm
+    ```
 
 ## Benchmarking
 

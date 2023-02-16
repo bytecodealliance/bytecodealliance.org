@@ -5,8 +5,8 @@ github_name: abrown
 ---
 
 Until now, one piece missing from WebAssembly standalone engines was the ability to spawn threads.
-Browsers have had this ability for some time via Web Workers, but standalone engines had no such
-thing. This post describes the work of several collaborators to bring about
+Browsers have had this ability for some time via Web Workers, but standalone engines had no standard
+way to do this. This post describes the work of several collaborators to bring about
 [wasi-threads](https://github.com/WebAssembly/wasi-threads), a proposal to add threads to WASI. It
 will explain the history to this proposal, the work done to get to this point, and how one can
 experiment with threaded applications in engines like Wasmtime and WAMR. To showcase this, we'll

@@ -210,14 +210,13 @@ the future to integrate this more carefully into the
 ## Future
 
 This blog post demonstrates how standalone WebAssembly engines can now use wasi-threads to spawn
-threads with wasi-threads &mdash; with the associated performance improvements that brings. But work
-is not finished: these are early days for wasi-threads and there are still issues to work through.
-Read through the [specification](https://github.com/WebAssembly/wasi-threads) and file issues there
-or feel free to create a
-[Zulip](https://bytecodealliance.zulipchat.com/#narrow/stream/349267-wasi-threads) thread to discuss
-with the various contributors. Remember that wasi-threads, as a new WASI proposal, is still
-experimental &mdash; do not expect strong stability in the ABI, especially as WASI transitions to
-the component model.
+threads &mdash; with the associated performance improvements that brings. But work is not finished:
+these are early days for wasi-threads and there are still issues to work through. Read through the
+[specification](https://github.com/WebAssembly/wasi-threads) and file issues there or feel free to
+create a [Zulip](https://bytecodealliance.zulipchat.com/#narrow/stream/349267-wasi-threads) thread
+to discuss with the various contributors. Remember that wasi-threads, as a new WASI proposal, is
+still experimental &mdash; do not expect strong stability in the ABI, especially as WASI transitions
+to the component model.
 
 We are watching and coordinating wasi-threads with the component model transition. wasi-threads, in
 an attempt to maintain as much compatibility with browser WebAssembly as possible, is designed to

@@ -64,9 +64,9 @@ versions, implying that peak performance requires parallelism. And in many cases
 multiple CPU cores available, the best performance *is* only available by using multiple threads.
 With wasi-threads, this performance is now available in standalone WebAssembly engines.
 
-Besides performance, another motivation for wasi-threads is to unlock even more of the ecosystem. Until now, many
-libraries using multi-threading (e.g., for multi-tasking) could not be run in a standalone
-engine. By enabling threads, wasi-threads expands the pool of libraries available.
+Besides performance, another motivation for wasi-threads is to unlock even more of the ecosystem.
+Until now, many libraries using multi-threading (e.g., for multi-tasking) could not be run in a
+standalone engine. By enabling threads, wasi-threads expands the pool of libraries available.
 
 But, in some standalone use cases, WebAssembly parallelism is not desired. For example, a blockchain
 environment billing per WebAssembly instruction may never desire the complications of multiple
@@ -178,11 +178,12 @@ $ target/release/wasmtime run --wasm-features=threads --wasi-modules=experimenta
 
 ## Benchmarking
 
-Now we can spawn threads, but it turns out that some of the Rust safeguards added to Wasmtime impact threaded performance negatively. After investigating and removing sub-optimal copies, performance was back to normal
-([#5566](https://github.com/bytecodealliance/wasmtime/pull/5566)). The workload I used for this
-performed parallel compression &mdash; the idea is that the work of compressing chunks of a file can
-be efficiently split into separate threads. (Why use WebAssembly for this? You tell me; I would
-typically use natively-compiled binaries myself, but for demo purposes `gzip` is an
+Now we can spawn threads, but it turns out that some of the Rust safeguards added to Wasmtime impact
+threaded performance negatively. After investigating and removing sub-optimal copies, performance
+was back to normal ([#5566](https://github.com/bytecodealliance/wasmtime/pull/5566)). The workload I
+used for this performed parallel compression &mdash; the idea is that the work of compressing chunks
+of a file can be efficiently split into separate threads. (Why use WebAssembly for this? You tell
+me; I would typically use natively-compiled binaries myself, but for demo purposes `gzip` is an
 easily-parallelizable, recognizable workload).
 
 ![The components compiled together with wasi-sdk for the parallel compression benchmark.]({{

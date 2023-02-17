@@ -43,8 +43,8 @@ WebAssembly world, there is some interesting previous work to mention (a non-exh
 -   in 2020, Ann Yuan and Marat Dukhan published browser results showing that the TensorFlow.js
     WebAssembly backend was fastest with threads and SIMD ([blog
     post](https://blog.tensorflow.org/2020/09/supercharging-tensorflowjs-webassembly.html))
--   in 2021, Ingvar Stepanyan and Surma built [Squoosh](https://squoosh.app), a browser-based image
-    manipulation app that relied on multi-threaded Rust libraries; they built
+-   in 2021, Ingvar Stepanyan and Surma updated [Squoosh](https://squoosh.app), a browser-based image
+    manipulation app that relied on multi-threaded C++ and Rust libraries; they built
     [wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon) to compile Rust
     threads to browser threads ([blog post](https://web.dev/webassembly-threads/#rust))
 -   in 2022, Alexandru Ene proposed wasi-threads largely based on the `pthreads` API

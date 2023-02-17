@@ -178,9 +178,7 @@ $ target/release/wasmtime run --wasm-features=threads --wasi-modules=experimenta
 
 ## Benchmarking
 
-Now we can spawn threads, but will threads actually increase performance? I was concerned that some
-of the Rust safeguards added to Wasmtime might impact threaded performance and indeed they did:
-after removing sub-optimal copies, performance was back to normal
+Now we can spawn threads, but it turns out that some of the Rust safeguards added to Wasmtime impact threaded performance negatively. After investigating and removing sub-optimal copies, performance was back to normal
 ([#5566](https://github.com/bytecodealliance/wasmtime/pull/5566)). The workload I used for this
 performed parallel compression &mdash; the idea is that the work of compressing chunks of a file can
 be efficiently split into separate threads. (Why use WebAssembly for this? You tell me; I would

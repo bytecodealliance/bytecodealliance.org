@@ -64,9 +64,9 @@ versions, implying that peak performance requires parallelism. And in many cases
 multiple CPU cores available, the best performance *is* only available by using multiple threads.
 With wasi-threads, this performance is now available in standalone WebAssembly engines.
 
-Besides performance, another motivation for wasi-threads is developer productivity. Until now, any
-library using multi-threading (e.g., for multi-tasking) was unusable for developers of standalone
-engines. By enabling threads, wasi-threads expands the pool of libraries available.
+Besides performance, another motivation for wasi-threads is to unlock even more of the ecosystem. Until now, many
+libraries using multi-threading (e.g., for multi-tasking) could not be run in a standalone
+engine. By enabling threads, wasi-threads expands the pool of libraries available.
 
 But, in some standalone use cases, WebAssembly parallelism is not desired. For example, a blockchain
 environment billing per WebAssembly instruction may never desire the complications of multiple

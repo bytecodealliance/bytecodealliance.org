@@ -166,7 +166,7 @@ $ target/release/wasmtime run --wasm-features=threads --wasi-modules=experimenta
 [^wamr]: To run the `threads.wasm` example in WAMR:
 
     ```shell
-    $ git clone https://github.com/bytecodealliance/wasm-micro-runtime.git -b dev/wasi_threads
+    $ git clone https://github.com/bytecodealliance/wasm-micro-runtime.git
     $ cd wasm-micro-runtime/product-mini/platforms/linux
     $ cmake -DWAMR_BUILD_LIB_WASI_THREADS=1 .
     $ ./iwasm threads.wasm

@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
 This can be compiled with the following flags:
 
 ```shell
-$ wasi-sdk/bin/clang --sysroot wasi-sdk/share/wasi-sysroot \
+$ $WASI_SDK_DIR/bin/clang --sysroot $WASI_SDK_DIR/share/wasi-sysroot \
     --target=wasm32-wasi-threads -pthread \
     -Wl,--import-memory,--export-memory,--max-memory=67108864 \
     threads.c -o threads.wasm

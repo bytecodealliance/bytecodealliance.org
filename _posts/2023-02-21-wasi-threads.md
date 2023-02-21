@@ -192,12 +192,12 @@ site.baseurl }}/articles/img/2023-02-21-wasi-threads/compiled-components.png)
 I found a parallel implementation of `gzip`, called `pigz`, and added `Makefile`s to compile it to
 WebAssembly. This also involved compiling `zlib`, a dependency, and patching `pigz` lightly. I
 collected all of the tools necessary for compiling and running `pigz` and put them all in one place
-[here](https://github.com/abrown/wasm-parallel-gzip). The `Makefile`s essentially compile the
-WebAssembly objects using the same flags as shown above, but with the added project-specific
+[here](https://github.com/bytecodealliance/wasm-parallel-gzip). The `Makefile`s essentially compile
+the WebAssembly objects using the same flags as shown above, but with the added project-specific
 complexities of `pigz` and `libz`. You can build and run the benchmark yourself with:
 
 ```shell
-$ git clone --recurse-submodules https://github.com/abrown/wasm-parallel-gzip
+$ git clone --recurse-submodules https://github.com/bytecodealliance/wasm-parallel-gzip
 $ make
 $ make benchmark NUM_THREADS=1
 $ make benchmark NUM_THREADS=8
@@ -207,10 +207,11 @@ Using eight threads to compress 100MB of random bytes, I see linear speedups whe
 single thread! With Wasm, ~8x improvement for eight threads is actually higher than the ~6x
 improvement I see using the natively-compiled `pigz` binary (i.e., eight threads versus a single
 thread but using `pigz`'s default `Makefile`). More investigation is needed, but note that the
-benchmarking setup in the [sample repository](https://github.com/abrown/wasm-parallel-gzip) is
-intentionally rough (e.g., `time`). I hope in the future to integrate the parallel compression
-workload more carefully into the [Sightglass](https://github.com/bytecodealliance/sightglass/)
-benchmark suite. I am interested in the results you observe on your system as well; contact me on
+benchmarking setup in the [sample
+repository](https://github.com/bytecodealliance/wasm-parallel-gzip) is intentionally rough (e.g.,
+`time`). I hope in the future to integrate the parallel compression workload more carefully into the
+[Sightglass](https://github.com/bytecodealliance/sightglass/) benchmark suite. I am interested in
+the results you observe on your system as well; contact me on
 [Zulip](https://bytecodealliance.zulipchat.com/#narrow/stream/349267-wasi-threads) to discuss more!
 
 ## Future

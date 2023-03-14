@@ -58,8 +58,7 @@ Here is the security disclosure policy for Bytecode Alliance projects.
 
 * On the embargo date, the Bytecode Alliance security mailing list is sent a copy of the
   announcement. The changes are pushed to the public repository and new builds
-  are deployed. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Bytecode Alliance blog.
+  are deployed.
 
 * Typically the embargo date will be set 72 hours from the time the CVE is
   issued. However, this may vary depending on the severity of the bug or
@@ -71,12 +70,15 @@ Here is the security disclosure policy for Bytecode Alliance projects.
   the release process above to ensure that the disclosure is handled in a
   consistent manner.
 
+* Project maintainers are encouraged to write a post-mortem for the Bytecode
+  Alliance blog, detailing the vulnerability and steps being taken to identify
+  and prevent similar vulnerabilities in the future.
+
 ## Receiving Security Updates
 
 Security notifications will be distributed via the following methods.
 
 * <https://groups.google.com/a/bytecodealliance.org/g/sec-announce>
-* <https://bytecodealliance.org/articles/>
 
 </div>
 </div>

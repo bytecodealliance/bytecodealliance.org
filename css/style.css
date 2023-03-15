@@ -153,6 +153,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
 #site-nav ul li.github-link a {
   padding: 4px 12px;
 }
+#site-nav ul li.zulip-link a {
+  padding: 4px 12px;
+}
 
 #site-nav a:hover {
   filter: brightness(60%);
@@ -189,8 +192,11 @@ body[id^="posts-"] nav a[href^="/articles"] {
 #site-nav .github-link span {
   display: none;
 }
+#site-nav .zulip-link span {
+  display: none;
+}
 
-#site-nav .github:hover {
+#site-nav .github:hover .zulip:hover {
   filter: brightness(80%);
 }
 
@@ -226,7 +232,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
   padding: 8px 10px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1175px) {
   #site-nav #menu-button {
     display: block;
   }
@@ -249,13 +255,23 @@ body[id^="posts-"] nav a[href^="/articles"] {
   }
 
   #site-nav ul li,
-  #site-nav ul li.github-link {
+  #site-nav ul li.github-link  {
     position: relative;
     float: none;
-    padding: 10px 0 10px 34px;
+    padding: 10px 0 10px 0px;
     border-bottom: 1px solid #f2f2f2;
   }
   #site-nav ul li.github-link {
+    left: -24px;
+    top: 0;
+  }
+  #site-nav ul li.zulip-link  {
+    position: relative;
+    float: none;
+    padding: 10px 0 10px 0px;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  #site-nav ul li.zulip-link {
     left: -24px;
     top: 0;
   }
@@ -265,7 +281,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
     border-bottom: none !important;
   }
 
-  #site-nav .github {
+  #site-nav .github .zulip {
     position: relative;
     top: -2px;
     left: -6px;
@@ -274,6 +290,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
   }
 
   #site-nav .github-link span {
+    display: inline;
+  }
+  #site-nav .zulip-link span {
     display: inline;
   }
 

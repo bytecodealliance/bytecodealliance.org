@@ -54,8 +54,8 @@ as many of the tools are very much in active development and bugs will
 definitely be encountered, please consider the tooling to be a ***technology 
 preview***.
 
-When the time comes when the proposals and implementations have stabilized, we 
-will announce when it is ready to use in a production environment.
+When the proposal and implementation have stabilized, we will announce that
+it is ready to use in a production environment.
 
 Here is the current compatibility matrix for the component model tooling:
 

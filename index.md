@@ -50,6 +50,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 
 <div class="member-logos">
 <img src="images/member-logos/amazon.png" alt="Amazon Logo">
+<img src="images/member-logos/anaconda.png" alt="Anaconda Logo">
 <img src="images/member-logos/arm.svg" alt="Arm Logo">
 <img src="images/member-logos/asmnext.svg" alt="AsmNext Logo">
 <img src="images/member-logos/candle.png" alt="Candle Logo">
@@ -61,7 +62,6 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/fastly.svg" alt="Fastly Logo">
 <img src="images/member-logos/fermyon.svg" alt="Fermyon Logo">
 <img src="images/member-logos/futurewei.png" alt="Futurewei Logo">
-<img src="images/member-logos/google.svg" alt="Google Logo">
 <img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
 <img src="images/member-logos/igalia.png" alt="Igalia Logo">
 <img src="images/member-logos/intel.svg" alt="Intel Logo">
@@ -69,6 +69,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 <img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
 <img src="images/member-logos/midokura.png" alt="Midokura Logo">
 <img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
+<img src="images/member-logos/nor2.svg" alt="Nornor Logo">
 <img src="images/member-logos/rackner.svg" alt="Rackner Logo">
 <img src="images/member-logos/shopify.svg" alt="Shopify Logo">
 <img src="images/member-logos/siemens.svg" alt="Siemens Logo">

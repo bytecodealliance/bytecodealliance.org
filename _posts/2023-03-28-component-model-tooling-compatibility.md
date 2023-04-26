@@ -2,6 +2,7 @@
 title: "Component Model Tooling Compatibility"
 author: "Peter Huene"
 github_name: peterhuene
+excerpt_separator: <!--end_excerpt-->
 
 # Published versions
 wasmtime: 7.0.0
@@ -33,6 +34,7 @@ Here at the Bytecode Alliance, we are very excited about the potential of the
 [WebAssembly Component Model][proposal] proposal and we understand that many of 
 you are actively exploring ways to build solutions that use WebAssembly 
 components as well!
+<!--end_excerpt-->
 
 We have been working hard on an implementation of the proposal across many of 
 our repositories. However, keeping track of the various versions of the tooling 

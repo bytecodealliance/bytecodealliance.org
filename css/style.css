@@ -140,10 +140,36 @@ body[id^="press"] nav a[href^="/press"],
 body[id^="projects"] nav a[href^="/projects"],
 body[id^="articles"] nav a[href^="/articles"],
 body[id^="security"] nav a[href^="/security"],
+body[id^="about"] nav a[href^="/about"],
 body[id^="posts-"] nav a[href^="/articles"] {
   border-bottom: 2px solid #373753;
   color: #373753;
 }
+
+#board-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8em;
+  margin: 1.5em 0 1.5em 1.5em;
+}
+#board-gallery img {
+  width: 125px;
+  height: 125px;
+}
+.board-member {
+  display: flex;
+  flex: 1 400px;
+  gap: 10px;
+  line-height: 1.5em;
+  background: #ffffff;
+  padding: 0px 10px 5px 0px
+}
+.board-member h4 {
+  margin-top: 0.5em;
+  text-align: left;
+}
+
 
 #membership nav a[href="/membership"] {
   background: #387E89;
@@ -196,7 +222,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
   display: none;
 }
 
-#site-nav .github:hover .zulip:hover {
+#site-nav .github:hover .zulip:hover{
   filter: brightness(80%);
 }
 
@@ -232,7 +258,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
   padding: 8px 10px;
 }
 
-@media (max-width: 1175px) {
+@media (max-width: 1100px) {
   #site-nav #menu-button {
     display: block;
   }
@@ -255,26 +281,28 @@ body[id^="posts-"] nav a[href^="/articles"] {
   }
 
   #site-nav ul li,
-  #site-nav ul li.github-link  {
+  #site-nav ul li.github-link {
     position: relative;
     float: none;
-    padding: 10px 0 10px 0px;
+    padding: 10px 0 10px 34px;
     border-bottom: 1px solid #f2f2f2;
   }
   #site-nav ul li.github-link {
     left: -24px;
     top: 0;
   }
-  #site-nav ul li.zulip-link  {
+  #site-nav ul li.zulip-link {
     position: relative;
     float: none;
-    padding: 10px 0 10px 0px;
+    padding: 10px 0 10px 34px;
     border-bottom: 1px solid #f2f2f2;
   }
   #site-nav ul li.zulip-link {
     left: -24px;
     top: 0;
   }
+
+
   #site-nav ul li a {
     margin: 0;
     padding: 0;
@@ -418,7 +446,7 @@ section.news__hero {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 65vh;
+  min-height: 45vh;
   padding-top: 67px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;

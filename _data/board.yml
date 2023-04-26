@@ -1,0 +1,49 @@
+# List of Board Members with title, office, and github ID.
+# Used to generate the gallery of Board members on the site About page,
+# including photos based on GitHub avatars.  Also links to Board
+# members' GitHub profiles for further info.
+- name: Bobby Holley
+  github: bholley
+  title: Member Director (Mozilla)
+  office: Board Chair
+
+- name: Bailey Hayes
+  github: ricochet
+  title: TSC Director
+  office: 
+
+- name: Daniel Lopez Ridruejo
+  github: ridruejo
+  title: Member Director (VMware)
+  office: 
+
+- name: Tyler McMullen
+  github: tyler
+  title: Member Director (Fastly)
+  office: 
+
+- name: Till Schneidereit
+  github: tschneidereit
+  title: At-Large Director
+  office: 
+
+- name: Ralph Squillace
+  github: squillace
+  title: Member Director (Microsoft)
+  office: Treasurer
+
+- name: Deian Stefan
+  github:  deian
+  title: Member Director (UCSD)
+  office: 
+
+- name: Mingqiu Sun
+  github: mingqiusun
+  title: Member Director (Intel)
+  office: 
+
+# List the Executive Director last (here):
+- name: David Bryant
+  github: disquisitioner
+  title: Consulting Executive Director
+  office: 

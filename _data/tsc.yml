@@ -1,0 +1,18 @@
+# List of TSC members with title, office, and github ID.
+# Used to generate the gallery of TSC members on the site About page,
+# including photos based on GitHub avatars.  Also links to TSC
+# members' GitHub profiles for further info.
+- name: Nick Fitzgerald
+  github: fitzgen
+  title: Elected Delegate
+  office: TSC Chair
+
+- name: Bailey Hayes
+  github: ricochet
+  title: Elected Delegate
+  office: 
+
+- name: Till Schneidereit
+  github: tschneidereit
+  title: Elected Delegate
+  office: 

@@ -2,6 +2,7 @@
 title: "Announcing wasi-threads"
 author: "Andrew Brown"
 github_name: abrown
+excerpt_separator: <!--end_excerpt-->
 ---
 
 Until now, one piece missing from WebAssembly standalone engines was the ability to spawn threads.
@@ -11,6 +12,7 @@ way to do this. This post describes the work of several collaborators to bring a
 will explain the history to this proposal, the work done to get to this point, and how one can
 experiment with threaded applications in engines like Wasmtime and WAMR. To showcase this, we'll
 look at how performing parallel compression with wasi-threads drastically improves performance.
+<!--end_excerpt-->
 
 ## History
 

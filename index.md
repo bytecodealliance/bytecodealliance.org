@@ -46,37 +46,14 @@ The Bytecode Alliance welcomes contributions and participation from across the i
 ## Members
 
 <div class="member-logos">
-<img src="images/member-logos/amazon.png" alt="Amazon Logo">
-<img src="images/member-logos/anaconda.png" alt="Anaconda Logo">
-<img src="images/member-logos/arm.svg" alt="Arm Logo">
-<img src="images/member-logos/candle.png" alt="Candle Logo">
-<img src="images/member-logos/cisco.svg" alt="Cisco Logo">
-<img src="images/member-logos/cosmonic.png" alt="Cosmonic Logo">
-<img src="images/member-logos/dfinity.png" alt="DFINITY Logo">
-<img src="images/member-logos/docker.png" alt="Docker Logo">
-<img src="images/member-logos/embark-studios.png" alt="Embark Studios Logo">
-<img src="images/member-logos/fastly.svg" alt="Fastly Logo">
-<img src="images/member-logos/fermyon.svg" alt="Fermyon Logo">
-<img src="images/member-logos/futurewei.png" alt="Futurewei Logo">
-<img src="images/member-logos/infinyon.svg" alt="Infinyon Logo">
-<img src="images/member-logos/igalia.png" alt="Igalia Logo">
-<img src="images/member-logos/intel.svg" alt="Intel Logo">
-<img src="images/member-logos/liquidreply.png" alt="Liquid Reply Logo">
-<img src="images/member-logos/microsoft.svg" alt="Microsoft Logo">
-<img src="images/member-logos/midokura.png" alt="Midokura Logo">
-<img src="images/member-logos/mozilla.svg" alt="Mozilla Logo">
-<img src="images/member-logos/nor2.svg" alt="Nornor Logo">
-<img src="images/member-logos/rackner.svg" alt="Rackner Logo">
-<img src="images/member-logos/shopify.svg" alt="Shopify Logo">
-<img src="images/member-logos/siemens.svg" alt="Siemens Logo">
-<img src="images/member-logos/singlestore.svg" alt="Singlestore Logo">
-<img src="images/member-logos/stackblitz.svg" alt="Stackblitz Logo">
-<img src="images/member-logos/suborbital.svg" alt="Suborbital Logo">
-<img src="images/member-logos/tangram.svg" alt="Tangram Logo">
-<img src="images/member-logos/ucsd.svg" alt="UCSD Logo">
-<img src="images/member-logos/university_luxembourg_snt.png" alt="Univ. of Luxembourg Logo">
-<img src="images/member-logos/vmware.svg" alt="VMware Logo">
-<img src="images/member-logos/wudun.png" alt="Wudun Logo">
+    {% comment %}Generate gallery of Member organizations from list in _data/members.yml{% endcomment %}
+    {% for member in site.data.members %}
+        {% if member.active %}
+            <a href="{{member.homepage}}" rel="nofollow">
+                <img src="images/member-logos/{{member.logo}}" alt="{{member.name}} Logo">
+            </a>
+        {% endif %}
+    {% endfor %}
 </div>
 
 </div>
@@ -169,7 +146,7 @@ The Bytecode Alliance welcomes contributions and participation from across the i
                     <img src="images/circle.svg" alt="" class="fcircle">
                 </div>
                 <div class="fanswer">
-                    <p>Hosted projects and groups are key ways in which the Bytecode Alliance pursues its mission.  While contributions to WebAssembly are happening across a broad and rapidly growing range of community, organizational, and individual efforts, certain projects are recognized by the Bytecode Alliance as central to the vision for WebAssesmbly it shares with its members.  Those projects receive special support through the Bytecode Alliance Board and its Technical Steering Committee, and today include <a href="https://wasmtime.dev/">Wasmtime</a>, <a href="https://github.com/bytecodealliance/wasmtime/tree/main/cranelift">Cranelift</a>, and <a href="https://github.com/bytecodealliance/wasm-micro-runtime">WAMR</a>.  
+                    <p>Hosted projects and groups are key ways in which the Bytecode Alliance pursues its mission.  While contributions to WebAssembly are happening across a broad and rapidly growing range of community, organizational, and individual efforts, certain projects are recognized by the Bytecode Alliance as central to the vision for WebAssesmbly it shares with its members.  Those projects receive special support through the Bytecode Alliance Board and its Technical Steering Committee, and today include <a href="https://wasmtime.dev/">Wasmtime</a>, <a href="https://cranelift.dev">Cranelift</a>, and <a href="https://github.com/bytecodealliance/wasm-micro-runtime">WAMR</a>.  
                     </p>
                     <p>You'll find more details about our hosted projects and Bytecode Alliance projects in general on our <a href="{{ site.baseurl }}/projects">Projects</a> page.
                     </p>

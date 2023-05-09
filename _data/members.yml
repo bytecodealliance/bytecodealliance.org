@@ -1,0 +1,161 @@
+# List of Bytecode Alliance member organizations with logos and home page.
+# Logos are presumed to reside in the images/member-logos folder and be an
+# image file name present there (prefere transparent PNG or SVG).  Active
+# flag can be used to easily enable/disable member display without removing
+# files or lines of HTML.
+#
+# Used to generate the gallery of member logos on the Alliance home page
+- name: Amazon
+  logo: amazon.png
+  homepage: https://aws.amazon.com
+  active: true
+
+- name: Anaconda
+  logo: anaconda.png
+  homepage: https://anaconda.com
+  active: true
+
+- name: Arm
+  logo: arm.svg
+  homepage: https://arm.com
+  active: true
+
+- name: Candle
+  logo: candle.png
+  homepage: https://candle.dev
+  active: true
+
+- name: Cisco
+  logo: cisco.svg
+  homepage: https://cisco.com
+  active: true
+
+- name: Cosmonic
+  logo: cosmonic.png
+  homepage: https://cosmonic.com
+  active: true
+
+- name: DFINITY
+  logo: dfinity.png
+  homepage: https://dfinity.org
+  active: true
+
+- name: Docker
+  logo: docker.png
+  homepage: https://docker.com
+  active: true
+
+- name: Embark Studios
+  logo: embark-studios.png
+  homepage: https://embark-studios.com
+  active: true
+
+- name: Fastly
+  logo: fastly.svg
+  homepage: https://www.fastly.com
+  active: true
+
+- name: Fermyon
+  logo: fermyon.svg
+  homepage: https://www.fermyon.com
+  active: true
+
+- name: Futurewei
+  logo: futurewei.png
+  homepage: https://www.futurewei.com
+  active: true
+
+- name: Infinyon
+  logo: infinyon.svg
+  homepage: https://infinyon.com
+  active: true
+
+- name: Igalia
+  logo: igalia.png
+  homepage: https://www.igalia.com
+  active: true
+
+- name: Intel
+  logo: intel.svg
+  homepage: https://www.intel.com
+  active: true
+
+- name: Liquid Reply
+  logo: liquidreply.png
+  homepage: https://www.reply.com
+  active: true
+
+- name: Microsoft
+  logo: microsoft.svg
+  homepage: https://www.microsoft.com
+  active: true
+
+- name: Midokura
+  logo: midokura.png
+  homepage: https://www.midokura.com
+  active: true
+
+- name: Mozilla
+  logo: mozilla.svg
+  homepage: https://www.mozilla.org
+  active: true
+
+- name: Nornor
+  logo: nor2.svg
+  homepage: https://nor2.io
+  active: true
+
+- name: Rackner
+  logo: rackner.svg
+  homepage: https://www.rackner.com
+  active: true
+
+- name: Shopify
+  logo: shopify.svg
+  homepage: https://www.shopify.com
+  active: true
+
+- name: Siemens
+  logo: siemens.svg
+  homepage: https://www.siemens.com
+  active: true
+
+- name: SingleStore
+  logo: singlestore.svg
+  homepage: https://www.singlestore.com
+  active: true
+
+- name: StackBlitz
+  logo: stackblitz.svg
+  homepage: https://stackblitz.com
+  active: true
+
+- name: Suborbital
+  logo: suborbital.svg
+  homepage: https://suborbital.dev
+  active: true
+
+- name: Tangram
+  logo: tangram.svg
+  homepage: https://www.tangram.dev
+  active: false
+
+- name: UCSD
+  logo: ucsd.svg
+  homepage: https://ucsd.edu
+  active: true
+
+- name: University of Luxembourg
+  logo: university_luxembourg_snt.png
+  homepage: https://wwwen.uni.lu/snt
+  active: true
+
+- name: VMware
+  logo: vmware.svg
+  homepage: https://www.vmware.com
+  active: true
+
+- name: Shanghai Wudun
+  logo: wudun.png
+  homepage: https://wudun.net
+  active: true

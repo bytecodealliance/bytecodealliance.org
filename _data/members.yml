@@ -100,6 +100,11 @@
   homepage: https://www.mozilla.org
   active: true
 
+- name: NGINX
+  logo: nginx.svg
+  homepage: https://www.nginx.com/
+  active: true
+
 - name: Nornor
   logo: nor2.svg
   homepage: https://nor2.io

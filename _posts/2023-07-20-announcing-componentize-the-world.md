@@ -6,15 +6,13 @@ subtitle: "Join the Bytecode Alliance Component Hackathon, colocated with the Li
 author: "Liam Randall"
 github_name: liamrandall
 excerpt_separator: <!--end_excerpt-->
-feature-img: "/articles/img/featured-image.png"
+feature-img: "/articles/img/rust-wasm-toolchain.svg"
 ---
 
-The Bytecode Alliance is pleased to invite you to our upcoming event, "Componentize the World", a comprehensive Hackathon taking place in Bellevue, Washington on Friday, September 8, 2023. This WebAssembly hosted hackathon is being held adjacent to the first annual Linux Foundation [WasmCon](https://events.linuxfoundation.org/wasmcon/), September 6 and 7th in Redmond, Washington at the Micrososft Executive Briefing Center (Building 33).
+The Bytecode Alliance is pleased to invite you to our upcoming event, "Componentize the World", a comprehensive Hackathon taking place in Redmond, Washington on Friday, September 8, 2023 at the Micrososft Executive Briefing Center (Building 33). This WebAssembly hosted hackathon is being held adjacent to the first annual Linux Foundation [WasmCon](https://events.linuxfoundation.org/wasmcon/), September 6 and 7th in Bellevue, Washington .
 
 Register for [Componentize the World](#) now!
 <!--end_excerpt-->
-
-[TOC]cd 
 
 ## Agenda
 
@@ -29,7 +27,7 @@ The Bytecode Alliance extends this invitation to developers, product managers, a
 
 **Date:**
 
-Friday, September 8, 2023 Location: Redmond, Washington
+Friday, September 8, 2023 
 
 **Location**: 
 

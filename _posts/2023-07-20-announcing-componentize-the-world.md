@@ -10,7 +10,7 @@ excerpt_separator: <!--end_excerpt-->
 
 The Bytecode Alliance is pleased to invite you to our upcoming event, "Componentize the World", a comprehensive Hackathon taking place in Redmond, Washington on Friday, September 8, 2023 at the Microsoft Executive Briefing Center (Building 33). This WebAssembly hackathon is being held adjacent to the first annual Linux Foundation [WasmCon](https://events.linuxfoundation.org/wasmcon/), on September 6 and 7th in Bellevue, Washington .
 
-Register for [Componentize the World](#) now!
+Register for the Bytecode Alliance WebAssembly Hackathon- [Componentize the World](https://www.eventbrite.com/e/bytecode-alliance-componentize-the-world-tickets-681895717447) now!
 <!--end_excerpt-->
 
 ## Agenda
@@ -36,7 +36,7 @@ Executive Briefing Center - "St. Helens" Room
 
 16070 NE 36th Way, Redmond 98052, WA
 
-To register for the event and learn more please visit our website at[ www.bytecodealliance.org/hacktheworld](http://www.bytecodealliance.org/hacktheworld).
+You can register for the Bytecode Alliance WebAssembly Hackathon now: ["Componentize the World"](https://www.eventbrite.com/e/bytecode-alliance-componentize-the-world-tickets-681895717447).
 
 We look forward to your participation in what promises to be a productive and exciting event. Together, let us explore the possibilities and continue to push the boundaries of the development ecosystem.
 

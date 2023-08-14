@@ -20,7 +20,8 @@ An essential way the Bytecode Alliance pursues its mission is to identify and su
 [Cranelift](https://cranelift.dev) is a production-ready low-level retargetable code generator, usable as a back-end for both WebAssembly and non-WebAssembly deployments.  It’s incorporated in Wasmtime for both JIT and AOT compilation, and is also used as an experimental backend for the Rust compiler. 
 <h4>WAMR</h4>
 The WebAssembly Micro Runtime ([WAMR](https://github.com/bytecodealliance/wasm-micro-runtime)) is a lightweight, standalone, interpreter-based WebAssembly runtime with small footprint, high performance and highly configurable features. It is especially well suited for embedded or similarly resource constrained environments (e.g., Internet of Things).
-
+<h4>Javy</h4>
+[Javy](https://github.com/bytecodealliance/javy) is a JavaScript-to-WebAssembly toolchain designed to execute JavaScript on WebAssembly. Based on  the QuickJS JavaScript engine, it prioritizes generating compact and efficient WebAssembly modules.
 </div>
 </div>
 </section>

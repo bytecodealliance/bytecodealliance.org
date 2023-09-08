@@ -115,6 +115,11 @@
   homepage: https://www.rackner.com
   active: true
 
+- name: Redhat
+  logo: redhat.png
+  homepage: https://www.redhat.com
+  active: true
+
 - name: Shopify
   logo: shopify.svg
   homepage: https://www.shopify.com
@@ -138,7 +143,7 @@
 - name: Suborbital
   logo: suborbital.svg
   homepage: https://suborbital.dev
-  active: true
+  active: false
 
 - name: Tangram
   logo: tangram.svg

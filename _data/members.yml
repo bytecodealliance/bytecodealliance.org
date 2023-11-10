@@ -140,6 +140,11 @@
   homepage: https://stackblitz.com
   active: true
 
+- name: Stellar Development Foundation
+  logo: stellar.png
+  homepage: https://stellar.org
+  active: true
+
 - name: Suborbital
   logo: suborbital.svg
   homepage: https://suborbital.dev

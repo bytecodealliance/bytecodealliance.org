@@ -192,7 +192,7 @@ we are now UB-free under MIRI. Running tests under MIRI gives us assurance that
 we won't be bitten by this same class of bug again in the future.
 
 [a CVE caused by a `rustc` miscompilation]: https://github.com/advisories/GHSA-ch89-5g45-qwc7
-[under MIRI]: github.com/bytecodealliance/wasmtime/pull/6332
+[under MIRI]: https://github.com/bytecodealliance/wasmtime/pull/6332
 
 Finally, we are in the process of adding support for running Wasm that was
 compiled by an alternative compiler from Cranelift: [Winch]. Winch is a baseline
@@ -485,16 +485,16 @@ extend the mid-end framework and ISLE compiler in 2024:
 ["mid-end"]: https://en.wikipedia.org/wiki/Compiler#Middle_end
 [e-graph]: https://en.wikipedia.org/wiki/E-graph
 [ISLE]: https://github.com/bytecodealliance/wasmtime/tree/main/cranelift/isle
-[enabled the new mid-end by default]: github.com/bytecodealliance/wasmtime/pull/5587
+[enabled the new mid-end by default]: https://github.com/bytecodealliance/wasmtime/pull/5587
 [removed the old mid-end pipeline once and for all]: https://github.com/bytecodealliance/wasmtime/pull/6167
 [invited talk at the EGRAPHS workshop at PLDI]: https://pldi23.sigplan.org/details/egraphs-2023-papers/2/-graphs-Acyclic-E-graphs-for-Efficient-Optimization-in-a-Production-Compiler
 [Slides]: https://cfallin.org/pubs/egraphs2023_aegraphs_slides.pdf
-[automated]: github.com/bytecodealliance/wasmtime/pull/7312
+[automated]: https://github.com/bytecodealliance/wasmtime/pull/7312
 [Souper]: https://github.com/google/souper/
 [rewrite side-effectful instructions]: https://github.com/bytecodealliance/wasmtime/issues/6106
 [instructions that can trap]: https://github.com/bytecodealliance/wasmtime/issues/5908
 [ISLE compiler automatically emit code]: https://github.com/bytecodealliance/wasmtime/issues/6128
-[Some exploratory work has already begun]: github.com/bytecodealliance/wasmtime/pull/7321
+[Some exploratory work has already begun]: https://github.com/bytecodealliance/wasmtime/pull/7321
 
 We also implemented a number of codegen improvements and optimizations outside
 of the mid-end framework in 2023:

@@ -80,6 +80,11 @@
   homepage: https://www.intel.com
   active: true
 
+- name: JAF Labs
+  logo: jaf-labs.svg
+  homepage: https://jaflabs.com 
+  active: true
+
 - name: Liquid Reply
   logo: liquidreply.png
   homepage: https://www.reply.com

@@ -7,7 +7,7 @@ excerpt_separator: <!--end_excerpt-->
 ---
 Last week, the Bytecode Alliance Plumber’s Summit gathered in Raleigh, NC to map the road ahead for the WebAssembly ecosystem.  
 
-You can read a [summary of the summit’s first day](https://bytecodealliance.org/articles/plumbers-summit-day-1) on the Bytecode Alliance blog or watch the [full recording](https://www.youtube.com/watch?v=eZF2MLMgXhk) on YouTube. While much of the second day was conducted in breakout sessions, some consistent themes ran through many of those conversations, including the implementation of **async** and **developer experience**. 
+You can read a [summary of the summit’s first day](https://bytecodealliance.org/articles/plumbers-day-1) on the Bytecode Alliance blog or watch the [full recording](https://www.youtube.com/watch?v=eZF2MLMgXhk) on YouTube. While much of the second day was conducted in breakout sessions, some consistent themes ran through many of those conversations, including the implementation of **async** and **developer experience**. 
 <!--end_excerpt-->
 
 A recording of the Day 2 livestream is [available on YouTube](https://www.youtube.com/watch?v=HGspgXNFisc); the summaries below include timestamps for those portions of the recording.  

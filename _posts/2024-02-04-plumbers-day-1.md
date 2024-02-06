@@ -129,7 +129,7 @@ The importance of component discoverability was a major topic of discussion. Dis
 
 To conclude the day, Luke Wagner talked through “Luke’s Backlog”&mdash;a collection of features and projects for possible future implementation. Luke presented these as “a menu of cool stuff to think about over the next few years”&mdash;items that might happen within months, within years, or on an indefinite timescale.  
 
-On the menu were several features for discussion on Day 2 of the Plumber’s Summit, including async, WIT package development, and much more. Check out [our summary of Day 2](https://bytecodealliance.org/articles/plumbers-summit-day-1) to learn more about those conversations or watch the [Day 2 stream](https://www.youtube.com/watch?v=HGspgXNFisc) on YouTube.
+On the menu were several features for discussion on Day 2 of the Plumber’s Summit, including async, WIT package development, and much more. Check out [our summary of Day 2](https://bytecodealliance.org/articles/plumbers-summit-day-2) to learn more about those conversations or watch the [Day 2 stream](https://www.youtube.com/watch?v=HGspgXNFisc) on YouTube.
 
 
 

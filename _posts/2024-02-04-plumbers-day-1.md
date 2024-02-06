@@ -6,12 +6,12 @@ github_name: "ericgregory"
 excerpt_separator: <!--end_excerpt-->
 ---
 
-The Bytecode Alliance Plumber’s Summit gathered in Raleigh, NC on January 31, 2024 to celebrate the release of WASI 0.2.0 and collaborate on the next steps forward for the WebAssembly ecosystem.  
+The Bytecode Alliance Plumber’s Summit gathered in Raleigh, NC on January 31, 2024 to celebrate the release of WASI 0.2 and collaborate on the next steps forward for the WebAssembly ecosystem.  
 
 The first day of the two-day summit focused on topics of general interest, while the second day adopted an “unconference” structure with more narrowly focused breakout sessions.  
 <!--end_excerpt-->
 
-Member Director Ralph Squillace opened the day with a celebration of the Bytecode Alliance’s milestone release of WASI Preview 2, and Technical Steering Committee Director Bailey Hayes set the tone with a guiding theme of “Building better together.”  
+Member Director Ralph Squillace opened the day with a celebration of the Bytecode Alliance’s milestone release of WASI 0.2, and Technical Steering Committee Director Bailey Hayes set the tone with a guiding theme of “Building better together.”  
 
 Day 1 topics included:  
 

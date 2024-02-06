@@ -14,9 +14,9 @@ A recording of the Day 2 livestream is [available on YouTube](https://www.youtub
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HGspgXNFisc?si=SHdhA2cWlLs_XD2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Async and WASI 0.3.0
+## Async and WASI 0.3
 
-Luke Wagner of Fastly delivered ([26:00](https://youtu.be/HGspgXNFisc?t=1560)) a look at his sketch for async implementation in WASI 0.3.0.&mdash;with an eye toward bringing users simple, composable HTTP interfaces with concurrency.  
+Luke Wagner of Fastly delivered ([26:00](https://youtu.be/HGspgXNFisc?t=1560)) a look at his sketch for async implementation in WASI 0.3&mdash;with an eye toward bringing users simple, composable HTTP interfaces with concurrency.  
 
 The presentation provided a high-level design summary that delved into lifting and lowering async, and how those would come into play under a variety of circumstances in which two components are communicating with one another:  
 
@@ -24,9 +24,9 @@ The presentation provided a high-level design summary that delved into lifting a
 * Sync calling async
 * Async calling sync
 
-Joel Dice of Fermyon demonstrated ([1:11:00](https://youtu.be/HGspgXNFisc?t=4260)) a prototype of the first milestone with [`isyswasfa`](https://github.com/dicej/isyswasfa) (I sync, you sync, we all sync for async), which he described as providing “a ‘polyfill’ that devs can play with today while they’re waiting for Preview 3 and real async.” The project aims to make it easier for developers to begin implementing async (and minimize changes needed later) while also providing implementation feedback for the WASI 0.3.0 design process.  
+Joel Dice of Fermyon demonstrated ([1:11:00](https://youtu.be/HGspgXNFisc?t=4260)) a prototype of the first milestone with [`isyswasfa`](https://github.com/dicej/isyswasfa) (I sync, you sync, we all sync for async), which he described as providing “a ‘polyfill’ that devs can play with today while they’re waiting for WASI 0.3 and real async.” The project aims to make it easier for developers to begin implementing async (and minimize changes needed later) while also providing implementation feedback for the WASI 0.3 design process.  
 
-The demo is [available on GitHub](https://github.com/dicej/isyswasfa) and shows how a component written in idiomatic Rust can await a WASI 0.2.0 monotonic clock poll. 
+The demo is [available on GitHub](https://github.com/dicej/isyswasfa) and shows how a component written in idiomatic Rust can await a WASI 0.2 monotonic clock poll. 
 
 ## Developer experience
 
@@ -55,4 +55,4 @@ Additional breakout sessions brought together smaller groups for focused discuss
 
 Among the many important conclusions reached on Day 2, the group decided to adopt a “tick tock” development pattern wherein feature development cycles (like the road to WASI 0.2.1) will be followed by a stabilization cycle, marking a strong commitment to ongoing stability and improvement to developer experience.  
 
-As the WebAssembly ecosystem enters a new era of enhanced portability and interoperability after WASI 0.2.0, the Bytecode Alliance is dedicated to making it as easy as possible for more developers to get involved. If you have questions or ideas, [join our Zulip chat](https://bytecodealliance.zulipchat.com/) to be part of the conversation.
+As the WebAssembly ecosystem enters a new era of enhanced portability and interoperability after WASI 0.2, the Bytecode Alliance is dedicated to making it as easy as possible for more developers to get involved. If you have questions or ideas, [join our Zulip chat](https://bytecodealliance.zulipchat.com/) to be part of the conversation.

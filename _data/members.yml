@@ -65,6 +65,11 @@
   homepage: https://www.futurewei.com
   active: true
 
+- name: Google
+  logo: google.svg
+  homepage: https://www.google.com
+  active: true
+
 - name: Infinyon
   logo: infinyon.svg
   homepage: https://infinyon.com
@@ -82,7 +87,7 @@
 
 - name: JAF Labs
   logo: jaf-labs.svg
-  homepage: https://jaflabs.com 
+  homepage: https://jaflabs.com
   active: true
 
 - name: Liquid Reply

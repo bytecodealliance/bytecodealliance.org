@@ -25,6 +25,6 @@ technologies like WebAssembly's [component model] and [WASI].
 [security and correctness]: https://bytecodealliance.org/articles/security-and-correctness-in-wasmtime
 [these guidelines]: https://bytecodealliance.org/security#reporting-a-security-bug-in-a-bytecode-alliance-project
 [believe]: https://bytecodealliance.org/about
-[supply-chain attacks]: https://en.wikipedia.org/wiki/Supply_chain_attack
+[supply chain attacks]: https://en.wikipedia.org/wiki/Supply_chain_attack
 [component model]: https://component-model.bytecodealliance.org/
 [WASI]: https://wasi.dev/

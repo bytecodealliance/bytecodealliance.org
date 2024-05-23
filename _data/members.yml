@@ -23,7 +23,7 @@
 - name: Candle
   logo: candle.png
   homepage: https://candle.dev
-  active: true
+  active: false
 
 - name: Cisco
   logo: cisco.svg
@@ -48,7 +48,7 @@
 - name: Embark Studios
   logo: embark-studios.png
   homepage: https://embark-studios.com
-  active: true
+  active: false
 
 - name: Fastly
   logo: fastly.svg
@@ -118,7 +118,7 @@
 - name: Rackner
   logo: rackner.svg
   homepage: https://www.rackner.com
-  active: true
+  active: false
 
 - name: Redhat
   logo: redhat.png
@@ -178,4 +178,4 @@
 - name: Shanghai Wudun
   logo: wudun.png
   homepage: https://wudun.net
-  active: true
+  active: false

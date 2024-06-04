@@ -75,6 +75,11 @@
   homepage: https://www.igalia.com
   active: true
 
+- name: imec
+  logo: imec.png
+  homepage: https://www.imec-int.com/en
+  active: true
+
 - name: Intel
   logo: intel.svg
   homepage: https://www.intel.com

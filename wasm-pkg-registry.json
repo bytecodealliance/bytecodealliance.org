@@ -4,5 +4,5 @@ permalink: .well-known/wasm-pkg/registry.json
 ---
 {
         "ociRegistry": "ghcr.io",
-        "ociNamespacePrefix": "bytecodealliance/wasm-pkg/"
+        "ociNamespacePrefix": "webassembly/"
 }

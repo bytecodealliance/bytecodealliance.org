@@ -146,14 +146,14 @@ body[id^="posts-"] nav a[href^="/articles"] {
   color: #373753;
 }
 
-#board-gallery {
+.board-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   font-size: 0.8em;
   margin: 1.5em 0 1.5em 1.5em;
 }
-#board-gallery img {
+.board-gallery img {
   width: 125px;
   height: 125px;
 }

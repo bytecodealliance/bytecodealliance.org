@@ -20,7 +20,7 @@ Our mission is to Provide state-of-the-art foundations to develop runtime enviro
          <p>
          Our Board is comprised of Directors elected from among our member organizations, the Technical Steering Committee, and our Recognized Contributors program. Board members are selected to a two-year term, staggered across elections every December. 
          </p>
-         <div id="board-gallery">
+         <div class="board-gallery" id="board-gallery">
             {% comment %}Generate gallery of Board members from list in _data/board.yml{% endcomment %}
             {% for member in site.data.board %}
             <div class="board-member">
@@ -43,7 +43,7 @@ Our mission is to Provide state-of-the-art foundations to develop runtime enviro
          <p>
             The Bytecode Alliance <a href="https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md">Technical Steering Committee</a> ("TSC") acts as the top-level governing body for projects and Special Interest Groups hosted by the Alliance, ensuring they further the Alliance's mission and are conducted in accordance with our <a href="#social-values">values and principles</a>.  The TSC also oversees the Bytecode Alliance <a href="https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md#recognized-contributors">Recognized Contributor</a> program to encourage and engage individual contributors as participants in Alliance projects and groups.
          </p>
-         <div id="board-gallery">
+         <div class="board-gallery" id="tsc-gallery">
            {% comment %}Generate gallery of TSC members from list in _data/tsc.yml{% endcomment %}
            {% for member in site.data.tsc %}
             <div class="board-member">

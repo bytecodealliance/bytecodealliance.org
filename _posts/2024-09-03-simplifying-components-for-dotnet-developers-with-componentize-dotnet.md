@@ -147,7 +147,7 @@ Now replace the contents of `hello.csproj` with the following:
 ```
 The project file is mostly the same&mdash;the most significant change is that we've added a new `ItemGroup` for our WIT reference, which refers to an OCI registry.
 
-If you're using the C# Dev Kit with Visual Studio Code, saving the project file will create WIT bindings for you to reference at `.\obj\Debug\net8.0\wasi-wasm\wit_bindgen\`, making it easier to use the `wasi-http` interface that you've just imported. (Your code should no longer show error squigglies, as well.) Regardless of your editor, now we can build a component that uses the interface:
+If you're using the C# Dev Kit with Visual Studio Code, saving the project file will create WIT bindings for you to reference at `.\obj\Debug\net9.0\wasi-wasm\wit_bindgen\`, making it easier to use the `wasi-http` interface that you've just imported. (Your code should no longer show error squigglies, as well.) Regardless of your editor, now we can build a component that uses the interface:
 
 ```sh
 dotnet build

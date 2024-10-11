@@ -163,7 +163,7 @@ Hello, World!
 
 ## Looking ahead
 
-When the final release of .NET 9 drops (scheduled for November 2024), it is expected to have support for generating components through the [Mono](https://github.com/dotnet/runtime/tree/main/src/mono) compiler, giving .NET/C# developers multiple approaches to building native WASI P2 components from the .NET SDK. The `componentize-dotnet` project will soon give users an easy way to choose between the `NativeAOT-LLVM` or Mono compilers, and either way, `componentize-dotnet` will be an essential tool for building components with WIT files. Maintainers anticipate Linux and macOS support soon.
+As the .NET component ecosystem grows and evolves, `componentize-dotnet` will be an essential tool for building components with WIT files. Maintainers anticipate Linux and macOS support soon.
 
 For more information on `componentize-dotnet`, including instructions on using WIT interfaces with .NET 9, composition, and exporting functionality, [see the `componentize-dotnet` readme](https://github.com/bytecodealliance/componentize-dotnet/blob/main/README.md). 
 

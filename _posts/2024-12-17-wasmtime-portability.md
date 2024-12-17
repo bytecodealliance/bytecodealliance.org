@@ -90,10 +90,12 @@ are implemented, a Wasm runtime requires:
 
 A Wasm runtime's portability is determined by how few assumptions it makes about
 its underlying platform in its implementation of those operations. Does it
-assume an operating system that provides the `mmap` syscall? Does it assume the
-underlying native instruction set is either `x86_64` or `aarch64`? Similarly,
-assumptions baked into the Wasm language specification itself can also limit
-portability.
+assume an operating system that provides the `mmap` syscall or a CPU that
+supports virtual memory? Does it support just a small, fixed set of instructions
+sets, such as `x86_64` and `aarch64`, or a wide, extensible set of ISAs? And, as
+previously mentioned, no matter which implementation choices are made,
+assumptions baked into the Wasm language specification itself can also limit a
+runtime's portability.
 
 ## Removing Runtime Assumptions
 
@@ -174,7 +176,7 @@ multiple times over today.
 ## Compilers Without Backends
 
 We've discussed allocating Wasm memories portably and removing assumptions from
-the runtime and language specification, now we turn our attention to portably
+the runtime and language specification; now we turn our attention to portably
 executing Wasm instructions. Wasmtime previously had two available approaches to
 Wasm execution:
 
@@ -331,12 +333,21 @@ both provide the application's required capabilities (at a high level,
 regardless if they happen to use incompatible syscalls or different mechanisms
 to expose the capabilities).
 
-[The WebAssembly Component Model][cm] introduces the concept of a [world], which
-makes explicit the capabilities a Wasm component requires. With worlds, we can
+[The WebAssembly Component Model][cm] makes explicit the capability dependencies
+of a Wasm component and introduces the concept of a [world] to formalize an
+environment's available capabilities. With components and worlds, we can
 precisely answer the question of whether WORA makes sense across two given
 platforms. Along with the standard worlds and interfaces defined by [WASI], we
 already have all the tools we need to make WORA a reality for Wasm where it
-makes sense.
+makes sense.[^parts]
+
+[^parts]: The component model also gives us tools to break Wasm applications
+    down into their constituent parts, and share those parts across different
+    applications. Even when WORA doesn't make sense for a full application, it
+    might make sense for some subset of its business logic that happens to
+    require fewer capabilities than the full application. For example, we may
+    want to share the logic for maintaining the set of active IRC users between
+    both the server and the client.
 
 [cm]: https://component-model.bytecodealliance.org/
 [world]: https://component-model.bytecodealliance.org/design/worlds.html

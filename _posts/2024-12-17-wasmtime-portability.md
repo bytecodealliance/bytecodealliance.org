@@ -75,11 +75,11 @@ principles, and its strengths to more platforms is a worthwhile endeavor.
     Internet Explorer-specific APIs. This led to broken Websites for people
     using other browsers, and eventually forced other browsers to reverse
     engineer the non-standard APIs. The Web is still stuck with the resulting
-    baggage and tech debt today. This is a big part of why we are so committed
-    to open standards and refuse to add non-standard extensions to
-    Wasmtime. Rather than deviating from the WebAssembly specification when we
-    identify inconvenient constraints, we engage with the standards process to
-    create solutions that the whole ecosystem can rely on.
+    baggage and tech debt today. We must prevent this from happening to
+    WebAssembly. Therefore we refuse the temptation to deviate from the
+    WebAssembly specification. Instead, when we identify language-level
+    constraints, we engage with the standards process to create solutions that
+    the whole ecosystem can rely on.
 
 So what must Wasmtime, or any other Wasm runtime, have in order to run Wasm on a
 given platform? There are two fundamental operations that, no matter how they

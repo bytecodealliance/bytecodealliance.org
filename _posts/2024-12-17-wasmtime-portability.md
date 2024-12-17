@@ -25,7 +25,7 @@ to choose between deviating from the standard with ad-hoc language modifications
 or else avoiding these platforms. This article details in-progress standards
 proposals to lift these extant language limitations; enumerates recent
 engineering efforts to greatly expand Wasmtime's platform support; and, finally,
-shares some ways that you can get involved and up us further improve Wasm's
+shares some ways that you can get involved and help us further improve Wasm's
 portability.
 
 WebAssembly has a lot going for it. It has a [formal specification] that is

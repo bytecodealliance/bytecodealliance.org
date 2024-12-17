@@ -48,7 +48,8 @@ worth commending, preserving, and making available in even more places.
 [portable]: https://webassembly.org/docs/portability/
 
 What does Wasm need in order to run on a given platform? A Wasm runtime that
-supports that platform.
+supports that platform. In this article, we'll focus on the runtime we're
+building: Wasmtime.
 
 [Wasmtime] is a lightweight, standalone WebAssembly runtime developed openly
 within the Bytecode Alliance. Wasmtime is fast. It can, for example, [spawn new

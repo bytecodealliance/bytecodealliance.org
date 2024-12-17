@@ -32,8 +32,8 @@ WebAssembly has a lot going for it. It has a [formal specification] that is
 developed in an open, collaborative [standards process] by browser, runtime,
 hardware, and language toolchain vendors, among others. It's [sandboxed], so a
 Wasm program cannot access any resource you don't explicitly give it access to,
-leading to the development of [standard Wasm APIS][WASI] based on
-capabilities-based security. It is [designed] such that, after compilation to
+leading to the development of [standard Wasm APIS][WASI] leveraging
+capability-based security. It is [designed] such that, after compilation to
 native code, it can be executed at near-native speeds. And, even if there is
 room for improvement, it is [portable] across many systems, running in Web
 browsers and on servers, workstations, phones, and more. These qualities are

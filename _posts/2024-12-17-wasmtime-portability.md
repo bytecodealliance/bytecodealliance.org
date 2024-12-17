@@ -5,15 +5,14 @@ github_name: "fitzgen"
 ---
 
 Portability is among the first properties promoted on [WebAssembly's official
-homepage][WebAssembly]:[^emphasis]
+homepage][WebAssembly]:
 
 [WebAssembly]: https://webassembly.org
-[^emphasis]: Emphasis mine.
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a
-> stack-based virtual machine. Wasm is designed as a ***portable*** compilation
-> target for programming languages, enabling deployment on the web for client
-> and server applications.
+> stack-based virtual machine. Wasm is designed as a portable compilation target
+> for programming languages, enabling deployment on the web for client and
+> server applications.
 
 This portability has led [many](https://wasmbyexample.dev/home.en-us.html)
 [people](https://www.cs.cmu.edu/wrc/) to

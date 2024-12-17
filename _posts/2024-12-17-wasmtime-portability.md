@@ -20,12 +20,14 @@ This portability has led [many](https://wasmbyexample.dev/home.en-us.html)
 [claim](https://www.infoq.com/news/2015/06/webassembly-wasm/) that it is a
 "universal bytecode" &mdash; an instruction set that can run on any computer,
 abstracting away the underlying native architecture and operating system. In
-practice, however, there remain places you cannot take WebAssembly, for example
-certain memory-constrained embedded devices. This article details the extant
-specification- and implementation-level portability limitations that persist;
-enumerates how we are overcoming those limitations via in-flight standards
-proposals and engineering efforts; and, finally, shares some ways that you can
-get involved and help us further improve Wasm's portability.
+practice, however, there remain places you cannot take standard WebAssembly, for
+example certain memory-constrained embedded devices. Runtimes have been forced
+to choose between deviating from the standard with ad-hoc language modifications
+or else avoiding these platforms. This article details in-progress standards
+proposals to lift these extant language limitations; enumerates recent
+engineering efforts to greatly expand Wasmtime's platform support; and, finally,
+shares some ways that you can get involved and up us further improve Wasm's
+portability.
 
 WebAssembly has a lot going for it. It has a [formal specification] that is
 developed in an open, collaborative [standards process] by browser, hardware,

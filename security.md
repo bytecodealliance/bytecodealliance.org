@@ -10,8 +10,11 @@ title: Security Policy
 
 ## Reporting a security bug in a Bytecode Alliance project
 
-If you think you have found a security issue in a Bytecode Alliance project,
-please send email to <security@bytecodealliance.org>.
+Security is a top priority for the Bytecode Alliance. As such, we take all reports of suspected security vulnerabilities seriously, and have a number of ways to report them.
+
+For suspected vulnerabilities in a specific project, prefer to report the issue using GitHub's [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) facilities. Maintainers will then work with you to resolve the issue.
+
+If you think that that channel isn't right for reporting your specific issue, you can also send email to <security@bytecodealliance.org>.
 This list is delivered to a small security team. We will then acknowledge receipt
 of your report and prioritize initial analysis of severity.
 

@@ -9,7 +9,7 @@
 
 - name: Bailey Hayes
   github: ricochet
-  title: TSC Director
+  title: At-Large Director
   office: 
 
 - name: Pat Hickey
@@ -20,11 +20,6 @@
 - name: Tyler McMullen
   github: tyler
   title: Member Director (Fastly)
-  office: 
-
-- name: Till Schneidereit
-  github: tschneidereit
-  title: At-Large Director
   office: 
 
 - name: Ralph Squillace

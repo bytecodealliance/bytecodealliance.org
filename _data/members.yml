@@ -93,7 +93,7 @@
 - name: Liquid Reply
   logo: liquidreply.png
   homepage: https://www.reply.com
-  active: true
+  active: false
 
 - name: Microsoft
   logo: microsoft.svg
@@ -128,7 +128,7 @@
 - name: Redhat
   logo: redhat.png
   homepage: https://www.redhat.com
-  active: true
+  active: false
 
 - name: Shopify
   logo: shopify.svg
@@ -178,7 +178,7 @@
 - name: VMware
   logo: vmware.svg
   homepage: https://www.vmware.com
-  active: true
+  active: false
 
 - name: Shanghai Wudun
   logo: wudun.png

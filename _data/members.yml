@@ -28,7 +28,7 @@
 - name: Cisco
   logo: cisco.svg
   homepage: https://cisco.com
-  active: true
+  active: false
 
 - name: Cosmonic
   logo: cosmonic.png

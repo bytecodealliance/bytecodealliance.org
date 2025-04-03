@@ -59,7 +59,7 @@ We reserve in full the right to exclude or limit participation of those who decr
 
 #### 6. We actively work against toxicity and exclusion
 
-We require all hosted projects and SIGs to follow and actively enforce our [Code of Conduct](./CODE_OF_CONDUCT.md) without exception.
+We require all hosted projects and SIGs to follow and actively enforce our [Code of Conduct](https://github.com/bytecodealliance/rfcs/blob/main/CODE_OF_CONDUCT.md) without exception.
 
 Additionally, we strongly encourage proactively engaging on early signs of deteriorating relationships or behavior that otherwise points towards a deterioration in community norms and take action before a situation becomes toxic and exclusionary.
 

@@ -16,7 +16,7 @@ Wasmtime's `run` subcommand has traditionally excelled at running Wasm modules, 
 
 If you want to follow along, please install:
 
-* [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases) using `rustup update`), and
+* [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases) using `rustup update`),
 * Cargo Component via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://github.com/bytecodealliance/cargo-component/releases)), and
 * [Wasmtime](https://docs.wasmtime.dev/cli-install.html) or download a [Wasmtime precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries). (If you already have wasmtime installed, please make sure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).)
 
@@ -127,7 +127,23 @@ Now, let's create the Wasm component with the exported function:
 cargo component build --target wasm32-wasip1
 ```
 
-If we take another look at our directory structure, we will see that cargo component has automatically generated `bindings.rs` and that we now have a target directory that contains `wasm32-wasip1` path. This is where our our `.wasm` file now lives:
+If we take another look at our directory structure, we will see that cargo component has automatically generated `bindings.rs` and that we now have a target directory that contains `wasm32-wasip1` path. 
+
+```bash
+tree . -L 2
+.
+├── Cargo.lock
+├── Cargo.toml
+├── src
+│   ├── bindings.rs
+│   └── lib.rs
+├── target
+│   └── wasm32-wasip1
+└── wit
+    └── answer.wit
+```
+
+Our newly generated `.wasm` file now lives at the following location:
 
 ```bash
 ls target/wasm32-wasip1/debug/wasm_answer.wasm 
@@ -159,7 +175,7 @@ wasmtime run --invoke "get-answer()" target/wasm32-wasip1/debug/wasm_answer.wasm
 
 ## Wasm Value Encoding (WAVE)
 
-Invoke leverages `wasm-wave` as a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values and is designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). Here are a few pointers for constructing your `wasmtime run --invoke` commands using WAVE.
+Invoke leverages [WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md) as a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values and is designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). Here are a few pointers for constructing your `wasmtime run --invoke` commands using WAVE.
 
 ## Parentheses
 

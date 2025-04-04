@@ -194,7 +194,7 @@ The result from our correctly typed command above is as follows:
 Note: If your function takes a string argument, ensure that you use escaped double quotes inside the parentheses. For example:
 
 ```bash
-wasmtime run - invoke "initialize(\"hello\")" foo.wasm
+wasmtime run - invoke 'initialize("hello")' foo.wasm
 ```
 
 And lastly, if your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:

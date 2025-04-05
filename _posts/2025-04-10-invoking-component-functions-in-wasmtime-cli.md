@@ -170,7 +170,7 @@ wasmtime run foo.wasm
 The `wasmtime run` command now accepts an optional `--invoke` argument, which can execute the name of an exported function that resides in the (`.wasm`) module:
 
 ```bash
-wasmtime run --invoke "get-answer()" target/wasm32-wasip1/debug/wasm_answer.wasm
+wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
 ```
 
 ## Wasm Value Encoding (WAVE)
@@ -181,9 +181,9 @@ Invoke leverages [WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main
 
 Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced.
 
-## Double Quotes
+## Quotes
 
-The exported function's name and mandatory exported function's parentheses must all be enclosed in one set of double quotes, i.e. `"get-answer()"`.
+The exported function's name and mandatory exported function's parentheses must all be enclosed in one set of single quotes, i.e. `'get-answer()'`.
 
 The result from our correctly typed command above is as follows:
 
@@ -191,17 +191,23 @@ The result from our correctly typed command above is as follows:
 42
 ```
 
-Note: If your function takes a string argument, ensure that you use escaped double quotes inside the parentheses. For example:
+If your function takes a string argument, ensure that you envelop your string in double quotes (inside the parentheses). For example:
 
 ```bash
 wasmtime run - invoke 'initialize("hello")' foo.wasm
 ```
 
-And lastly, if your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
+**Please note:** If you enclose your function call using double quotes, your string argument will require its double quotes to be escaped (escaping quotes is more complicated and harder to read and therefore not ideal). For example:
 
 ```bash
-wasmtime run - invoke "initialize(\"Pi\", 3.14)" foo.wasm
-wasmtime run - invoke "add(1, 2)" foo.wasm
+wasmtime run - invoke "initialize(\"hello\")" foo.wasm
+```
+
+Lastly, if your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
+
+```bash
+wasmtime run -- invoke 'initialize("Pi", 3.14)' foo.wasm
+wasmtime run -- invoke 'add(1, 2)' foo.wasm
 ```
 
 With the ability to invoke Wasm component exports directly from the command line, developers unlock powerful workflows:

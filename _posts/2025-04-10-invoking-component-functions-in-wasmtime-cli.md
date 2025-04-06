@@ -18,7 +18,7 @@ Wasmtime's `run` subcommand has traditionally excelled at running Wasm modules, 
 If you want to follow along, please install:
 
 * [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases) using `rustup update`),
-* Cargo Component via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://github.com/bytecodealliance/cargo-component/releases)), and
+* [`cargo component`](https://crates.io/crates/cargo-component) via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://github.com/bytecodealliance/cargo-component/releases)), and
 * [Wasmtime](https://docs.wasmtime.dev/cli-install.html) or download a [Wasmtime precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries). (If you already have wasmtime installed, please make sure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).)
 
 You can check versions using the following commands:

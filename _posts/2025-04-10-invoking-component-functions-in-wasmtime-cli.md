@@ -5,7 +5,8 @@ date: "2025-04-10"
 github_name: "tpmccallum"
 excerpt_separator: <!--end_excerpt-->
 ---
-Wasmtime now supports invoking Wasm component exports directly from the command line with the new `--invoke` flag. This article walks through building a Wasm component in Rust, writing a WIT interface, and using `wasmtime run --invoke` to execute specific functions (enabling powerful workflows for scripting, testing, and integrating Wasm into modern development pipelines).
+Wasmtime now supports invoking Wasm component exports directly from the command line with the new `--invoke` flag. 
+This article walks through building a Wasm component in Rust, writing a WIT interface, and using `wasmtime run --invoke` to execute specific functions (enabling powerful workflows for scripting, testing, and integrating Wasm into modern development pipelines).
 <!--end_excerpt-->
 
 ## The Evolution of Wasmtime's CLI

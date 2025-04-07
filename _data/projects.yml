@@ -6,6 +6,7 @@
   site: 
   docs:
   active: true 
+  status: hosted
   labels: []
   
 - name: cargo-component
@@ -14,6 +15,7 @@
   site: 
   docs:
   active: true
+  status: hosted
   labels: [rust]
 
 - name: cargo-wasi
@@ -22,6 +24,7 @@
   site: 
   docs:
   active: false
+  status: hosted
   labels: [rust]
 
 - name: componentize-dotnet
@@ -30,6 +33,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dotnet]
 
 - name: ComponentizeJS
@@ -38,6 +42,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [javascript]
 
 - name: componentize-py
@@ -46,6 +51,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [python]
 
 - name: Cranelift
@@ -54,6 +60,7 @@
   site: https://cranelift.dev/
   docs: https://github.com/bytecodealliance/wasmtime/tree/main/cranelift/docs/
   active: true
+  status: hosted
   labels: []
 
 - name: go-modules
@@ -62,6 +69,7 @@
   site: 
   docs: https://pkg.go.dev/go.bytecodealliance.org#section-readme
   active: true
+  status: hosted
   labels: [go]
 
 - name: Javy
@@ -70,6 +78,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [javascript]
 
 - name: jco
@@ -78,6 +87,7 @@
   site: 
   docs: https://bytecodealliance.github.io/jco/
   active: true
+  status: hosted
   labels: [javascript]
 
 - name: Lucet
@@ -86,6 +96,7 @@
   site: 
   docs: 
   active: false
+  status: hosted
   labels: []
 
 - name: regalloc.rs
@@ -94,6 +105,7 @@
   site: 
   docs: 
   active: false
+  status: hosted
   labels: []
 
 - name: regalloc2
@@ -102,6 +114,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: []
 
 - name: rust-oci-wasm
@@ -110,6 +123,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [rust]
 
 - name: rustix
@@ -118,6 +132,7 @@
   site: 
   docs: https://docs.rs/rustix/latest/rustix/
   active: true
+  status: hosted
   labels: [rust]
 
 - name: sightglass
@@ -126,6 +141,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: []
 
 - name: StarlingMonkey
@@ -134,6 +150,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [starlingmonkey, javascript]
 
 - name: spidermonkey-wasi-embedding
@@ -142,6 +159,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [starlingmonkey]
 
 - name: system-interface
@@ -150,6 +168,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: []
 
 - name: target-lexicon
@@ -158,6 +177,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: []
 
 - name: VSCode-WIT
@@ -166,6 +186,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools]
 
 - name: WebAssembly Compositions (WAC)
@@ -174,6 +195,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools]
 
 - name: waffle
@@ -182,6 +204,7 @@
   site: 
   docs: https://docs.rs/waffle/latest/waffle/
   active: true
+  status: hosted
   labels: []
 
 - name: warg
@@ -190,6 +213,7 @@
   site: 
   docs: 
   active: false
+  status: hosted
   labels: []
 
 - name: wasi-rs
@@ -198,6 +222,7 @@
   site: 
   docs: https://docs.rs/wasi/latest/wasi/
   active: true
+  status: hosted
   labels: [rust]
 
 - name: WASI-Virt
@@ -206,6 +231,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools]
 
 - name: WebAssembly Micro Runtime (WAMR)
@@ -214,6 +240,7 @@
   site: https://bytecodealliance.github.io/wamr.dev/
   docs: https://wamr.gitbook.io/document/wamr-in-practice/
   active: true
+  status: hosted
   labels: [runtime, wamr]
 
 - name: wamr-app-framework
@@ -222,6 +249,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wamr]
 
 - name: wamr-python
@@ -230,6 +258,7 @@
   site: 
   docs: 
   active: false
+  status: hosted
   labels: [wamr, python]
 
 - name: wamr-rust-sdk
@@ -238,6 +267,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wamr, rust]
 
 - name: wamr.dev
@@ -246,6 +276,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wamr]
 
 - name: wasm-pkg-tools
@@ -254,6 +285,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools, rust]
 
 - name: wasm-tools
@@ -262,6 +294,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools, rust]
 
 - name: Wasmtime
@@ -270,6 +303,7 @@
   site: https://wasmtime.dev/
   docs: https://docs.wasmtime.dev/
   active: true
+  status: core
   labels: [runtime, wasmtime]
 
 - name: wasmtime-cpp
@@ -278,6 +312,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wasmtime, c]
 
 - name: wasmtime-dotnet
@@ -286,6 +321,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wasmtime, dotnet]
 
 - name: wasmtime-go
@@ -294,6 +330,7 @@
   site: 
   docs: https://pkg.go.dev/github.com/bytecodealliance/wasmtime-go/
   active: true
+  status: hosted
   labels: [wasmtime, go]
 
 - name: wasmtime-py
@@ -302,6 +339,7 @@
   site: 
   docs: https://bytecodealliance.github.io/wasmtime-py/
   active: true
+  status: hosted
   labels: [wasmtime, python]
 
 - name: wasmtime-rb
@@ -310,6 +348,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wasmtime, ruby]
 
 - name: wasmtime.dev
@@ -318,6 +357,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [wasmtime]
 
 - name: wasmtime-libfuzzer-corpus
@@ -326,6 +366,7 @@
   site: 
   docs: 
   active: false
+  status: hosted
   labels: [wasmtime]
 
 - name: weval
@@ -334,6 +375,7 @@
   site: 
   docs: https://docs.rs/crate/weval/latest
   active: true
+  status: hosted
   labels: []
 
 - name: wit-bindgen
@@ -342,6 +384,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: [dev-tools]
 
 - name: wit-deps
@@ -350,6 +393,7 @@
   site: 
   docs: 
   active: true
+  status: hosted
   labels: []
 
 - name: Wizer
@@ -358,6 +402,7 @@
   site: 
   docs: https://docs.rs/wizer/latest/wizer/
   active: true
+  status: hosted
   labels: []
 
 - name: wRPC
@@ -366,6 +411,7 @@
   site: 
   docs: https://docs.rs/wrpc/latest/wrpc/
   active: true
+  status: hosted
   labels: [protocol]
 
 

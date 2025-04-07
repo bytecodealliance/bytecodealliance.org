@@ -13,141 +13,148 @@ This article walks through building a Wasm component in Rust, writing a WIT inte
 
 Wasmtime's `run` subcommand has traditionally excelled at running Wasm modules, whether in binary (`.wasm`) or text (`.wat`) format. In this article, we will create a Wasm component that exports a function and then demonstrate how to invoke the function using `wasmtime run --invoke`.
 
-## Housekeeping
+## Tooling & Dependencies
 
 If you want to follow along, please install:
 
 * [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases) using `rustup update`),
-* [`cargo component`](https://crates.io/crates/cargo-component) via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://github.com/bytecodealliance/cargo-component/releases)), and
-* [Wasmtime](https://docs.wasmtime.dev/cli-install.html) or download a [Wasmtime precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries). (If you already have wasmtime installed, please make sure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).)
+* [`cargo`](https://crates.io/crates/cargo) via the `cargo install cargo` command (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo)),
+* [`cargo component`](https://crates.io/crates/cargo-component) via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo-component)), and
+* [`wasmtime` CLI](https://docs.wasmtime.dev/cli-install.html) (or use a [precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries)). If already installed, ensure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).
 
 You can check versions using the following commands:
 
-```bash
-wasmtime --version
-cargo component --version
-rustc --version
+```console
+$ wasmtime --version
+$ cargo --version
+$ cargo component --version
+$ rustc --version
+```
+
+For `cargo component` to generate a Wasm binary that is compatible with the WASI Preview 1 standard, we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
+
+```console
+$ rustup target add wasm32-wasip1
 ```
 
 ## New Library
 
 Let's start by creating a new Rust library that we will later convert to a Wasm component using `cargo component`:
 
-```bash
-cargo new --lib wasm-answer
-cd wasm-answer
+```console
+$ cargo component new --lib wasm_answer
+$ cd wasm_answer
 ```
 
-Install `wit-bindgen`:
+If you open the `Cargo.toml` file, you will notice that the `cargo component` command has automatically added some essential configurations:
 
-```bash
-cargo add wit-bindgen
-```
+The `wit-bindgen-rt` dependency (with the `["bitflags"]` feature) under `[dependencies]`, and the crate-type = `["cdylib"]` setting under the [lib] section.
 
-If you open the `Cargo.toml` file, you will notice that the `wit-bindgen` dependency has been automatically added for us (by the above `cargo add command`). While you have the `Cargo.toml` open, please go ahead and add the following:
-
-```toml
-[lib]
-crate-type = ["cdylib"]
-```
-
-The `Cargo.toml` file will look something like the following:
+Your `Cargo.toml` should now include these entries (as shown in the example below):
 
 ```toml
 [package]
-name = "wasm-answer"
+name = "wasm_answer"
 version = "0.1.0"
 edition = "2024"
+
+[dependencies]
+wit-bindgen-rt = { version = "0.41.0", features = ["bitflags"] }
 
 [lib]
 crate-type = ["cdylib"]
 
-[dependencies]
-wit-bindgen = "0.41.0"
+[package.metadata.component]
+package = "component:wasm-answer"
+
+[package.metadata.component.dependencies]
 ```
 
-We need to set a special target that allows us to leverage the Wasm component model via `cargo component`. So please go ahead and add the Wasm target shown below and also set your default Rust toolchain to `nightly`:
+The directory structure of the `wasm_answer` example is automatically scaffolded out for us by `cargo component`:
 
-```bash
-rustup toolchain install nightly
-rustup default nightly
-rustup target add wasm32-wasip1
-```
+```console
+$ tree wasm_answer
 
-## WIT
-
-Now, let's create a hand-written `.wit` file. Open a new file `answer.wit` in and new directory `wit`:
-
-```bash
-mkdir wit
-vi wit/answer.wit
-```
-
-Add the following content to the `answer.wit` file:
-
-```wit
-package example:answer;
-world answer-world {
-    export get-answer: func() -> u32;
-}
-```
-
-Your directory structure should look like the following:
-
-```bash
-tree .
-.
-├── Cargo.lock
-├── Cargo.toml
-├── src
-│   └── lib.rs
-└── wit
-    └── answer.wit
-```
-
-Next, we write the logic that supports our WIT. Open the `src/lib.rs` file and add the following content:
-
-```rust
-wit_bindgen::generate!({
-    world: "answer-world",  
-    path: "wit/answer.wit",
-});
-
-struct Answer;
-impl Guest for Answer {
-    fn get_answer() -> u32 {
-        42
-    }
-}
-export!(Answer);
-```
-
-Now, let's create the Wasm component with the exported function:
-
-```bash
-cargo component build --target wasm32-wasip1
-```
-
-If we take another look at our directory structure, we will see that cargo component has automatically generated `bindings.rs` and that we now have a target directory that contains `wasm32-wasip1` path. 
-
-```bash
-tree . -L 2
-.
+wasm_answer
 ├── Cargo.lock
 ├── Cargo.toml
 ├── src
 │   ├── bindings.rs
 │   └── lib.rs
-├── target
-│   └── wasm32-wasip1
 └── wit
-    └── answer.wit
+    └── world.wit
+```
+
+Next, we add a `get_answer` function in the `src/lib.rs` file:
+
+```rust
+#[allow(warnings)]
+mod bindings;
+
+use bindings::Guest;
+
+struct Component;
+
+impl Guest for Component {
+    fn get_answer() -> u32 {
+        42
+    }
+}
+
+bindings::export!(Component with_types_in bindings);
+```
+
+## WIT
+
+Now, we need to open the `.wit` file and slightly modify it for our use case:
+
+```console
+$ vi wit/world.wit
+```
+
+Add the following content to the `answer.wit` file:
+
+```wit
+package component:wasm-answer;
+
+world example {
+    export get-answer: func() -> u32;
+}
+```
+
+Now, let's create the Wasm component with our exported `get_answer()` function:
+
+```console
+$ cargo component build --target wasm32-wasip1
 ```
 
 Our newly generated `.wasm` file now lives at the following location:
 
-```bash
-ls target/wasm32-wasip1/debug/wasm_answer.wasm 
+```console
+$ file target/wasm32-wasip1/debug/wasm_answer.wasm
+target/wasm32-wasip1/debug/wasm_answer.wasm: WebAssembly (wasm) binary module version 0x1000d
+```
+
+We can also use the `--release` option which optimised builds for production:
+
+```console
+$ cargo component build --target wasm32-wasip1 --release
+```
+
+If we check the sizes of the `debug` vs. `release` we see a difference of `1.9M` vs. `16K` respectively.
+
+Debug:
+
+```console
+$ du -mh target/wasm32-wasip1/debug/wasm_answer.wasm
+1.9M	target/wasm32-wasip1/debug/wasm_answer.wasm
+```
+
+Release:
+
+```console
+$ du -mh target/wasm32-wasip1/release/wasm_answer.wasm
+16K	target/wasm32-wasip1/release/wasm_answer.wasm
 ```
 
 ## Default Entry Point vs. Exported Function
@@ -164,14 +171,14 @@ The addition of the `--invoke` feature (within the `wasmtime run` subcommand) al
 
 Originally, the `wasmtime run` command would take one positional argument (the name of the module) and just run that `.wasm` file:
 
-```bash
-wasmtime run foo.wasm
+```console
+$ wasmtime run foo.wasm
 ```
 
 The `wasmtime run` command now accepts an optional `--invoke` argument, which can execute the name of an exported function that resides in the (`.wasm`) module:
 
-```bash
-wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
+```console
+$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
 ```
 
 ## Wasm Value Encoding (WAVE)
@@ -188,27 +195,27 @@ The exported function's name and mandatory exported function's parentheses must 
 
 The result from our correctly typed command above is as follows:
 
-```bash
+```console
 42
 ```
 
 If your function takes a string argument, ensure that you envelop your string in double quotes (inside the parentheses). For example:
 
-```bash
-wasmtime run - invoke 'initialize("hello")' foo.wasm
+```console
+$ wasmtime run --invoke 'initialize("hello")' foo.wasm
 ```
 
 **Please note:** If you enclose your function call using double quotes, your string argument will require its double quotes to be escaped (escaping quotes is more complicated and harder to read and therefore not ideal). For example:
 
-```bash
-wasmtime run - invoke "initialize(\"hello\")" foo.wasm
+```console
+$ wasmtime run --invoke "initialize(\"hello\")" foo.wasm
 ```
 
 Lastly, if your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
 
-```bash
-wasmtime run -- invoke 'initialize("Pi", 3.14)' foo.wasm
-wasmtime run -- invoke 'add(1, 2)' foo.wasm
+```console
+$ wasmtime run --invoke 'initialize("Pi", 3.14)' foo.wasm
+$ wasmtime run --invoke 'add(1, 2)' foo.wasm
 ```
 
 With the ability to invoke Wasm component exports directly from the command line, developers unlock powerful workflows:

@@ -46,9 +46,9 @@ $ cargo component new --lib wasm_answer
 $ cd wasm_answer
 ```
 
-If you open the `Cargo.toml` file, you will notice that the `cargo component` command has automatically added some essential configurations:
+If you open the `Cargo.toml` file, you will notice that the `cargo component` command has automatically added some essential configurations.
 
-The `wit-bindgen-rt` dependency (with the `["bitflags"]` feature) under `[dependencies]`, and the crate-type = `["cdylib"]` setting under the [lib] section.
+The `wit-bindgen-rt` dependency (with the `["bitflags"]` feature) under `[dependencies]`, and the crate-type = `["cdylib"]` setting under the `[lib]` section.
 
 Your `Cargo.toml` should now include these entries (as shown in the example below):
 
@@ -135,13 +135,13 @@ $ file target/wasm32-wasip1/debug/wasm_answer.wasm
 target/wasm32-wasip1/debug/wasm_answer.wasm: WebAssembly (wasm) binary module version 0x1000d
 ```
 
-We can also use the `--release` option which optimised builds for production:
+We can also use the `--release` option which optimises builds for production:
 
 ```console
 $ cargo component build --target wasm32-wasip1 --release
 ```
 
-If we check the sizes of the `debug` vs. `release` we see a difference of `1.9M` vs. `16K` respectively.
+If we check the sizes of the `debug` and `release`, we see a difference of `1.9M` and `16K`, respectively.
 
 Debug:
 
@@ -165,7 +165,7 @@ Originally, the `wasmtime run` command would take one positional argument (the n
 $ wasmtime run foo.wasm
 ```
 
-The `wasmtime run` command now accepts an optional `--invoke` argument, which can execute the name of an exported function that resides in the (`.wasm`) module:
+The `wasmtime run` command now accepts an optional `--invoke` argument, which can execute the name of an exported function that resides in the (`.wasm`) **component**:
 
 ```console
 $ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
@@ -219,12 +219,18 @@ If we are not using the component model and just creating a binary executable, w
 Example of running a Wasm **module** that exports a raw function directly:
 
 ```console
-wasmtime run --invoke initialize foo.wasm
+$ wasmtime run --invoke initialize foo.wasm
 ```
 
 ### Wasm Components
 
-Now that Wasm is evolving beyond simple modules to embrace the Wasm Component Model, developers have more granular control over the execution and composition of individual components. Wasm component that use the WebAssembly Interface Types (WIT) can now use the `wasmtime run` command with the optional `--invoke` argument to call their exported function from their component (**with** [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-wave)):
+Now that Wasm is evolving beyond simple modules to embrace the Wasm Component Model, developers have more granular control over the execution and composition of individual components. Wasm component that use the WebAssembly Interface Types (WIT) can now use the `wasmtime run` command with the optional `--invoke` argument to call their exported function from their component (**with** [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-wave)).
+
+Example of running a Wasm **component** that exports a function:
+
+```console
+$ wasmtime run --invoke 'add(1, 2)' foo.wasm
+```
 
 For more information, visit the [cli-options section](https://docs.wasmtime.dev/cli-options.html#run) of the Wasmtime documentation.
 

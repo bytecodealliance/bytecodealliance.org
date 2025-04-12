@@ -6,12 +6,12 @@ github_name: "tpmccallum"
 excerpt_separator: <!--end_excerpt-->
 ---
 Wasmtime now supports invoking Wasm component exports directly from the command line with the new `--invoke` flag. 
-This article walks through building a Wasm component in Rust, writing a WIT interface, and using `wasmtime run --invoke` to execute specific functions (enabling powerful workflows for scripting, testing, and integrating Wasm into modern development pipelines).
+This article walks through building a Wasm component in Rust and using `wasmtime run --invoke` to execute specific functions (enabling powerful workflows for scripting, testing, and integrating Wasm into modern development pipelines).
 <!--end_excerpt-->
 
 ## The Evolution of Wasmtime's CLI
 
-Wasmtime's `run` subcommand has traditionally excelled at running Wasm modules, whether in binary (`.wasm`) or text (`.wat`) format. In this article, we will create a Wasm component that exports a function and then demonstrate how to invoke the function using `wasmtime run --invoke`.
+Wasmtime's `run` subcommand has traditionally excelled at running Wasm **modules**, whether in binary (`.wasm`) or text (`.wat`) format. In this article, we will create a Wasm **component** that exports a function and then demonstrate how to invoke the function using `wasmtime run --invoke`.
 
 ## Tooling & Dependencies
 
@@ -157,16 +157,6 @@ $ du -mh target/wasm32-wasip1/release/wasm_answer.wasm
 16K	target/wasm32-wasip1/release/wasm_answer.wasm
 ```
 
-## Default Entry Point vs. Exported Function
-
-If we were not using the component model and just creating binary executable, we could use a simple command like `wasmtime run foo.wasm` to execute our code.
-
-But in this case, we are making the point that Wasm has evolved beyond simple modules to embrace the Wasm Component Model. Developers need more granular control over the execution and composition of components. The benefits are code reuse and cross-language sharing. For example, Rust, Javascript, and Python logic can all interoperate when the explicit interfaces are defined using WIT. For example, [seamlessly interoperable compression tasks across native C++, Rust, and also in a Wasm runtime](https://medium.com/wasm/wasm-component-model-seamless-compression-c-rust-and-wasm-3b8d52ed8b31).
-
-## Invoking Exported Functions
-
-The addition of the `--invoke` feature (within the `wasmtime run` subcommand) allows users to specify an exported function to execute, complete with arguments, directly from the command line interface (CLI) terminal. Being able to invoke functions in the CLI is a huge step forward for not only executing Wasm via consoles or Bash scripting but will also play a big role in testing, debugging, and integrating Wasm components into workflows without having to embed them into a host application during development.
-
 ## How Invoke Works: A Practical Example
 
 Originally, the `wasmtime run` command would take one positional argument (the name of the module) and just run that `.wasm` file:
@@ -181,13 +171,15 @@ The `wasmtime run` command now accepts an optional `--invoke` argument, which ca
 $ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
 ```
 
+You will notice that the above example does not pass any arguments into the `get-answer()` function. Let's discuss how to represent the values passed into function calls in a structured way.
+
 ## Wasm Value Encoding (WAVE)
 
-Invoke leverages [WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md) as a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values and is designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). Here are a few pointers for constructing your `wasmtime run --invoke` commands using WAVE.
+Transferring and invoking complex argument data via the command line is challenging, especially with Wasm components that use diverse value types. To simplify this, Wasm Value Encoding ([WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md)) was introduced offering a concise way to represent structured values directly in the CLI.
 
-## Parentheses
+[WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md) provides a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values and is designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). 
 
-Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced.
+Below we provide a few additional pointers for constructing your `wasmtime run --invoke` commands using WAVE.
 
 ## Quotes
 
@@ -199,31 +191,53 @@ The result from our correctly typed command above is as follows:
 42
 ```
 
-If your function takes a string argument, ensure that you envelop your string in double quotes (inside the parentheses). For example:
+## Parentheses
+
+Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced. If your function takes a string argument, ensure that you envelop your string in double quotes (**inside the parentheses**). For example:
 
 ```console
 $ wasmtime run --invoke 'initialize("hello")' foo.wasm
 ```
 
-**Please note:** If you enclose your function call using double quotes, your string argument will require its double quotes to be escaped (escaping quotes is more complicated and harder to read and therefore not ideal). For example:
-
-```console
-$ wasmtime run --invoke "initialize(\"hello\")" foo.wasm
-```
-
-Lastly, if your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
+If your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
 
 ```console
 $ wasmtime run --invoke 'initialize("Pi", 3.14)' foo.wasm
 $ wasmtime run --invoke 'add(1, 2)' foo.wasm
 ```
 
-With the ability to invoke Wasm component exports directly from the command line, developers unlock powerful workflows:
+# Conclusion
 
-* Shell Scripting: Embedding Wasm logic in Bash/Python scripts,
-* CI/CD Pipelines: Validating components in GitHub Actions or GitLab CI,
-* Cross-Language Testing: Quickly verifying that interfaces match across different language implementations (Rust/JS/Python),
-* Debugging: Quickly inspect exports during development, and
-* Microservices: Chaining components in serverless workflows (e.g., compress → encrypt → upload).
+## Wasm Modules vs. Wasm Components
 
-This evolution from monolithic modules to composable, CLI-friendly components is a big leap forward.
+Let's wrap this article up with a recap to crystallize your knowledge.
+
+### Wasm Modules
+
+If we are not using the component model and just creating a binary executable, we use a simple command like `wasmtime run foo.wasm` (**without** WAVE syntax) to execute our the binary executable. This typically applies to modules, which export a `_start` function, or reactor modules, which can optionally export the `wasi:cli/run` interface—standardized to enable consistent execution semantics. 
+
+Example of running a Wasm **module** that exports a raw function directly:
+
+```console
+wasmtime run --invoke initialize foo.wasm
+```
+
+### Wasm Components
+
+Now that Wasm is evolving beyond simple modules to embrace the Wasm Component Model, developers have more granular control over the execution and composition of individual components. Wasm component that use the WebAssembly Interface Types (WIT) can now use the `wasmtime run` command with the optional `--invoke` argument to call their exported function from their component (**with** [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-wave)):
+
+For more information, visit the [cli-options section](https://docs.wasmtime.dev/cli-options.html#run) of the Wasmtime documentation.
+
+## Benefits and Usefulness
+
+The addition of support for the run `--invoke` feature [for components](https://github.com/bytecodealliance/wasmtime/pull/10054) allows users to specify and execute exported functions from a Wasm component. This enables greater flexibility for testing, debugging, and integration. We now have the ability to perform the execution of arbitrary exported functions directly from the command line, this feature opens up a world of possibilities for integrating Wasm into modern development pipelines.
+
+Here are some of the powerful workflows made possible by `--invoke`:
+
+* Shell Scripting: Embed Wasm logic directly into Bash or Python scripts for seamless automation.
+* CI/CD Pipelines: Validate components in GitHub Actions, GitLab CI, or other automation tools without embedding them in host applications.
+* Cross-Language Testing: Quickly verify that interfaces match across implementations in Rust, JavaScript, and Python.
+* Debugging: Inspect exported functions during development with ease.
+* Microservices: Chain components in serverless workflows, such as compress → encrypt → upload, leveraging Wasm's modularity.
+
+**This evolution from monolithic Wasm modules to composable, CLI-friendly components exemplifies the versatility and power of WebAssembly in real-world scenarios.**

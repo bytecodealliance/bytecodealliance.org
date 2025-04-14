@@ -31,7 +31,7 @@ $ cargo component --version
 $ wasmtime --version
 ```
 
-For `cargo component` to generate a Wasm binary (`.wasm` file) that is compatible with the WASI Preview 1 standard, we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
+For `cargo component` to generate a Wasm binary (`.wasm` file, in this case a Wasm module) that is compatible with the [WASI Preview 1 standard](https://github.com/WebAssembly/WASI/tree/main/legacy/preview1), we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
 
 ```console
 $ rustup target add wasm32-wasip1

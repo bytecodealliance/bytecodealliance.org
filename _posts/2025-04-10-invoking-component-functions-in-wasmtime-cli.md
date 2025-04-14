@@ -194,13 +194,13 @@ $ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wa
 
 You will notice that the above `get-answer()` function call does not pass in any arguments. Let's discuss how to represent the arguments passed into function calls in a structured way (using WAVE).
 
-## Wasm Value Encoding (WAVE)
+#### Wasm Value Encoding (WAVE)
 
 Transferring and invoking complex argument data via the command line is challenging, especially with Wasm components that use diverse value types. To simplify this, Wasm Value Encoding ([WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md)) was introduced; offering a concise way to represent structured values directly in the CLI. WAVE provides a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values; designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). 
 
 Below are a few additional pointers for constructing your `wasmtime run --invoke` commands using WAVE.
 
-## Quotes
+#### Quotes
 
 As shown above, the component's exported function name and mandatory parentheses are contained in one set of single quotes, i.e., `'get-answer()'`:
 
@@ -214,7 +214,7 @@ The result from our correctly typed command above is as follows:
 42
 ```
 
-## Parentheses
+#### Parentheses
 
 Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced. If your function takes a string argument, ensure that you contain your string in double quotes (inside the parentheses). For example:
 

@@ -11,7 +11,7 @@ This article walks through building a Wasm component in Rust and using `wasmtime
 
 ## The Evolution of Wasmtime's CLI
 
-Wasmtime's `run` subcommand has traditionally excelled at running Wasm **modules**, whether in binary (`.wasm`) or text (`.wat`) format. In this article, we will create a Wasm **component** that exports a function and then demonstrate how to invoke the function using `wasmtime run --invoke`.
+Wasmtime's `run` subcommand has traditionally supported running Wasm modules as well as invoking that **module**'s exported function. However, with the evolution of the Wasm Component Model, this article focuses on a newer capability; creating a component that exports a function and then demonstrating how to invoke that **component**'s exported function.
 
 ## Tooling & Dependencies
 
@@ -31,10 +31,10 @@ $ cargo component --version
 $ wasmtime --version
 ```
 
-For `cargo component` to generate a Wasm binary (`.wasm` file, in this case a Wasm module) that is compatible with the [WASI Preview 1 standard](https://github.com/WebAssembly/WASI/tree/main/legacy/preview1), we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
+We must explicitly `add` the `wasm32-wasip2` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, sockets, random etc.):
 
 ```console
-$ rustup target add wasm32-wasip1
+$ rustup target add wasm32-wasip2
 ```
 
 ## New Library
@@ -125,36 +125,36 @@ world example {
 Now, let's create the Wasm component with our exported `get_answer()` function:
 
 ```console
-$ cargo component build --target wasm32-wasip1
+$ cargo component build --target wasm32-wasip2
 ```
 
 Our newly generated `.wasm` file now lives at the following location:
 
 ```console
-$ file target/wasm32-wasip1/debug/wasm_answer.wasm
-target/wasm32-wasip1/debug/wasm_answer.wasm: WebAssembly (wasm) binary module version 0x1000d
+$ file target/wasm32-wasip2/debug/wasm_answer.wasm
+target/wasm32-wasip2/debug/wasm_answer.wasm: WebAssembly (wasm) binary module version 0x1000d
 ```
 
 We can also use the `--release` option which optimises builds for production:
 
 ```console
-$ cargo component build --target wasm32-wasip1 --release
+$ cargo component build --target wasm32-wasip2 --release
 ```
 
-If we check the sizes of the `debug` and `release`, we see a difference of `1.9M` and `16K`, respectively.
+If we check the sizes of the `debug` and `release`, we see a difference of `2.1M` and `16K`, respectively.
 
 Debug:
 
 ```console
-$ du -mh target/wasm32-wasip1/debug/wasm_answer.wasm
-1.9M	target/wasm32-wasip1/debug/wasm_answer.wasm
+$ du -mh target/wasm32-wasip2/debug/wasm_answer.wasm
+2.1M	target/wasm32-wasip2/debug/wasm_answer.wasm
 ```
 
 Release:
 
 ```console
-$ du -mh target/wasm32-wasip1/release/wasm_answer.wasm
-16K	target/wasm32-wasip1/release/wasm_answer.wasm
+$ du -mh target/wasm32-wasip2/release/wasm_answer.wasm
+16K	target/wasm32-wasip2/release/wasm_answer.wasm
 ```
 
 ## How Invoke Works: A Practical Example
@@ -189,7 +189,7 @@ $ wasmtime run --invoke 'initialize()' foo.wasm
 Back to our `get-answer()` example:
 
 ```console
-$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
+$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip2/debug/wasm_answer.wasm
 ```
 
 You will notice that the above `get-answer()` function call does not pass in any arguments. Let's discuss how to represent the arguments passed into function calls in a structured way (using WAVE).
@@ -205,7 +205,7 @@ Below are a few additional pointers for constructing your `wasmtime run --invoke
 As shown above, the component's exported function name and mandatory parentheses are contained in one set of single quotes, i.e., `'get-answer()'`:
 
 ```console
-$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
+$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip2/release/wasm_answer.wasm
 ```
 
 The result from our correctly typed command above is as follows:
@@ -235,7 +235,7 @@ Let's wrap this article up with a recap to crystallize your knowledge.
 
 ### Wasm Modules
 
-If we are not using the component model and just creating a binary executable, we use a simple command like `wasmtime run foo.wasm` (**without** WAVE syntax) to execute our the binary executable. This typically applies to modules, which export a `_start` function, or reactor modules, which can optionally export the `wasi:cli/run` interface—standardized to enable consistent execution semantics. 
+If we are not using the component model and just creating a module, we use a simple command like `wasmtime run foo.wasm` (**without** WAVE syntax). This approach typically applies to modules, which export a `_start` function, or reactor modules, which can optionally export the `wasi:cli/run` interface—standardized to enable consistent execution semantics. 
 
 Example of running a Wasm **module** that exports a raw function directly:
 

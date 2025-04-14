@@ -17,21 +17,21 @@ Wasmtime's `run` subcommand has traditionally excelled at running Wasm **modules
 
 If you want to follow along, please install:
 
-* [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases) using `rustup update`),
-* [`cargo`](https://crates.io/crates/cargo) via the `cargo install cargo` command (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo)),
-* [`cargo component`](https://crates.io/crates/cargo-component) via the `cargo install cargo-component` command (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo-component)), and
+* [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases)),
+* [`cargo`](https://crates.io/crates/cargo) (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo)),
+* [`cargo component`](https://crates.io/crates/cargo-component) (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo-component)), and
 * [`wasmtime` CLI](https://docs.wasmtime.dev/cli-install.html) (or use a [precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries)). If already installed, ensure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).
 
 You can check versions using the following commands:
 
 ```console
-$ wasmtime --version
+$ rustc --version
 $ cargo --version
 $ cargo component --version
-$ rustc --version
+$ wasmtime --version
 ```
 
-For `cargo component` to generate a Wasm binary that is compatible with the WASI Preview 1 standard, we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
+For `cargo component` to generate a Wasm binary (`.wasm` file) that is compatible with the WASI Preview 1 standard, we must explicitly `add` the `wasm32-wasip1` target. This ensures that our component adheres to WASI’s system interface for non-browser environments (e.g., file system access, networking):
 
 ```console
 $ rustup target add wasm32-wasip1
@@ -48,7 +48,7 @@ $ cd wasm_answer
 
 If you open the `Cargo.toml` file, you will notice that the `cargo component` command has automatically added some essential configurations.
 
-The `wit-bindgen-rt` dependency (with the `["bitflags"]` feature) under `[dependencies]`, and the crate-type = `["cdylib"]` setting under the `[lib]` section.
+The `wit-bindgen-rt` dependency (with the `["bitflags"]` feature) under `[dependencies]`, and the `crate-type = ["cdylib"]` setting under the `[lib]` section.
 
 Your `Cargo.toml` should now include these entries (as shown in the example below):
 
@@ -159,31 +159,54 @@ $ du -mh target/wasm32-wasip1/release/wasm_answer.wasm
 
 ## How Invoke Works: A Practical Example
 
-Originally, the `wasmtime run` command would take one positional argument (the name of the module) and just run that `.wasm` file:
+The `wasmtime run` command can take one positional argument and just run a `.wasm` or `.wat` file:
 
 ```console
 $ wasmtime run foo.wasm
+$ wasmtime run foo.wat
 ```
 
-The `wasmtime run` command now accepts an optional `--invoke` argument, which can execute the name of an exported function that resides in the (`.wasm`) **component**:
+### Invoke: Wasm Modules
+
+In the case of a Wasm **module** that exports a raw function directly, the `run` command accepts an optional `--invoke` argument, which is the name of an exported raw function (of the **module**) to run:
+
+```sh
+$ wasmtime run --invoke initialize foo.wasm
+```
+
+### Invoke: Wasm Components
+
+In the case of a Wasm **component** that uses typed interfaces (defined by [the component model](https://component-model.bytecodealliance.org/design/components.html)), the `run` command now also accepts the optional `--invoke` argument for calling an exported function of a **component**. 
+
+However, the calling of an exported function of a **component** uses [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/a56e8d3d2a0b754e0465c668f8e4b68bad97590f/crates/wasm-wave#readme)(a human-oriented text encoding of Wasm Component Model values). For example:
+
+```sh
+$ wasmtime run --invoke 'initialize()' foo.wasm
+```
+
+> You will notice the different syntax of `initialize` versus `initialize()` when referring to a **module** versus a **component**, respectively.
+
+Back to our `get-answer()` example:
 
 ```console
 $ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
 ```
 
-You will notice that the above example does not pass any arguments into the `get-answer()` function. Let's discuss how to represent the values passed into function calls in a structured way.
+You will notice that the above `get-answer()` function call does not pass in any arguments. Let's discuss how to represent the arguments passed into function calls in a structured way (using WAVE).
 
 ## Wasm Value Encoding (WAVE)
 
-Transferring and invoking complex argument data via the command line is challenging, especially with Wasm components that use diverse value types. To simplify this, Wasm Value Encoding ([WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md)) was introduced offering a concise way to represent structured values directly in the CLI.
+Transferring and invoking complex argument data via the command line is challenging, especially with Wasm components that use diverse value types. To simplify this, Wasm Value Encoding ([WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md)) was introduced; offering a concise way to represent structured values directly in the CLI. WAVE provides a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values; designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). 
 
-[WAVE](https://github.com/bytecodealliance/wasm-tools/blob/main/crates/wasm-wave/README.md) provides a standard way to encode function calls and/or results. WAVE is a human-oriented text encoding of Wasm Component Model values and is designed to be consistent with the [WIT IDL format](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). 
-
-Below we provide a few additional pointers for constructing your `wasmtime run --invoke` commands using WAVE.
+Below are a few additional pointers for constructing your `wasmtime run --invoke` commands using WAVE.
 
 ## Quotes
 
-The exported function's name and mandatory exported function's parentheses must all be enclosed in one set of single quotes, i.e. `'get-answer()'`.
+As shown above, the component's exported function name and mandatory parentheses are contained in one set of single quotes, i.e., `'get-answer()'`:
+
+```console
+$ wasmtime run --invoke 'get-answer()' target/wasm32-wasip1/debug/wasm_answer.wasm
+```
 
 The result from our correctly typed command above is as follows:
 
@@ -193,22 +216,20 @@ The result from our correctly typed command above is as follows:
 
 ## Parentheses
 
-Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced. If your function takes a string argument, ensure that you envelop your string in double quotes (**inside the parentheses**). For example:
+Parentheses after the exported function's name are mandatory. The presence of the parenthesis `()` signifies function invocation, as opposed to the function name just being referenced. If your function takes a string argument, ensure that you contain your string in double quotes (inside the parentheses). For example:
 
 ```console
 $ wasmtime run --invoke 'initialize("hello")' foo.wasm
 ```
 
-If your exported function takes more than one argument, you will need to separate each argument with a single comma `,` as shown below:
+If your exported function takes more than one argument, ensure that each argument is separated using a single comma `,` as shown below:
 
 ```console
 $ wasmtime run --invoke 'initialize("Pi", 3.14)' foo.wasm
 $ wasmtime run --invoke 'add(1, 2)' foo.wasm
 ```
 
-# Conclusion
-
-## Wasm Modules vs. Wasm Components
+## Recap: Wasm Modules versus Wasm Components
 
 Let's wrap this article up with a recap to crystallize your knowledge.
 

@@ -214,7 +214,7 @@ However, the calling of an exported function of a **component** uses [WAVE](http
 $ wasmtime run --invoke 'initialize()' foo.wasm
 ```
 
-> You will notice the different syntax of `initialize` versus `initialize()` when referring to a **module** versus a **component**, respectively.
+> You will notice the different syntax of `initialize` versus `'initialize()'` when referring to a **module** versus a **component**, respectively.
 
 Back to our `get-answer()` example:
 
@@ -292,4 +292,4 @@ For more information, visit the [cli-options section](https://docs.wasmtime.dev/
 
 The addition of support for the run `--invoke` feature [for components](https://github.com/bytecodealliance/wasmtime/pull/10054) allows users to specify and execute exported functions from a Wasm component. This enables greater flexibility for testing, debugging, and integration. We now have the ability to perform the execution of arbitrary exported functions directly from the command line, this feature opens up a world of possibilities for integrating Wasm into modern development pipelines.
 
-**This evolution from monolithic Wasm modules to composable, CLI-friendly components exemplifies the versatility and power of WebAssembly in real-world scenarios.**
+**This evolution from monolithic Wasm modules to composable, CLI-friendly components exemplifies the versatility and power of Wasm in real-world scenarios.**

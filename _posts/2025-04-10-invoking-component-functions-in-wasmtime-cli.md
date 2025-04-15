@@ -13,7 +13,7 @@ This article walks through building a Wasm component in Rust and using `wasmtime
 
 Wasmtime's `run` subcommand has traditionally supported running Wasm modules as well as invoking that **module**'s exported function. However, with the evolution of the Wasm Component Model, this article focuses on a newer capability; creating a component that exports a function and then demonstrating how to invoke that **component**'s exported function.
 
-By the end of this article, you’ll be ready to create Wasm components and orchestrate their exported component functions to improve your workflow's efficiency and promote reuse. Examples include:
+By the end of this article, you’ll be ready to create Wasm components and orchestrate their exported component functions to improve your workflow's efficiency and promote reuse. Potential examples include:
 
 * Shell Scripting: Embed Wasm logic directly into Bash or Python scripts for seamless automation.
 * CI/CD Pipelines: Validate components in GitHub Actions, GitLab CI, or other automation tools without embedding them in host applications.
@@ -93,13 +93,53 @@ wasm_answer
     └── world.wit
 ```
 
-Next, we add a `get_answer` function in the `src/lib.rs` file:
+## WIT
+
+If we open the `wit/world.wit` file, that `cargo component` created for us, we can see that `cargo component` generates a minimal `world.wit` that exports a raw function:
+
+```wit
+package component:wasm-answer;
+
+/// An example world for the component to target.
+world example {
+    export hello-world: func() -> string;
+}
+```
+
+We can simply adjust the `export` line (as shown below):
+
+```wit
+package component:wasm-answer;
+
+/// An example world for the component to target.
+world example {
+    export get-answer: func() -> u32;
+}
+```
+
+> **But, instead, let's use an interface to export our function!**
+
+While the above approach works, the [recommended best practice](https://github.com/bytecodealliance/component-docs/blob/main/component-model/examples/tutorial/wit/adder/world.wit) is to **wrap related functions inside an interface, which you then export from your world**. This is more modular, extensible, and aligns with how the Wasm Interface Type (WIT) format is used in multi-function or real-world components. Let's update the `wit/world.wit` file as follows:
+
+```wit
+package component:wasm-answer;
+
+interface answer {
+    get-answer: func() -> u32;
+}
+
+world example {
+    export answer;
+}
+```
+
+Next, we update our `src/lib.rs` file accordingly, by pasting in the following Rust code:
 
 ```rust
 #[allow(warnings)]
 mod bindings;
 
-use bindings::Guest;
+use bindings::exports::component::wasm_answer::answer::Guest;
 
 struct Component;
 
@@ -110,18 +150,6 @@ impl Guest for Component {
 }
 
 bindings::export!(Component with_types_in bindings);
-```
-
-## WIT
-
-Now, we need to open the `wit/world.wit` file, that `cargo component` created for us, and slightly modify it for our use case. Add the following content to the `wit/world.wit` file:
-
-```wit
-package component:wasm-answer;
-
-world example {
-    export get-answer: func() -> u32;
-}
 ```
 
 Now, let's create the Wasm component with our exported `get_answer()` function:
@@ -178,7 +206,7 @@ $ wasmtime run --invoke initialize foo.wasm
 
 ### Invoke: Wasm Components
 
-In the case of a Wasm **component** that uses typed interfaces (defined [in WIT](https://component-model.bytecodealliance.org/design/wit.html), in concert with [the component model](https://component-model.bytecodealliance.org/design/components.html)), the `run` command now also accepts the optional `--invoke` argument for calling an exported function of a **component**.
+In the case of a Wasm **component** that uses typed interfaces (defined [in WIT](https://component-model.bytecodealliance.org/design/wit.html), in concert with [the Component Model](https://component-model.bytecodealliance.org/design/components.html)), the `run` command now also accepts the optional `--invoke` argument for calling an exported function of a **component**.
 
 However, the calling of an exported function of a **component** uses [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/a56e8d3d2a0b754e0465c668f8e4b68bad97590f/crates/wasm-wave#readme)(a human-oriented text encoding of Wasm Component Model values). For example:
 
@@ -240,7 +268,7 @@ Let's wrap this article up with a recap to crystallize your knowledge.
 
 ### Earlier Wasmtime Run Support for Modules
 
-If we are not using the component model and just creating a module, we use a simple command like `wasmtime run foo.wasm` (**without** WAVE syntax). This approach typically applies to modules, which export a `_start` function, or reactor modules, which can optionally export the `wasi:cli/run` interface—standardized to enable consistent execution semantics. 
+If we are not using the Component Model and just creating a module, we use a simple command like `wasmtime run foo.wasm` (**without** WAVE syntax). This approach typically applies to modules, which export a `_start` function, or reactor modules, which can optionally export the `wasi:cli/run` interface—standardized to enable consistent execution semantics. 
 
 Example of running a Wasm **module** that exports a raw function directly:
 
@@ -250,7 +278,7 @@ $ wasmtime run --invoke initialize foo.wasm
 
 ### Wasmtime Run Support for Components
 
-Now that Wasm is evolving beyond simple modules to embrace the Wasm Component Model, developers have more granular control over the execution and composition of individual components. Wasm component that use the WebAssembly Interface Types (WIT) can now use the `wasmtime run` command with the optional `--invoke` argument to call their exported function from their component (**with** [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-wave)).
+As Wasm evolves with the Component Model, developers gain fine-grained control over component execution and composition. Components using WIT can now be run with `wasmtime run`, using the optional `--invoke` argument to call exported functions (**with** [WAVE](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-wave)).
 
 Example of running a Wasm **component** that exports a function:
 

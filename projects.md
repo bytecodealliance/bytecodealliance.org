@@ -10,29 +10,69 @@ title: Projects
 
 ## Bytecode Alliance Projects
 
-An essential way the Bytecode Alliance pursues its mission is to identify and support projects that align with its vision for the evolution of WebAssembly.  Hosting such projects allows the Alliance to contribute greater attention and technical oversight both directly and through collaborative participation from its member organizations.  Requirements for and recognition of adopted projects are managed by the Alliance's Technical Steering Committee per its [charter](https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md), and approved by the Board.
+An essential way the Bytecode Alliance pursues its mission is to identify and support projects that align with its vision for the evolution of WebAssembly. Hosting such projects allows the Alliance to contribute greater attention and technical oversight both directly and through collaborative participation from its member organizations.  
 
-## Our Current Projects
+Adopted projects may be designated **Core** or **Hosted** projects based on their adherence to the [Core](https://github.com/bytecodealliance/governance/blob/main/templates/projects/proposal-core-project.md) or [Hosted](https://github.com/bytecodealliance/governance/blob/main/templates/projects/proposal-hosted-project.md) project requirements. Requirements for and recognition of adopted projects are managed by the Alliance's Technical Steering Committee per its [charter](https://github.com/bytecodealliance/governance/blob/main/TSC/charter.md), and approved by the Board. A complete [repository of active and archived Bytecode Alliance projects](https://github.com/bytecodealliance/governance/tree/main/projects) is maintained on GitHub. 
 
-<h4>Wasmtime</h4>
-[Wasmtime](https://wasmtime.dev) is a fast, secure and standards compliant runtime for WebAssembly, configurable to support a wide range of deployment environments and which provides a rich set of APIs for interacting with that host environment through the WASI standard.  Wasmtime serves as the base layer for other hosts.
-<h4>Cranelift</h4>
-[Cranelift](https://cranelift.dev) is a production-ready low-level retargetable code generator, usable as a back-end for both WebAssembly and non-WebAssembly deployments.  It’s incorporated in Wasmtime for both JIT and AOT compilation, and is also used as an experimental backend for the Rust compiler. 
-<h4>WAMR</h4>
-The WebAssembly Micro Runtime ([WAMR](https://github.com/bytecodealliance/wasm-micro-runtime)) is a lightweight, standalone, interpreter-based WebAssembly runtime with small footprint, high performance and highly configurable features. It is especially well suited for embedded or similarly resource constrained environments (e.g., Internet of Things).
-<h4>Javy</h4>
-[Javy](https://github.com/bytecodealliance/javy) is a JavaScript-to-WebAssembly toolchain designed to execute JavaScript on WebAssembly. Based on  the QuickJS JavaScript engine, it prioritizes generating compact and efficient WebAssembly modules.
+### Project security
+
+The Bytecode Alliance maintains an active security management and monitoring posture across all of its projects. If you think you have found a security issue in a Bytecode Alliance project or would like to know more, please consult our [Security Policy]({{ site.baseurl }}/security) for details on reporting, disclosure, and remediation.
+
+## Core projects
+
+<div>
+    {% comment %}Assign projects from list in _data/projects.yml with status value "core" and active value "true"{% endcomment %}
+    {% assign core = site.data.projects | where:"status", "core" %}
+    {% assign core_active = core | where: "active", "true" %}
+    {% comment %}Loop through projects in "core" variable{% endcomment %}
+    {% for project in core_active %}
+    <div>
+            <div>
+                <h3><a href="{{ project.repo }}">{{ project.name }}</a></h3>
+                  {{ project.description }}
+                  <p></p>
+                  <ul class="project-list"><li><b>GitHub</b>: <a href="{{ project.repo }}">{{ project.repo }}</a></li>
+                  {% if project.site %}
+                     <li><b>Website</b>: <a href="{{ project.site }}">{{ project.site }}</a></li>
+                  {% endif %}
+                  {% if project.docs %}
+                     <li><b>Docs</b>: <a href="{{ project.docs }}">{{ project.docs }}</a></li>
+                  {% endif %}
+                  </ul><br>
+            </div>
+            {% endfor %}
+    </div>
 </div>
-</div>
-</section>
+
+## Hosted projects
+
+<div>
+    {% comment %}Assign projects from list in _data/projects.yml with active value "true" to active variable{% endcomment %}
+    {% assign hosted = site.data.projects | where:"status", "hosted" %}
+    {% assign hosted_active = hosted | where:"active", "true" %}
+    {% comment %}Loop through projects in active variable{% endcomment %}
+    {% for project in hosted_active %}
+    <div>
+            <div>
+                <h3><a href="{{ project.repo }}">{{ project.name }}</a></h3>
+                  {{ project.description }}
+                  <p></p>
+                  <ul class="project-list"><li><b>GitHub</b>: <a href="{{ project.repo }}">{{ project.repo }}</a></li>
+                  {% if project.site %}
+                     <li><b>Website</b>: <a href="{{ project.site }}">{{ project.site }}</a></li>
+                  {% endif %}
+                  {% if project.docs %}
+                     <li><b>Docs</b>: <a href="{{ project.docs }}">{{ project.docs }}</a></li>
+                  {% endif %}
+                  </ul><br>
+            </div>
+            {% endfor %}
+    </div>
+
 
 <section>
     <div class="container w-container">
         <div class="width-container" markdown="1">
-
-## Project Security
-
-The Bytecode Alliance maintains an active security management and monitoring posture across all of its projects.  If you think you have found a security issue in a Bytecode Alliance project or would like to know more, please consult our [Security Policy]({{ site.baseurl }}/security) for details on reporting, disclosure, and remediation.
 
 </div>
 </div>

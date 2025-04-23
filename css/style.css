@@ -170,6 +170,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
   text-align: left;
 }
 
+.project-list {
+  font-size: 0.8em;
+}
 
 #membership nav a[href="/membership"] {
   background: #387E89;

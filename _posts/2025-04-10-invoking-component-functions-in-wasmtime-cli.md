@@ -1,7 +1,7 @@
 ---
 title: "Running WebAssembly (Wasm) Components From the Command Line"
 author: "Tim McCallum"
-date: "2025-04-10"
+date: "2025-04-25"
 github_name: "tpmccallum"
 excerpt_separator: <!--end_excerpt-->
 ---

@@ -1,11 +1,11 @@
 ---
 title: "Running WebAssembly (Wasm) Components From the Command Line"
 author: "Tim McCallum"
-date: "2025-04-25"
+date: "2025-05-21"
 github_name: "tpmccallum"
 excerpt_separator: <!--end_excerpt-->
 ---
-Wasmtime now supports invoking Wasm component exports directly from the command line with the new `--invoke` flag. 
+Wasmtime's 33.0.0 release supports invoking Wasm component exports directly from the command line with the new `--invoke` flag. 
 This article walks through building a Wasm component in Rust and using `wasmtime run --invoke` to execute specific functions (enabling powerful workflows for scripting, testing, and integrating Wasm into modern development pipelines).
 <!--end_excerpt-->
 
@@ -28,7 +28,7 @@ If you want to follow along, please install:
 * [Rust](https://www.rust-lang.org/tools/install) (if you already have Rust installed, make sure you are on [the latest version](https://github.com/rust-lang/rust/releases)),
 * [`cargo`](https://crates.io/crates/cargo) (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo)),
 * [`cargo component`](https://crates.io/crates/cargo-component) (if already installed, please make sure you are on [the latest version](https://crates.io/crates/cargo-component)), and
-* [`wasmtime` CLI](https://docs.wasmtime.dev/cli-install.html) (or use a [precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries)). If already installed, ensure you are using [the latest version](https://github.com/bytecodealliance/wasmtime/releases).
+* [`wasmtime` CLI](https://docs.wasmtime.dev/cli-install.html) (or use a [precompiled binary](https://docs.wasmtime.dev/cli-install.html#download-precompiled-binaries)). If already installed, ensure you are using [v33.0.0](https://github.com/bytecodealliance/wasmtime/releases) or newer.
 
 You can check versions using the following commands:
 

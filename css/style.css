@@ -179,10 +179,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
   text-decoration: underline;
 }
 
-#site-nav ul li.github-link a {
-  padding: 4px 12px;
-}
-#site-nav ul li.zulip-link a {
+#site-nav ul li.github-link a,
+#site-nav ul li.zulip-link a,
+#site-nav ul li.calendar-link a {
   padding: 4px 12px;
 }
 
@@ -218,10 +217,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
   filter: none;
 }
 
-#site-nav .github-link span {
-  display: none;
-}
-#site-nav .zulip-link span {
+#site-nav .github-link span,
+#site-nav .zulip-link span,
+#site-nav .calendar-link span {
   display: none;
 }
 
@@ -284,27 +282,16 @@ body[id^="posts-"] nav a[href^="/articles"] {
   }
 
   #site-nav ul li,
-  #site-nav ul li.github-link {
+  #site-nav ul li.github-link,
+  #site-nav ul li.zulip-link,
+  #site-nav ul li.calendar-link {
     position: relative;
     float: none;
     padding: 10px 0 10px 34px;
     border-bottom: 1px solid #f2f2f2;
-  }
-  #site-nav ul li.github-link {
     left: -24px;
     top: 0;
   }
-  #site-nav ul li.zulip-link {
-    position: relative;
-    float: none;
-    padding: 10px 0 10px 34px;
-    border-bottom: 1px solid #f2f2f2;
-  }
-  #site-nav ul li.zulip-link {
-    left: -24px;
-    top: 0;
-  }
-
 
   #site-nav ul li a {
     margin: 0;
@@ -312,7 +299,7 @@ body[id^="posts-"] nav a[href^="/articles"] {
     border-bottom: none !important;
   }
 
-  #site-nav .github .zulip {
+  #site-nav .github .zulip .calendar {
     position: relative;
     top: -2px;
     left: -6px;
@@ -320,10 +307,9 @@ body[id^="posts-"] nav a[href^="/articles"] {
     height: 20px;
   }
 
-  #site-nav .github-link span {
-    display: inline;
-  }
-  #site-nav .zulip-link span {
+  #site-nav .github-link span,
+  #site-nav .zulip-link span,
+  #site-nav .calendar-link span {
     display: inline;
   }
 

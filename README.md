@@ -41,8 +41,8 @@ We welcome contributions to improve the website! To get started:
 
 1. **Fork this repository**: Create your own copy of the repository.
 2. **Clone the repository**: Use `git clone` to copy it to your local machine.
-3. **Set up your environment**: Follow the setup instructions in [`/.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
-4. **Submit a pull request**: Push your changes and open a pull request to the `main` branch.
+3. **Set up your environment**: Follow the setup instructions in our [CONTRIBUTION GUIDE](.github/CONTRIBUTING.md).
+4. **Submit a pull request**: Push your changes and open a pull request to the `gh-pages` branch.
 
 Please ensure all contributions adhere to our [Code of Conduct](.github/ORG_CODE_OF_CONDUCT.md).
 

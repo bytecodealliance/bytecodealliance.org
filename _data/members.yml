@@ -35,11 +35,6 @@
   homepage: https://cosmonic.com
   active: true
 
-- name: DFINITY
-  logo: dfinity.png
-  homepage: https://dfinity.org
-  active: true
-
 - name: Docker
   logo: docker.png
   homepage: https://docker.com
@@ -65,11 +60,6 @@
   homepage: https://www.futurewei.com
   active: true
 
-- name: Infinyon
-  logo: infinyon.svg
-  homepage: https://infinyon.com
-  active: true
-
 - name: Igalia
   logo: igalia.png
   homepage: https://www.igalia.com
@@ -80,9 +70,19 @@
   homepage: https://www.imec-int.com/en
   active: true
 
+- name: InfinyOn
+  logo: infinyon.svg
+  homepage: https://infinyon.com
+  active: false
+
 - name: Intel
   logo: intel.svg
   homepage: https://www.intel.com
+  active: true
+
+- name: DFINITY
+  logo: internet-computer-dfinity.png
+  homepage: https://internetcomputer.org/
   active: true
 
 - name: JAF Labs
@@ -103,6 +103,11 @@
 - name: Midokura
   logo: midokura.png
   homepage: https://www.midokura.com
+  active: true
+
+- name: Mimic
+  logo: mimic.png
+  homepage: https://www.mimic.com
   active: true
 
 - name: Mozilla
@@ -143,7 +148,7 @@
 - name: SingleStore
   logo: singlestore.svg
   homepage: https://www.singlestore.com
-  active: true
+  active: false
 
 - name: StackBlitz
   logo: stackblitz.svg

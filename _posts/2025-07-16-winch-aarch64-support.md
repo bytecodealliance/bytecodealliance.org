@@ -21,7 +21,7 @@ Embedders can
 Wasmtime to use either [Cranelift](https://cranelift.dev/) or
 [Winch](https://github.com/bytecodealliance/wasmtime/tree/main/winch)
 as the Wasm compiler depending on the use-case: Cranelift is an
-optimizing compiler aiming to generate fast enough code. Winch is a
+optimizing compiler aiming to generate fast code. Winch is a
 'baseline' compiler, aiming for fast compilation and low-latency
 startup.
 

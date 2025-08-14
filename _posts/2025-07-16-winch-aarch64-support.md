@@ -1,7 +1,7 @@
 ---
 title: "Wasmtime 35 Brings AArch64 Support in Winch"
 author: "Saúl Cabrera"
-date: "2025-07-16"
+date: "2025-08-14"
 github_name: "saulecabrera"
 excerpt_separator: <!--end_excerpt-->
 ---

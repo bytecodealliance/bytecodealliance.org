@@ -180,6 +180,15 @@
   status: hosted
   labels: []
 
+- name: tree-sitter-wit
+  description: WebAssembly Interface Types (WIT) grammar for tree-sitter
+  repo: https://github.com/bytecodealliance/tree-sitter-wit
+  site:
+  docs: https://docs.rs/tree-sitter-wit
+  active: true
+  status: hosted
+  labels: [dev-tools]
+
 - name: VSCode-WIT
   description: A Visual Studio Code extension to recognize and highlight the WebAssembly Interface Type (WIT) Interface Definition Language (IDL).
   repo: https://github.com/bytecodealliance/vscode-wit
@@ -414,4 +423,11 @@
   status: hosted
   labels: [protocol]
 
-
+- name: wstd
+  description: An async Rust standard library for Wasm Components and WASI 0.2
+  repo: https://github.com/bytecodealliance/wstd
+  site:
+  docs: https://docs.rs/wstd
+  active: true
+  status: hosted
+  labels: [rust] 

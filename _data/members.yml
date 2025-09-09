@@ -30,6 +30,11 @@
   homepage: https://cisco.com
   active: false
 
+- name: Copia Wealth Studios
+  logo: copia-wealth-studios.png
+  homepage: https://copiawealthstudios.com
+  active: true
+
 - name: Cosmonic
   logo: cosmonic.png
   homepage: https://cosmonic.com

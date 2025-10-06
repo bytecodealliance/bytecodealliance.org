@@ -50,6 +50,11 @@
   homepage: https://embark-studios.com
   active: false
 
+- name: Endor
+  logo: endor.png
+  homepage: https://endor.dev
+  active: true
+
 - name: Fastly
   logo: fastly.svg
   homepage: https://www.fastly.com

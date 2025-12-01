@@ -134,7 +134,7 @@ world proxy {
 }
 ````
 
-The above forms the basis for WASI Preview 2’s standardized interfaces. All the interfaces used by the CLI and HTTP-Proxy worlds will need to have moved to at least Phase 3 by the WASI Sub Group before Preview 2 is officially approved by the WASI Subgroup. Please find more information at [WASI Proposals](https://github.com/WebAssembly/WASI/blob/main/Proposals.md).
+The above forms the basis for WASI Preview 2’s standardized interfaces. All the interfaces used by the CLI and HTTP-Proxy worlds will need to have moved to at least Phase 3 by the WASI Sub Group before Preview 2 is officially approved by the WASI Subgroup. Please find more information at [WASI Proposals](https://github.com/WebAssembly/WASI/blob/main/docs/Proposals.md).
 
 In order to advance WASI Preview 2’s development to stable, we will need to provide documentation, a complete test suite and framework, and two different host implementations:
 

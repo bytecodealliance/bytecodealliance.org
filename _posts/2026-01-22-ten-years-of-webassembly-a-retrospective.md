@@ -24,7 +24,7 @@ PNaCl placed the program's call stack in its own memory space&mdash;a reasonable
 
 Asm.js took a different approach, which Dan Gohman&mdash;then at Mozilla&mdash;describes as a "trusted call stack," where compiled code and JavaScript could share the same stack. 
 
-"That means Asm.js was able to kind of coexist with JavaScript," he says. "You can call into JavaScript, and JavaScript can call into you." This design decision&mdash;later inherited by WebAssembly&mdash;would prove foundational, enabling everything from seamless browser integration to the Component Model's vision of calling across isolation boundaries.
+"That means Asm.js was able to kind of coexist with JavaScript," he says. "You can call into JavaScript, and JavaScript can call into you." This design decision&mdash;later inherited by WebAssembly&mdash;would prove foundational, enabling everything from seamless browser integration to calling functions across isolation boundaries in the Component Model.
 
 ## "We're going to tell each other's managers that the other one's on board."
 

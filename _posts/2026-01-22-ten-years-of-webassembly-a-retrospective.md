@@ -114,7 +114,7 @@ WASI 0.3 is on the horizon in 2026, bringing native async and cooperative thread
 
 Titzer is now Principal Researcher in the Software and Societal Systems Department at Carnegie Mellon, where he has turned his attention to embedded systems and artificial intelligence&mdash;two domains where WebAssembly's core properties might prove transformative. He's been working on projects integrating WebAssembly into industrial controllers and cyber-physical systems. 
 
-"[Industrial automation companies] have the mobile code problem," he explains, "and at its core, if Wasm solved any problem, it's running untrusted mobile code." The same principle applies to sandboxing AI-generated applications. "You've got AI generating code&mdash;who knows what it does? Do you trust this code? No." 
+"[Industrial automation companies] have the mobile code problem," he explains, referring to [software that may be transmitted across a network and then executed on a remote machine](https://owasp.org/www-community/vulnerabilities/Unsafe_Mobile_Code). "At its core, if Wasm solved any problem, it's running untrusted mobile code." The same principle applies to sandboxing AI-generated applications. "You've got AI generating code&mdash;who knows what it does? Do you trust this code? No." 
 
 Bastien agrees. "AI coding agents are are pretty insecure right now, especially third-party plugins. Forget just injection, right? Like, I'm going to run a bunch of code I don't trust. Wasm is a pretty interesting fit." 
 

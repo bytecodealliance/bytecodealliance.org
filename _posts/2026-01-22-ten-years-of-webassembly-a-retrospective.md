@@ -62,7 +62,7 @@ This writer has certainly used the "neither web nor assembly" line more than onc
 
 With the Chrome and Firefox teams on the same page, the co-designers turned to the teams at Apple and Microsoft. 
 
-Microsoft's Chakra team, which powered the Edge browser's JavaScript engine, had already implemented Asm.js optimizations&mdash;Wagner had personally relicensed Mozilla source code to make adoption easier. After some "intense Q&A" (in Wagner's words), the Chakra team got on board. At Apple, JavaScriptCore team lead Phil Pizlo was instrumental in securing buy-in.
+Microsoft's Chakra team, which powered the Edge browser's JavaScript engine, had already implemented Asm.js optimizations&mdash;Wagner had personally relicensed Mozilla source code to make adoption easier. After some "intense Q&A" (in Wagner's words), the Chakra team got on board. At Apple, JavaScriptCore team lead Fil Pizlo was instrumental in securing buy-in.
 
 The four browser engines&mdash;Mozilla's SpiderMonkey, Google's V8, Microsoft's Chakra, and Apple's JavaScriptCore&mdash;would ship WebAssembly support within months of each other. Bastien, who chaired the WebAssembly Community Group during this period, helped set up the organizational structure and operating pace for the W3C standardization process. Before Wagner's first public commit, the team hashed out the basic shape of the project in a shared Google Doc. Wagner then transcribed those agreements into public markdown files. 
 

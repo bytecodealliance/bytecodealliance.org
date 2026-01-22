@@ -98,7 +98,7 @@ The design space was suddenly vast.
 
 Gohman, who went on to lead much of the WASI design work, recalls the early days as intimidating. "You add WASI to the mix and it's like, now we're going to add APIs to everything," he says. "Graphics, networking, input devices&mdash;everything you can do from a browser, but also now we're in servers too. We're going to talk about databases. Name an API in the world and it's in scope for WASI."
 
-The challenge was compounded by the need to design cross-language APIs without the scaffold of existing standards. Should WASI present a C-style interface? A JavaScript-style one? An RPC protocol? The answer, eventually, was none of the above: the team developed [WebAssembly Interface Type (WIT)](https://component-model.bytecodealliance.org/design/wit.html), an interface definition language that could generate idiomatic bindings for any target language. 
+The challenge was compounded by the need to design cross-language APIs without the scaffold of existing standards. Should WASI present a C-style interface? A JavaScript-style one? An RPC protocol? The answer, eventually, was none of the above: the team developed [WebAssembly Interface Type (WIT)](https://component-model.bytecodealliance.org/design/wit.html), an interface definition language that can generate idiomatic bindings for any target language. 
 
 In March 2019, Mozilla [announced WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/) and caught the attention of Solomon Hykes, creator of Docker. Hykes famously posted on Twitter: 
 

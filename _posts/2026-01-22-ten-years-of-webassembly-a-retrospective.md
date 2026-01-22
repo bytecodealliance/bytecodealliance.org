@@ -90,7 +90,7 @@ Gaming had been part of the conversation from the beginning&mdash;early demos fe
 
 Asm.js answered the hardest questions for the WebAssembly MVP: What is the security model? What features are in scope? When someone proposed adding coroutines or stack switching, the response was simple, according to Gohman: "That's not in Asm.js. Out of scope. End of story." 
 
-The next phase of WebAssembly's evolution offered no such constraints. With the core spec shipped and browsers onboard, attention turned to running WebAssembly outside the browser&mdash;on servers, at the edge, in embedded systems. This meant defining WASI, the [WebAssembly System Interface](https://wasi.dev/), and eventually the [Component Model](https://component-model.bytecodealliance.org/introduction.html). Together, these specifications could allow Wasm binaries to not only run native code, but communicate with one another. These "Wasm components" would be able to securely interoperate regardless of the language they were written in.
+The next phase of WebAssembly's evolution offered no such constraints. With the core spec shipped and browsers onboard, attention turned to running WebAssembly outside the browser&mdash;on servers, at the edge, in embedded systems. This meant defining WASI, the [WebAssembly System Interface](https://wasi.dev/), and eventually the [Component Model](https://component-model.bytecodealliance.org/introduction.html). Together, these specifications could allow Wasm binaries to communicate with one another. These "Wasm components" would be able to securely interoperate regardless of the language they were written in.
 
 The design space was suddenly vast.
 

@@ -94,7 +94,7 @@ The next phase of WebAssembly's evolution offered no such constraints. With the 
 
 The design space was suddenly vast.
 
-"What surprised me most is how hard it was to figure out what to do for Wasm outside the browser, if not copy POSIX," Wagner says. The Unix-style approach was tempting&mdash;just give WebAssembly modules access to files, sockets, and processes in the familiar way. But Wagner saw a trap. "If you just copy POSIX, you're just going to have to reimplement containers but with Wasm on the inside. And that's not that much better than containers."
+"What surprised me most is how hard it was to figure out what to do for Wasm outside the browser, if not copy POSIX," Wagner says. The Unix-style approach was tempting&mdash;just give WebAssembly modules access to files, sockets, and processes in the familiar way. But Wagner saw a trap. "If you just copy POSIX, you're just going to have to reimplement containers but with Wasm on the inside,"  which is not an unambiguous win: it provides portability, but imposes execution overhead.
 
 Gohman, who went on to lead much of the WASI design work, recalls the early days as intimidating. "You add WASI to the mix and it's like, now we're going to add APIs to everything," he says. "Graphics, networking, input devices&mdash;everything you can do from a browser, but also now we're in servers too. We're going to talk about databases. Name an API in the world and it's in scope for WASI."
 

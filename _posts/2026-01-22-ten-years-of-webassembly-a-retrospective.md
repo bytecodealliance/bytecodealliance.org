@@ -20,7 +20,7 @@ Meanwhile, Google was developing [Native Client (NaCl)](https://developer.chrome
 
 JF Bastien was on the Chrome team at the time, where he helped finalize the Armv7 version of NaCl. According to Bastien, NaCl was a secure sandbox, but it wasn't portable, and didn't "fully respect the ethos of the web." 
 
-NaCl and PNaCl used an out-of-process isolation model, which effectively required asynchronous calls. This simplified the security model, but posed challenges for interoperability with JavaScript, and required consensus-building on new APIs for functionality like graphics, audio, and networking. If PNaCl was going to serve as the basis for a multi-browser approach to native code on the web, what standards body would govern the APIs?
+PNaCl placed untrusted code in a separate process from the rest of a web page and its JavaScript&mdash;a reasonable choice for sandboxing, but one that made it difficult for JavaScript to call PNaCl code or vice versa. The connection between PNaCl and the rest of the browser relied on message passing, which required an entirely separate API surface for graphics, audio, and networking. It also forced asynchrony as a programming model, a huge lift to execute successfully. This created obstacles to broader adoption. If PNaCl was going to serve as the basis for a multi-browser approach to native code on the web, what standards body would govern the APIs?
 
 Asm.js took a different approach, which Dan Gohman&mdash;then at Mozilla&mdash;describes as a "trusted call stack," where compiled code and JavaScript could share the same stack. 
 

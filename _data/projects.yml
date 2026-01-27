@@ -14,7 +14,7 @@
   repo: https://github.com/bytecodealliance/cargo-component
   site: 
   docs:
-  active: true
+  active: false
   status: hosted
   labels: [rust]
 

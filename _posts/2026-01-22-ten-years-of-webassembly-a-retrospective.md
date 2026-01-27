@@ -14,7 +14,7 @@ For the ten-year anniversary of the project (well, ten and change), I spoke to m
 
 ## The trusted call stack
 
-In March of 2013, a group of Mozilla engineers including Wagner, Alon Zakai, and David Herman released [Asm.js](http://asmjs.org/). Asm.js defined a subset of the existing JavaScript language that implicitly embeds enough static type information to allow a browser's existing JS engine to achieve much better performance once the optimizer knew to look for it. "Super hacky," in Wagner's words.
+In March of 2013, a group of Mozilla engineers including Wagner, Alon Zakai, and Dave Herman released [Asm.js](http://asmjs.org/). Asm.js defined a subset of the existing JavaScript language that implicitly embeds enough static type information to allow a browser's existing JS engine to achieve much better performance once the optimizer knew to look for it. "Super hacky," in Wagner's words.
 
 Meanwhile, Google was developing [Native Client (NaCl)](https://developer.chrome.com/docs/native-client/) and its successor  [Portable Native Client (PNaCl)](https://chrome.jscn.org/docs/native-client/nacl-and-pnacl/#portable-native-client-pnacl), to sandbox and run native code in Chrome. 
 

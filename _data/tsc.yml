@@ -2,11 +2,6 @@
 # Used to generate the gallery of TSC members on the site About page,
 # including photos based on GitHub avatars.  Also links to TSC
 # members' GitHub profiles for further info.
-- name: Andrew Brown
-  github: abrown
-  title: Elected Delegate
-  office: TSC Chair
-
 - name: Bailey Hayes
   github: ricochet
   title: Elected Delegate
@@ -20,4 +15,4 @@
 - name: Oscar Spencer
   github: ospencer
   title: Elected Delegate
-  office: TSC Director
+  office:

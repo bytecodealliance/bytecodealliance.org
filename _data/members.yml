@@ -18,7 +18,7 @@
 - name: Arm
   logo: arm.svg
   homepage: https://arm.com
-  active: true
+  active: false
 
 - name: Candle
   logo: candle.png

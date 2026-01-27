@@ -122,6 +122,6 @@ Meanwhile, some of Wasm's innovations gleaned outside the browser context may re
 
 Today, WebAssembly runs in billions of users' browsers, as well as edge networks, clouds, and embedded systems. The project has achieved standardization and understated ubiquity. It's almost certainly running in one of your most commonly used apps, on one of your everyday devices, right now. What and where could Wasm be in ten years? The fundamentals of the architecture, going all the way back to Asm.js, stuck a toe in the door of a vast possibility space.
 
-In Gohman's view, WebAssembly represents "one of the few chances that the computing industry has at actually building something truly cloud native." It will take persistence, but for the first time in fifty years, he says, there's a chance to innovate at the boundary between kernel and user space. 
+In Gohman's view, WebAssembly represents "one of the few chances that the computing industry has at actually building an execution environment that's truly cloud native." It will take persistence, but for perhaps the first time in fifty years, he says, there's a chance to innovate at the boundary between kernel and user space.
 
 "It's gonna be a long road," he says. "We're going to build a lot of cool stuff. We're going to have a lot of fun."

@@ -56,7 +56,7 @@ Bastien recalls internal resistance to the name. "We know it's going to be used 
 
 This writer has certainly used the "neither web nor assembly" line more than once, and so did several of the Wasm co-designers I interviewed, but Wagner gently pushes back on the characterization. 
 
-"I disagree on both counts," he says. "An assembly language isn't a well-defined concept. It's just a language that's low-level enough that you can compile your other languages to it, but it's not yet pure machine code. WebAssembly is that&mdash;low-level enough, but not machine code&mdash;so I feel like it *is* assembly. And then people say it's not 'web' because it's being used outside the web. Well, what's the definition of the web? Is it only things in browsers? The W3C paints a much broader picture of the [open web platform](https://www.w3.org/standards/) that I think covers a lot more of the places where WebAssembly runs today and where we want it to run in the future."
+"Setting aside the asm.js path dependency, perhaps 'bytecode' or 'intermediate language' would've been a bit more accurate," he says, "but when people say it's not 'web' because it's being used outside the web... well, what's the definition of the web? Is it only things in browsers? The W3C paints a much broader picture of the [open web platform](https://www.w3.org/standards/) that I think covers a lot more of the places where WebAssembly runs today and where we want it to run in the future."
 
 ## "Ship as fast as you humanly can before this whole coalition falls apart."
 

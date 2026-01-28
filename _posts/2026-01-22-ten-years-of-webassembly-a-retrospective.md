@@ -66,7 +66,7 @@ Microsoft's Chakra team, which powered the Edge browser's JavaScript engine, had
 
 The four browser engines&mdash;Mozilla's SpiderMonkey, Google's V8, Microsoft's Chakra, and Apple's JavaScriptCore&mdash;would ship WebAssembly support within months of each other. Bastien, who chaired the WebAssembly Community Group during this period, helped set up the organizational structure and operating pace for the W3C standardization process. Before Wagner's first public commit, the team hashed out the basic shape of the project in a shared Google Doc. Wagner then transcribed those agreements into public markdown files. 
 
-The formal announcement was coordinated: on June 17, 2015, all four browsers simultaneously released blogs linking to each other. Brendan Eich, then Mozilla CTO, [posted his own blog](https://brendaneich.com/2015/06/from-asm-js-to-webassembly/), giving the project the imprimatur of JavaScript's creator, and riffing on his trademark close to presentations:
+The formal announcement was coordinated: on June 17, 2015, all four browsers simultaneously released blogs linking to each other. Brendan Eich [posted his own blog](https://brendaneich.com/2015/06/from-asm-js-to-webassembly/), giving the project the imprimatur of JavaScript's creator, and riffing on his trademark close to presentations:
 
 > I usually finish with a joke: “Always bet on JS”. I look forward to working “and wasm” into that line — no joke.
 

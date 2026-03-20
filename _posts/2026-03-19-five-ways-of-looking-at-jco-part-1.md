@@ -59,4 +59,4 @@ P3 shim support is in active development, with full WASI P3 support for Node.js 
 
 ## Looking ahead
 
-In the next blog, we’ll take a look at four more ways of thinking about Jco, and break down how you can get involved. In the meantime, if you have questions or want to jump in right away, make sure to join the community on the [Bytecode Alliance Zulip has a `jco` channel](https://bytecodealliance.zulipchat.com/#narrow/stream/409526-jco).
+In the next blog, we’ll take a look at four more ways of thinking about Jco, and break down how you can get involved. In the meantime, if you have questions or want to jump in right away, make sure to join the community on the [Bytecode Alliance Zulip `jco` channel](https://bytecodealliance.zulipchat.com/#narrow/stream/409526-jco).

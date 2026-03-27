@@ -43,7 +43,7 @@
 - name: Docker
   logo: docker.png
   homepage: https://docker.com
-  active: true
+  active: false
 
 - name: Embark Studios
   logo: embark-studios.png
@@ -133,7 +133,7 @@
 - name: Nornor
   logo: nor2.svg
   homepage: https://nor2.io
-  active: true
+  active: false
 
 - name: Rackner
   logo: rackner.svg

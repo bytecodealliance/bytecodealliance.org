@@ -10,9 +10,14 @@
 - name: Till Schneidereit
   github: tschneidereit
   title: Appointed Delegate
-  office:
+  office: TSC Director
 
 - name: Oscar Spencer
   github: ospencer
+  title: Elected Delegate
+  office: TSC Chair
+
+- name: Christof Petig
+  github: cpetig
   title: Elected Delegate
   office:

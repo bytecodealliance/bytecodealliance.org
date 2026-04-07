@@ -41,7 +41,7 @@ The **`jco` CLI** is the amalgamation of JS WebAssembly ecosystem tools into one
 
 ### `jco` transpile
 
-**`jco` transpile** takes any WebAssembly component (written in any language: Rust, Go, Python, C, JavaScript, anything) and converts it into core Wasm modules plus JavaScript glue code that runs in Node.js or any browser with core Wasm support. No native Component Model support required. 
+**`jco` transpile** ([`@bytecodealliance/jco-transpile` on NPM](https://www.npmjs.com/package/@bytecodealliance/jco-transpile) or via the `jco transpile` CLI) takes any WebAssembly component (written in any language: Rust, Go, Python, C, JavaScript, anything) and converts it into core Wasm modules plus JavaScript glue code that runs in Node.js or any browser with core Wasm support. No native Component Model support required. 
 
 Under the hood, this involves "unbundling" the component—decomposing it into its constituent core Wasm modules with the imports and exports they need, then generating the glue code that implements Component Model semantics on top of those.
 

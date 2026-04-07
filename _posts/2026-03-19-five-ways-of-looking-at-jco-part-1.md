@@ -37,7 +37,7 @@ Componentize-js is also in the process of being rewritten to use [`wit-dylib`](h
 
 ### The `jco` CLI
 
-The **`jco` CLI** is the amalgamation of JS WebAssembly ecosystem tools into one user-facing layer. `jco componentize` calls down to componentize-js. But `jco`'s other major capability `jco transpile`operates differently.
+The **`jco` CLI** is the amalgamation of JS WebAssembly ecosystem tools into one user-facing layer. `jco componentize` calls down to `componentize-js`. But `jco`'s other major capability `jco transpile`operates differently.
 
 ### `jco` transpile
 

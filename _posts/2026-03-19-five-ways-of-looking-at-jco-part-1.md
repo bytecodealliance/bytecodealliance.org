@@ -53,7 +53,7 @@ The Rust crate that makes this possible, [**`js-component-bindgen`**](https://gi
 
 ### WASI P2 shims
 
-Jco ships **WASI P2 shim packages**: JavaScript implementations of [WASI (the WebAssembly System Interface](https://github.com/WebAssembly/WASI), the standard set of I/O APIs for Wasm covering filesystem access, HTTP, clocks, randomness, and more) interfaces that let transpiled components call things like `wasi:http` and `wasi:io` from a browser or Node.js environment.
+Jco ships **WASI P2 shim packages** ([`@bytecodealliance/preview2-shim` on NPM](https://www.npmjs.com/package/@bytecodealliance/preview2-shim)): JavaScript implementations of [WASI (the WebAssembly System Interface](https://github.com/WebAssembly/WASI), the standard set of I/O APIs for Wasm covering filesystem access, HTTP, clocks, randomness, and more) interfaces that let transpiled components call things like `wasi:http` and `wasi:io` from a browser or Node.js environment.
 
 ### WASI P3 shims
 

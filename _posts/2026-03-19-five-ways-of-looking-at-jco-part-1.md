@@ -57,7 +57,7 @@ Jco ships **WASI P2 shim packages** ([`@bytecodealliance/preview2-shim` on NPM](
 
 ### WASI P3 shims
 
-P3 shim support is in active development, with full WASI P3 support for Node.js environments imminent in Jco. Browser-side P3 shims are explicitly deferred until the Node.js shims stabilize.
+P3 shim support is in [active development](https://github.com/bytecodealliance/jco/tree/main/packages/preview3-shim), with full WASI P3 support for Node.js environments imminent in Jco. Browser-side P3 shims are explicitly deferred until the Node.js shims stabilize.
 
 ## Looking ahead
 

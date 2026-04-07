@@ -49,7 +49,7 @@ Under the hood, this involves "unbundling" the component—decomposing it into i
 
 ### js-component-bindgen
 
-The Rust crate that makes this possible, [**`js-component-bindgen`**](https://github.com/bytecodealliance/jco/tree/main/crates/js-component-bindgen), handles the heavy lifting of generating correct "lifting and lowering" glue code for every Component Model type and intrinsic based on the WIT contract that you've specified for your component—that is to say, the translation layer that converts between Wasm's binary value representation (a string is a memory pointer plus a byte length) and idiomatic JavaScript types that your code works with.
+The Rust crate that makes this possible, [**`js-component-bindgen`**](https://github.com/bytecodealliance/jco/tree/main/crates/js-component-bindgen) ([`js-component-bindgen` on crates.io](https://crates.io/crates/js-component-bindgen)), handles the heavy lifting of generating correct "lifting and lowering" glue code for every Component Model type and intrinsic based on the WIT contract that you've specified for your component—that is to say, the translation layer that converts between Wasm's binary value representation (a string is a memory pointer plus a byte length) and idiomatic JavaScript types that your code works with.
 
 ### WASI P2 shims
 

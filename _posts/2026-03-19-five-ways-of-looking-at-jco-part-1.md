@@ -33,7 +33,7 @@ At the base is [**StarlingMonkey**](https://github.com/bytecodealliance/Starling
 
 Componentize-js runs the binary through [**Wizer**](https://github.com/bytecodealliance/wizer), a pre-initialization tool. At build time, Wizer executes the component's startup code (and your JS code at global scope) and snapshots the resulting state. The initialization cost is paid once, at build time, not on every instantiation.
 
-Componentize-js is also in the process of being rewritten to use [`wit-dylib`](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wit-dylib) — a relatively new tool Alex Crichton added to `wasm-tools` that significantly simplifies the process of targeting the Component Model from an interpreted language. This rewrite will eliminate a somewhat circular dependency that currently exists in the build (js-component-bindgen, written in Rust, is currently consumed by componentize-js via transpilation, and is also depended on by componentize-js).
+Componentize-js is also in the process of being rewritten to use [`wit-dylib`](https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wit-dylib) — a relatively new tool Alex Crichton added to `wasm-tools` that significantly simplifies the process of targeting the Component Model from an interpreted language. This rewrite will eliminate a somewhat circular dependency that currently exists in the build ([`js-component-bindgen`](https://crates.io/crates/js-component-bindgen), written in Rust, is currently consumed by componentize-js via transpilation, and is also depended on by componentize-js).
 
 ### The `jco` CLI
 

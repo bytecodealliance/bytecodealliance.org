@@ -5,7 +5,7 @@ date: "2026-03-19"
 github_name: "ericgregory"
 excerpt_separator: <!--end_excerpt-->
 ---
-Jco is a ["multi-tool for the JS WebAssembly ecosystem."](https://github.com/bytecodealliance/jco) At the 2026 Bytecode Alliance Plumbers Summit, Technical Steering Committee member Bailey Hayes put it another way: Jco is "like five projects in one."
+Jco ([`@bytecodealliance/jco` on NPM](https://www.npmjs.com/package/@bytecodealliance/jco))is a ["multi-tool for the JS WebAssembly ecosystem."](https://github.com/bytecodealliance/jco) At the 2026 Bytecode Alliance Plumbers Summit, Technical Steering Committee member Bailey Hayes put it another way: Jco is "like five projects in one."
 
 It's certainly a project with many facets—five big ones, arguably! Recognizing what those facets are, and how they fit together, is the key to understanding why Jco matters beyond the JavaScript ecosystem. 
 

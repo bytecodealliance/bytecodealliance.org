@@ -24,7 +24,7 @@ Security is critical to the [mission of the Bytecode Alliance] as well as to the
 * Wasmtime's maintainers audit the project's dependencies using [`cargo vet`].
 * Wasmtime requires continuous fuzzing for all applicable [tier 1] functionality
 * Wasmtime includes [mitigations for Spectre] attacks
-* Wasmtime's Cranelift code generator has been [formally] [verified].
+* Wasmtime's Cranelift code generator has been [formally verified].
 
 [mission of the Bytecode Alliance]: https://bytecodealliance.org/about
 [documented]: https://docs.wasmtime.dev/security.html
@@ -33,8 +33,7 @@ Security is critical to the [mission of the Bytecode Alliance] as well as to the
 [Miri]: https://github.com/rust-lang/miri
 [`cargo vet`]: https://mozilla.github.io/cargo-vet/
 [mitigations for Spectre]: https://docs.wasmtime.dev/security.html#spectre
-[formally]: https://dl.acm.org/doi/10.1145/3617232.3624862
-[verified]: https://dl.acm.org/doi/10.1145/3764383
+[formally verified]: https://dl.acm.org/doi/10.1145/3617232.3624862
 
 ### Discovering and remediating these issues
 

@@ -91,8 +91,6 @@ In addition to everything above, the path to 1.0 will include a sustained docume
 
 The path to 1.0 includes work on several WIT features, based on gaps identified in practice:
 
-- **Stream v2**: The current 0.3.0 HTTP body type requires a complex function signature to represent all the concurrent things that can happen while consuming a request or response: a byte stream, a final result (trailers or error), and a back-channel for the consumer to signal the producer. A generalized stream type would make this pattern readable and reusable across any streaming protocol with state transitions.
-
 - **Optional imports**: Lets a component declare that it only optionally requires a capability. Standard libraries could compile against a minimal host world without forcing every component to unconditionally import files, sockets, and GPU capabilities. This pairs well with the guest C-ABI.
 
 - **Callbacks**: Needed to express DOM APIs like `addEventListener` in WIT.

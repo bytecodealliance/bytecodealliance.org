@@ -97,7 +97,7 @@ The path to 1.0 includes work on several WIT features, based on gaps identified 
 
 - **Resource subtyping**: Lets a resource type (like a DOM Node) extend another (like EventTarget), enabling method reuse without virtual dispatch or complex inheritance semantics.
 
-- **Function subtyping**: Allows WIT interfaces to add parameters, record fields, and variant cases without breaking changes, something that's currently painful in practice.
+- **Function subtyping**: Allows WIT interfaces to add parameters, record fields, and variant cases without having to add new functions or declare a breaking change, something that's currently painful in practice.
 
 - **Parameterized import/export names**: Lets components encode metadata in their import names (for example, which key-value store backend they expect) enabling deployment-time configuration checking rather than runtime surprises.
 

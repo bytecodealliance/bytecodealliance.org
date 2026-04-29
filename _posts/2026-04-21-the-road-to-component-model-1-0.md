@@ -53,7 +53,7 @@ There's also a separate GC ABI option planned, enabling components to pass value
 
 The Component Model can't formally reach 1.0 without native implementation in at least two browser engines. The groundwork for browser implementations is being laid today: `jco`'s `transpile` command already converts any component into equivalent core Wasm and JavaScript glue, making components runnable in any browser without native support. That already works, but native support matters for two reasons:
 
-- **Performance**: Experiments by Ryan Hunt at Mozilla show that a DOM mutation-heavy Wasm VDOM reconciliation loop can get close to a 2x speedup from direct Wasm-to-browser API calls, bypassing the JavaScript glue layer. Real-world gains will vary by workload, but the ceiling is meaningful.
+- **Performance**: [Experiments](https://hacks.mozilla.org/wp-content/uploads/2026/02/Screenshot-2026-02-25-at-2.22.23-PM-1536x1018.png) by Ryan Hunt at Mozilla show that a DOM mutation-heavy Wasm VDOM reconciliation loop can get close to a 2x speedup from direct Wasm-to-browser API calls, bypassing the JavaScript glue layer. Real-world gains will vary by workload, but the ceiling is meaningful.
 
 - **Reach**: Native Component Model support in browsers creates strong incentives for upstream Wasm support across languages, packages, and frameworks, which in turn feeds back into a better developer experience across all platforms where Wasm runs.
 

@@ -95,7 +95,7 @@ The path to 1.0 includes work on several WIT features, based on gaps identified 
 
 - **Callbacks**: Needed to express DOM APIs like `addEventListener` in WIT.
 
-- **Resource subtyping**: Lets a resource type (like a DOM Node) extend another (like EventTarget), enabling method inheritance without virtual dispatch or complex inheritance semantics.
+- **Resource subtyping**: Lets a resource type (like a DOM Node) extend another (like EventTarget), enabling method reuse without virtual dispatch or complex inheritance semantics.
 
 - **Function subtyping**: Allows WIT interfaces to add parameters, record fields, and variant cases without breaking changes, something that's currently painful in practice.
 

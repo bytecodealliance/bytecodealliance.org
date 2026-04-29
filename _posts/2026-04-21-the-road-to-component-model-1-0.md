@@ -31,7 +31,7 @@ Wagner frames the path to 1.0 around five areas of work:
 
 ### 1. ABI improvements
 
-The Component Model's current Application Binary Interface (ABI), the calling convention that governs how components pass data to each other, relies on a function called `cabi_realloc`. When a callee returns a value like a list of strings, the host calls `cabi_realloc` to allocate memory for each element, then copies everything before returning to the caller. This works, but experience has surfaced real friction: heap fragmentation over time, difficulty handling large allocation failures gracefully, and one host-to-guest call per value in a list.
+The Component Model's current Application Binary Interface (ABI), the calling convention that governs how components pass data to each other, relies on a function conventionally called `cabi_realloc`. When a callee returns a value like a list of strings, the host calls `cabi_realloc` to allocate memory for each element, then copies everything before returning to the caller. This works, but experience has surfaced real friction: heap fragmentation over time, difficulty handling large allocation failures gracefully, one host-to-guest call per value in a list, and trouble using custom memory allocators.
 
 One planned change inverts the control flow. Instead of the host eagerly allocating, the callee returns *lazy value handles*: opaque `i32` indices. When the caller is ready to place a value into memory, it calls a static built-in function with the destination address. Because these built-ins are statically known to the compiler, they can be inlined as if they were instructions.
 

@@ -99,7 +99,7 @@ The path to 1.0 includes work on several WIT features, based on gaps identified 
 
 - **Function subtyping**: Allows WIT interfaces to add parameters, record fields, and variant cases without having to add new functions or declare a breaking change, something that's currently painful in practice.
 
-- **Parameterized import/export names**: Lets components encode metadata in their import names (for example, which key-value store backend they expect) enabling deployment-time configuration checking rather than runtime surprises.
+- **Enhanced import/export names**: Lets components import multiple of the same WIT interface with different arbitrary identifiers, enabling deployment-time configuration checking rather than runtime surprises.
 
 - **Getters and setters**: Syntactic sugar for more idiomatic bindings in languages that expect property access patterns. Like constructors and methods, these would be sugar for regular functions with special names that binding generators recognize.
 

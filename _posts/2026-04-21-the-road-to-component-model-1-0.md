@@ -105,7 +105,7 @@ The path to 1.0 includes work on several WIT features, based on gaps identified 
 
 - **Map type**: For producing and consuming idiomatic objects, dictionaries, and associative arrays across languages. (Yordis Prieto is already working on this!)
 
-- **Runtime instantiation**: The ability to instantiate components at runtime, within the Component Model. This is useful for lazy code loading, spawning subcommands, and giving different components different lifetimes. Browsers already support something more powerful in their JavaScript API; this would bring equivalent functionality to the Component Model.
+- **Runtime instantiation**: The ability to instantiate components at runtime, within the Component Model. This is useful for lazy code loading, spawning subcommands, and giving different components different lifetimes. Browsers already support something more powerful in their JavaScript API; this would bring some of this functionality to the Component Model so that producer toolchains could address these use cases in a way that works both inside *and* outside the browser.
 
 Not all of these will land before 1.0: some may come in 1.x releases. Sequencing depends on use cases and available resources.
 

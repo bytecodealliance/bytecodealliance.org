@@ -23,7 +23,7 @@ WASI interfaces are consumed through the Component Model; together they form the
 
 At the Plumbers Summit, Wagner described the relationship between the Component Model and WASI as analogous to a microkernel architecture: the Component Model is the always-present microkernel, providing foundational primitives that run across any host. WASI layers on top like OS services (e.g., networking, storage, graphics) that run as processes on top of the microkernel and may or may not be present on a given device. A browser, for instance, has very strong opinions about what I/O APIs exist; WASI interfaces run there via polyfill. But the Component Model itself can be implemented natively in the browser alongside core WebAssembly, since it only provides computational primitives, not I/O.
 
-In practical terms, the Component Model is already stable. P1 components still work. P2 components still work. The team has been maintaining this stability since P1 using semantic versioning, side-by-side implementations, and Wasm-to-Wasm adapters. That story continues past 1.0. As Wagner put it: "We can start using this stuff now." But *getting* to Component Model 1.0 involves critical work across several important areas.
+In practical terms, the Component Model is already stable. P1 modules still work. P2 components still work. The team has been maintaining this stability since P1 using semantic versioning, side-by-side implementations, and Wasm-to-Wasm adapters. That story continues past 1.0. As Wagner put it: "We can start using this stuff now." But *getting* to Component Model 1.0 involves critical work across several important areas.
 
 ## Five areas of work
 

@@ -5,7 +5,7 @@ date: "2026-04-21"
 github_name: "ericgregory"
 excerpt_separator: <!--end_excerpt-->
 ---
-WASI 0.3.0 is almost here, bringing native async support to the **WebAssembly System Interface (WASI)** and **Component Model**. In this post, we're looking to the *next* big milestone: a stable, formally specified Component Model 1.0.
+WASI P3 is almost here, bringing native async support to the **WebAssembly System Interface (WASI)** and **Component Model**. In this post, we're looking to the *next* big milestone: a stable, formally specified Component Model 1.0.
 
 At February's Bytecode Alliance Plumbers Summit, Luke Wagner and Alex Crichton gave a preview of what the path to a stable 1.0 actually looks like. Last month at [Wasm I/O 2026 in Barcelona](https://wasm.io/), Wagner [expanded on that vision](https://youtu.be/qq0Auw01tH8?si=4Zb2r52SNsAsUtkQ). So let's take a look at where the Component Model is heading.
 
@@ -43,11 +43,11 @@ The transition is designed to be non-breaking: the lazy ABI ships as a new opt-i
 
 Bundled into the same transition are multivalue returns (using Wasm multivalue for return types at the C ABI level) and an error context value in every result's error case, so there's always a standard way for hosts to attach backtraces and debug information.
 
-Sitting alongside the ABI work is a related performance goal: sync-to-sync component-to-component calls with zero overhead. Earlier async state-management flags added meaningful cost even on purely synchronous call paths (Nick Fitzgerald measured roughly 3.5x at the Plumbers Summit). Both the spec-level fixes and the [Wasmtime work](https://github.com/bytecodealliance/wasmtime/pull/13194) to inline the remaining task-state intrinsics have now landed, with cross-module inlining [on by default](https://github.com/bytecodealliance/wasmtime/pull/13214) — closing this gap ahead of 1.0.
-
 There is one significant dependency: LLVM doesn't yet support multivalue at the C ABI level. Getting that upstream may be the longest lead time in this piece of work.
 
 There's also a separate GC ABI option planned, enabling components to pass values via Wasm GC-allocated memory instead of linear memory, and avoiding copies through linear memory for GC-based languages. Nick Fitzgerald has a pre-proposal on this in [Component Model issue 525](https://github.com/WebAssembly/component-model/issues/525).
+
+Sitting alongside the ABI work is a related performance goal: zero overhead on synchronous calls between components. The current implementation manages async task infrastructure across component boundaries via a host call, which (per Nick Fitzgerald's Plumbers Summit measurements) adds roughly 3.5x overhead even on purely synchronous call paths. Some of this has already been addressed at the spec level (the recursion check was removed during P3 development). The remaining work is [planned](https://github.com/bytecodealliance/wasmtime/issues/12311) for after WASI P3 ships, refactoring task state so synchronous adapters allocate a lightweight task on the stack that [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift) (Wasmtime's optimizing code generation backend) can largely optimize away. The goal is to restore the performance profile that synchronous adapters had before component model async support was added.
 
 ### 2. The browser path
 
@@ -113,9 +113,9 @@ Not all of these will land before 1.0: some may come in 1.x releases. Sequencing
 
 Sy Brand presented a deep dive on cooperative threads at the Plumbers Summit, and it's worth noting here that they're implemented at the Component Model level, below the WASI layer. A Rust component using `std::thread::spawn` gets cooperative thread support when it lands, with nothing special needed in WIT.
 
-The implementation is in progress: `wasi-libc` pthreads support is largely done, LLVM patches are under review, and Wasmtime has a functional implementation under a feature flag. Cooperative threads support will ship in a WASI 0.3.x minor release. These advancements also pave the road for shared-everything threads later, since many of the heaviest toolchain lifts for cooperative threads carry over directly.
+The implementation is in progress: `wasi-libc` pthreads support is largely done, LLVM patches are under review, and Wasmtime has a functional implementation under a feature flag. Cooperative threads support will ship in a follow-up WASI P3 minor release. These advancements also pave the road for shared-everything threads later, since many of the heaviest toolchain lifts for cooperative threads carry over directly.
 
-Also shipping in an early 0.3.x minor release is **stream splicing**, the ability to splice one stream directly into another without an intermediate copy. Stream splicing is important for streaming performance, since unnecessary copying through an intermediate buffer is costly on hot paths, and was simply too close to the wire to make 0.3.0.
+Also shipping in an early WASI P3 follow-up release is **stream splicing**, the ability to splice one stream directly into another without an intermediate copy. Stream splicing is important for streaming performance, since unnecessary copying through an intermediate buffer is costly on hot paths, and was simply too close to the wire to make WASI P3 itself.
 
 ## The toolchain view
 

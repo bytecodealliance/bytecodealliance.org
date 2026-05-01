@@ -153,7 +153,7 @@
 - name: Siemens
   logo: siemens.svg
   homepage: https://www.siemens.com
-  active: true
+  active: false
 
 - name: SingleStore
   logo: singlestore.svg

@@ -132,7 +132,7 @@ For examples of this, take a look at Java's [`HandlerInterceptor`], gRPC's [`Int
 
 [Go middleware suite]: https://github.com/grpc-ecosystem/go-grpc-middleware
 
-In fact, there's an entire architecture pattern that platform maintainers leverage to workaround this pervasive issue called [sidecars]. This pattern decouples the application from the platform, which allows the sidecar to be updated independent of the application (this even works for polyglot services). However, sidecars have been proven to bear a significant cost [[1], [2]].
+In fact, there's an entire architecture pattern called [sidecars] that platform maintainers leverage to work around this pervasive issue. The sidecar pattern decouples the application from the platform, which allows the sidecar to be updated independent of the application (this even works for polyglot services). However, sidecars have been proven to incur a significant cost [[1], [2]].
 
 [sidecars]: https://learn.microsoft.com/en-us/azure/architecture/patterns/sidecar
 [1]: https://www.cerbos.dev/blog/whats-so-bad-about-sidecars-anyway

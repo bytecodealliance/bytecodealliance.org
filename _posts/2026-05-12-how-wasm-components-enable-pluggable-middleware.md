@@ -204,4 +204,4 @@ Once these adapter types are all supported, there are plans to:
 2. demonstrate how to reuse middlewares from other languages (mentioned above)
 3. demonstrate how to virtualize interfaces
 4. implement developer tooling such as record / replay and fuzzers
-
+If you want to try interposing on your own composition, kick the tires on `splicer` and open an issue with what you find: the read/write adapter, the builtins suite, and the tooling layer are all places contributors can plug in.

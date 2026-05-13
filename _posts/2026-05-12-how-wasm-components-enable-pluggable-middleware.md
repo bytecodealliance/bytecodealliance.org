@@ -180,7 +180,7 @@ That's right, and it's an active research project called [`splicer`].
 
 `splicer` is able to automatically interpose Wasm components on an arbitrary interface. It can target interfaces of a standalone component _or_ any arbitrary Wasm composition. All you have to do is provide a Yaml configuration to the tool and the relevant Wasm components.
 
-Given an arbitrary Wasm component binary, `splicer` discovers its composition graph and uses the Yaml configuration to plan how to interpose Wasm components into its composition. A user can pass a component that matches the interface's function signature **OR** target a [WIT adapter interface] depending on the capabilities required by the functionality. Then the `splicer` does the heavy work of adapting the component to match the target interface! Read more about how this can be used in your own use cases [here].
+Given an arbitrary Wasm component binary, `splicer` discovers its composition graph and uses the YAML configuration to plan how to interpose Wasm components into its composition. A user can pass a component that matches the interface's function signature **OR** target a [WIT adapter interface] depending on the capabilities required by the functionality. Then the `splicer` does the heavy work of adapting the component to match the target interface! Read more about how this can be used in your own use cases [here].
 
 [WIT adapter interface]: https://github.com/ejrgilbert/splicer/blob/main/wit/tier1/world.wit
 [here]: https://github.com/ejrgilbert/splicer/tree/main/docs/adapter-components.md

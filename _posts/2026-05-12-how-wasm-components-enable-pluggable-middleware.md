@@ -25,7 +25,7 @@ world middleware {
 
 First, you'll note that all that's required to implement a `service` is exporting the `handler` interface. This makes sense, as it exposes the entrypoint to handling some incoming HTTP service request and providing a corresponding response. What's more interesting, though, is this `middleware` world.
 
-Before digging into the meat of what middlewares are used for, I want to emphasize that while this world is called `middleware`, it could really just be defining a service that relies on some downstream service. It's a service that takes in a request, does some processing on it, passes it to some imported service and then returns the response.
+Before digging into the meat of what middlewares are used for, I want to emphasize that while this world is called `middleware`, it could really just be defining a service that relies on some downstream service. It's a service that takes in a request, does some processing on it, passes it to some imported service, and then returns the response.
 
 So, thinking of this service architecture:
 ```

@@ -55,7 +55,7 @@ HTTP →
 ← HTTP
 ```
 
-This is called service chaining, and it's an architecture that's supported by CDN's like [Fastly]. But, note that it's really an architecture that's natively enabled by the component model itself. You can take two components and compose them together as long as their imports/exports agree[^1].
+This is called **service chaining**, and it's an architecture that's supported by CDNs like [Fastly]. But, note that it's really an architecture that is natively enabled by the Component Model itself. You can take two components and compose them together as long as their imports/exports agree[^1].
 
 [Fastly]: https://www.fastly.com/documentation/guides/concepts/service-chaining/
 [Fermyon]: https://www.fermyon.com/blog/protect-rest-apis-with-service-chaining

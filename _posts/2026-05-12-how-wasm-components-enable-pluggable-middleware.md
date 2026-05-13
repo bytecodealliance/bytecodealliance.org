@@ -128,7 +128,7 @@ For examples of this, take a look at Java's [`HandlerInterceptor`], gRPC's [`Int
 
 ## The Limitations ##
 
-**Limitation #1: Heterogeneity.** Web services are implemented in a diverse set of languages. While having a suite of extendable middlewares that a user can leverage in their own context (such as this [Go middleware suite]), their availability is fragmented across languages. Further, customization of such middlewares (even if they exist across languages) is unmaintainable if it must be done for a high number of languages _especially_ as their underlying implementations diverge.
+**Limitation #1: Heterogeneity.** Web services are implemented in a diverse set of languages. While having a suite of extendable middlewares that a user can leverage in their own context (such as this [Go middleware suite]), their availability is fragmented across languages. Further, customization of such middlewares (even if they exist across languages) is unmaintainable if it must be done for a high number of languages, _especially_ as their underlying implementations diverge.
 
 [Go middleware suite]: https://github.com/grpc-ecosystem/go-grpc-middleware
 

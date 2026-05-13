@@ -147,7 +147,7 @@ In fact, there's an entire architecture pattern called [sidecars] that platform 
 
 Rather, everything is baked opaquely into a single binary without structural cues that would enable any flexibility.
 
-While simply exposing a `middleware` world in `wasi:http` can _kinda_ help with limitation #1 and #3 above, it loses out on some powerful capabilities that the component model provides us. Capabilities that, in fact, help us overcome all these limitations in the context of HTTP middleware **and** empower new use cases using the same mechanisms.
+While simply exposing a `middleware` world in `wasi:http` can _kinda_ help with limitation #1 and #3 above, it loses out on some powerful capabilities that the Component Model provides us. Capabilities that, in fact, help us overcome all these limitations in the context of HTTP middleware **and** empower new use cases using the same mechanisms.
 
 ## Why Wasm Component Interposition is the Answer. ##
 

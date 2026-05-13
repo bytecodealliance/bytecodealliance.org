@@ -1,4 +1,9 @@
-# How Wasm components enable pluggable tooling through interposition
+---
+title: "How Wasm components enable pluggable tooling through interposition"
+author: "Elizabeth Gilbert"
+date: "2026-05-13"
+github_name: "ejrgilbert"
+---
 
 _And how the `splicer` framework makes it tractable at any interface edge._
 

@@ -153,7 +153,7 @@ While simply exposing a `middleware` world in `wasi:http` can _kinda_ help with 
 
 Interposition here refers to the classic systems technique of inserting a layer between a caller and callee. This layer intercepts every call across the boundary without modifying the caller or the callee. They are simply opaque units with a well-defined interface the layer sits on. So, this term "Wasm Component Interposition" refers to inserting a component between a caller and a callee component that intercepts the call.
 
-**Benefit #1: Heterogeneity.** Wasm is a polyglot. It's a bytecode format that many languages can compile to. This means that middlewares implemented in a specific language can be reused across heterogeneous services!
+**Benefit #1: Heterogeneity.** Wasm is polyglot. It's a bytecode format that many languages can compile to. This means that middlewares implemented in a specific language can be reused across heterogeneous services!
 
 **Benefit #2: Interface adaptation.** All the typing information about the payload being passed between caller / callee is transparent on the component interface. This means that a tool could leverage this information to _adapt_ a middleware to be compatible with the target interface on-the-fly. The middleware just needs to be implemented in a way that also adapts to the interface shape. For example, generating an OpenTelemetry trace[^2] doesn't require access to the payload at all while a logging middleware may log some information about the payload. This achieves _truly pluggable middleware_ beyond HTTP.
 

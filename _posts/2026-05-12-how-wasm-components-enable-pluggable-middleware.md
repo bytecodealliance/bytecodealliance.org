@@ -7,7 +7,7 @@ github_name: "ejrgilbert"
 
 _And how the `splicer` framework makes it tractable at any interface edge._
 
-If you've been keeping up with the Wasi releases, you may have noticed the shape of `wasi:http` in the WASI 0.3.0 release candidate changed:
+If you've been keeping up with WASI releases, you may have noticed that the shape of `wasi:http` in the WASI 0.3.0 release candidate has changed:
 ```wit
 interface handler {
   /// This function may be called with either an incoming request read from the

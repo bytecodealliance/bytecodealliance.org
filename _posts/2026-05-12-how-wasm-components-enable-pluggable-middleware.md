@@ -1,7 +1,7 @@
 ---
 title: "How Wasm components enable pluggable tooling through interposition"
 author: "Elizabeth Gilbert"
-date: "2026-05-13"
+date: "2026-05-14"
 github_name: "ejrgilbert"
 ---
 

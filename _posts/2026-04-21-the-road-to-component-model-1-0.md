@@ -43,7 +43,7 @@ The transition is designed to be non-breaking: the lazy ABI ships as a new opt-i
 
 Bundled into the same transition are multivalue returns (using Wasm multivalue for return types at the C ABI level) and an error context value in every result's error case, so there's always a standard way for hosts to attach backtraces and debug information.
 
-There is one significant dependency: LLVM doesn't yet support multivalue at the C ABI level. Getting that upstream may be the longest lead time in this piece of work.
+There is one significant dependency: LLVM doesn't yet support multivalue at the C ABI level. A [proposal for the precise ABI](https://github.com/WebAssembly/tool-conventions/pull/268) exists, but getting that upstream may be the longest lead time in this piece of work.
 
 There's also a separate GC ABI option planned, enabling components to pass values via Wasm GC-allocated memory instead of linear memory, and avoiding copies through linear memory for GC-based languages. Nick Fitzgerald has a pre-proposal on this in [Component Model issue 525](https://github.com/WebAssembly/component-model/issues/525).
 

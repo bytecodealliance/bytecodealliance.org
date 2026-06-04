@@ -115,7 +115,7 @@ Sy Brand presented a deep dive on cooperative threads at the Plumbers Summit, an
 
 The implementation is in progress: `wasi-libc` pthreads support is largely done, LLVM patches are under review, and Wasmtime has a functional implementation under a feature flag. Cooperative threads support will ship in a follow-up WASI P3 minor release. These advancements also pave the road for shared-everything threads later, since many of the heaviest toolchain lifts for cooperative threads carry over directly.
 
-Also shipping in an early WASI P3 follow-up release is **stream splicing**, the ability to splice one stream directly into another without an intermediate copy. Stream splicing is important for streaming performance, since unnecessary copying through an intermediate buffer is costly on hot paths, and was simply too close to the wire to make WASI P3 itself.
+Also shipping in an early WASI P3 follow-up release will be **stream splicing**, the ability to splice one stream directly into another without an intermediate copy. Stream splicing is important for streaming performance, since unnecessary copying through an intermediate buffer is costly on hot paths, and was simply too close to the wire to make WASI P3 itself.
 
 ## The toolchain view
 

@@ -7,7 +7,7 @@ excerpt_separator: <!--end_excerpt-->
 ---
 WASI P3 is almost here, bringing native async support to the **WebAssembly System Interface (WASI)** and **Component Model**. In this post, we're looking to the *next* big milestone: a stable, formally specified Component Model 1.0.
 
-At February's Bytecode Alliance Plumbers Summit, Luke Wagner and Alex Crichton gave a preview of what the path to a stable 1.0 actually looks like. Last month at [Wasm I/O 2026 in Barcelona](https://wasm.io/), Wagner [expanded on that vision](https://youtu.be/qq0Auw01tH8?si=4Zb2r52SNsAsUtkQ). So let's take a look at where the Component Model is heading.
+At February's Bytecode Alliance Plumbers Summit, Luke Wagner and Alex Crichton gave a preview of what the path to a stable 1.0 actually looks like. At [Wasm I/O 2026 in Barcelona](https://wasm.io/) in March, Wagner [expanded on that vision](https://youtu.be/qq0Auw01tH8?si=4Zb2r52SNsAsUtkQ). So let's take a look at where the Component Model is heading.
 
 <!--end_excerpt-->
 

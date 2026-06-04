@@ -117,7 +117,7 @@ Not all of these will land before 1.0: some may come in 1.x releases. Sequencing
 
 Sy Brand presented a deep dive on cooperative threads at the Plumbers Summit, and it's worth noting here that they're implemented at the Component Model level, below the WASI layer. A Rust component using `std::thread::spawn` gets cooperative thread support when it lands, with nothing special needed in WIT.
 
-The implementation is in progress: `wasi-libc` pthreads support is largely done, LLVM patches are under review, and Wasmtime has a functional implementation under a feature flag. Cooperative threads support will ship in a follow-up WASI P3 minor release. These advancements also pave the road for shared-everything threads later, since many of the heaviest toolchain lifts for cooperative threads carry over directly.
+The implementation is in progress: `wasi-libc` pthreads support is largely done, LLVM patches have just landed and will be included in the next release, and Wasmtime has a functional implementation under a feature flag. Cooperative threads support will ship in a follow-up WASI P3 minor release. These advancements also pave the road for shared-everything threads later, since many of the heaviest toolchain lifts for cooperative threads carry over directly.
 
 Also shipping in an early WASI P3 follow-up release will be **stream splicing**, the ability to splice one stream directly into another without an intermediate copy. Stream splicing is important for streaming performance, since unnecessary copying through an intermediate buffer is costly on hot paths, and was simply too close to the wire to make WASI P3 itself.
 

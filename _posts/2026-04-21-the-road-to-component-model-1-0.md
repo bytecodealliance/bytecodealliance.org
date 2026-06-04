@@ -1,13 +1,13 @@
 ---
 title: "The Road to Component Model 1.0"
 author: "Eric Gregory"
-date: "2026-04-21"
+date: "2026-06-08"
 github_name: "ericgregory"
 excerpt_separator: <!--end_excerpt-->
 ---
 WASI P3 is almost here, bringing native async support to the **WebAssembly System Interface (WASI)** and **Component Model**. In this post, we're looking to the *next* big milestone: a stable, formally specified Component Model 1.0.
 
-At February's Bytecode Alliance Plumbers Summit, Luke Wagner and Alex Crichton gave a preview of what the path to a stable 1.0 actually looks like. At [Wasm I/O 2026 in Barcelona](https://wasm.io/) in March, Wagner [expanded on that vision](https://youtu.be/qq0Auw01tH8?si=4Zb2r52SNsAsUtkQ). So let's take a look at where the Component Model is heading.
+At February's [Bytecode Alliance Plumbers Summit](https://www.youtube.com/watch?v=aQchiu6DXUE), Luke Wagner and Alex Crichton gave a preview of what the path to a stable 1.0 actually looks like. At [Wasm I/O 2026 in Barcelona](https://wasm.io/) in March, Luke [expanded on that vision](https://youtu.be/qq0Auw01tH8?si=4Zb2r52SNsAsUtkQ). So let's take a look at where the Component Model is heading.
 
 <!--end_excerpt-->
 
@@ -21,13 +21,13 @@ Before we dive into the future of the Component Model, we should take a moment t
 
 WASI interfaces are consumed through the Component Model; together they form the composable, portable foundation of the Wasm ecosystem. (It's worth noting that Component Model 1.0 and WASI 1.0 are related but distinct milestones: WASI 1.0 will follow from and depend on the Component Model reaching 1.0 first.)
 
-At the Plumbers Summit, Wagner described the relationship between the Component Model and WASI as analogous to a microkernel architecture: the Component Model is the always-present microkernel, providing foundational primitives that run across any host. WASI layers on top like OS services (e.g., networking, storage, graphics) that run as processes on top of the microkernel and may or may not be present on a given device. A browser, for instance, has very strong opinions about what I/O APIs exist; WASI interfaces run there via polyfill. But the Component Model itself can be implemented natively in the browser alongside core WebAssembly, since it only provides computational primitives, not I/O.
+At the Plumbers Summit, Luke described the relationship between the Component Model and WASI as analogous to a microkernel architecture: the Component Model is the always-present microkernel, providing foundational primitives that run across any host. WASI layers on top like OS services (e.g., networking, storage, graphics) that run as processes on top of the microkernel and may or may not be present on a given device. A browser, for instance, has very strong opinions about what I/O APIs exist; WASI interfaces run there via polyfill. But the Component Model itself can be implemented natively in the browser alongside core WebAssembly, since it only provides computational primitives, not I/O.
 
-In practical terms, both WASI and the Component Model are already heavily used in production. Despite ongoing evolution of both the binary format and WASI APIs, platform providers and embedders can give strong backwards-compatibility guarantees. P1 modules still work. P2 components still work. The team has been maintaining this stability since P1 using semantic versioning, side-by-side implementations, and Wasm-to-Wasm adapters. That story continues past 1.0. As Wagner put it: "We can start using this stuff now." But *getting* to Component Model 1.0 involves critical work across several important areas.
+In practical terms, both WASI and the Component Model are already heavily used in production. Despite ongoing evolution of both the binary format and WASI APIs, platform providers and embedders can give strong backwards-compatibility guarantees. P1 modules still work. P2 components still work. The team has been maintaining this stability since P1 using semantic versioning, side-by-side implementations, and Wasm-to-Wasm adapters. That story continues past 1.0. As Luke put it: "We can start using this stuff now." But *getting* to Component Model 1.0 involves critical work across several important areas.
 
 ## Five areas of work
 
-Wagner frames the path to 1.0 around five areas of work:
+Luke frames the path to 1.0 around five areas of work:
 
 ### 1. ABI improvements
 
@@ -51,7 +51,7 @@ Sitting alongside the ABI work is a related performance goal: zero overhead on s
 
 ### 2. The browser path
 
-The Component Model can't formally reach 1.0 without native implementation in at least two browser engines. The groundwork for browser implementations is being laid today: `jco`'s `transpile` command already converts any component into equivalent core Wasm and JavaScript glue, making components runnable in any browser without native support. That already works, but native support matters for two reasons:
+The Component Model can't formally reach 1.0 without native implementation in at least two browser engines. The groundwork for browser implementations is being laid today: [`jco`](https://github.com/bytecodealliance/jco/)'s `transpile` command already converts any component into equivalent core Wasm and JavaScript glue, making components runnable in any browser without native support. That already works, but native support matters for two reasons:
 
 - **Performance**: [Experiments](https://hacks.mozilla.org/wp-content/uploads/2026/02/Screenshot-2026-02-25-at-2.22.23-PM-1536x1018.png) by Ryan Hunt at Mozilla show that a DOM mutation-heavy Wasm VDOM reconciliation loop can get close to a 2x speedup from direct Wasm-to-browser API calls, bypassing the JavaScript glue layer. Real-world gains will vary by workload, but the ceiling is meaningful.
 
@@ -85,7 +85,7 @@ In addition to everything above, the path to 1.0 will include a sustained docume
 
 - Getting stable P3 support upstream in the major language ecosystems. Progress is trackable in Yosh's [awesome-wasm-components](https://github.com/yoshuawuyts/awesome-wasm-components) repo. Rust, Tokio, LLVM, and CPython all have first steps underway.
 
-- More cross-language tooling like `jco` (more Web API integration via WebIDL imports), `wac` (component composition from the command line or a linking language), and `wkg` (publishing and fetching from OCI registries, with higher-level discovery tooling still needed).
+- More cross-language tooling like [`jco`](https://github.com/bytecodealliance/jco/) (more Web API integration via WebIDL imports), [`wac`](https://github.com/bytecodealliance/wac/) (component composition from the command line or a linking language), and [`wkg`](https://github.com/bytecodealliance/wasm-pkg-tools) (publishing and fetching from OCI registries, with higher-level discovery tooling still needed).
 
 - Record/replay debugging, a capability uniquely suited to components' shared-nothing architecture. At the Summit, Yan Chen demoed a concrete implementation: instrumentation components wrap a target component's imports and exports, recording all WIT-level calls in WAVE format and replaying them later without the original host. Recorded traces are editable and human-writable in WAVE syntax, and can be replayed against a modified binary — a debugging workflow that the Component Model's isolation makes possible.
 

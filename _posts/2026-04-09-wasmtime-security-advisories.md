@@ -117,7 +117,7 @@ Beyond the remediation of some non-security bugs, the Wasmtime team will be taki
 * We will require the use of LLM based vulnerability discovery as part of the tier 1 requirements for all future tier 1 features.
 * We will explore improvements our fuzzing harnesses to include checking that invalid programs trap as required. Historically we have found this to be much more difficult than checking that valid programs behave correctly, so we expect this will pose some challenges.
 * We will investigate ways to provide continuous fuzzing on aarch64 for both the Cranelift and Winch engines. If any infrastructure providers offering continuous fuzzing like [Google's oss-fuzz] and offer aarch64 runners can help our project, please [reach out]!
-* We will accelarate the work in progress to land formal verification of Cranelift into the Wasmtime repo, so that all changes to Cranelift's lowering rules will be verified as part of CI checks.
+* We will accelerate the work in progress to land formal verification of Cranelift into the Wasmtime repo, so that all changes to Cranelift's lowering rules will be verified as part of CI checks.
 * We will apply everything we learned from this effort to other Bytecode Alliance projects, and help the TSC form recommendations that will apply to all BA projects.
 
 [reach out]: mailto:membership@bytecodealliance.org

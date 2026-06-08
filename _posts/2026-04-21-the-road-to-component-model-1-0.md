@@ -137,7 +137,7 @@ If you want to help out on the road to Component Model 1.0, there are lots of di
 
 - **Implementation:** [`wasm-tools`](https://github.com/bytecodealliance/wasm-tools), [Wasmtime](https://github.com/bytecodealliance/wasmtime), and [`wit-bindgen`](https://github.com/bytecodealliance/wit-bindgen) are the core implementation projects.
 
-- **Language toolchains:** [`wit-bindgen-go`](https://github.com/bytecodealliance/go-modules), [`componentize-py`](https://github.com/bytecodealliance/componentize-py), [`componentize-js`](https://github.com/bytecodealliance/ComponentizeJS), and others need P3 support and ecosystem work.
+- **Language toolchains:** [`componentize-go`](https://github.com/bytecodealliance/componentize-go), [`componentize-py`](https://github.com/bytecodealliance/componentize-py), [`componentize-js`](https://github.com/bytecodealliance/ComponentizeJS), and others need P3 support and ecosystem work.
 
 - **Browser usage:** Using `jco`-transpiled components in browser contexts contributes directly to the telemetry signal that motivates native browser implementation.
 

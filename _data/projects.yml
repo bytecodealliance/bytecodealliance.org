@@ -63,6 +63,15 @@
   status: hosted
   labels: [python]
 
+- name: Endive
+  description: A JVM native WebAssembly runtime.
+  repo: https://github.com/bytecodealliance/endive
+  site: https://endive.run/
+  docs:
+  active: true
+  status: hosted
+  labels: [runtime, java]
+
 - name: Cranelift
   description: A compiler backend that translates a target-independent intermediate representation into executable machine code.
   repo: https://github.com/bytecodealliance/wasmtime/tree/main/cranelift

@@ -20,20 +20,21 @@ standards and actively participate in Wasm standardization.
 
 Originally, in the first versions of WebAssembly, high-level languages with an
 objects-and-references data model, as opposed to a raw-pointers-and-memory data
-model, had one of two choices. Either they didn't compile to WebAssembly at all
-or they embedded a whole garbage collector inside their `.wasm` binaries,
-effectively putting a virtual machine inside their virtual machine. This was
-unfortunate because most languages fell into this bucket.
+model, had to embed their own garbage collector inside their `.wasm`
+binaries. This led to bloated `.wasm` binaries and many techniques often used
+when implementing collectors in native code, such as using [stack maps] and
+stack walking to identify GC roots, were unavailable. And, unfortunately, many
+languages fell into this bucket.
 
-The [Wasm GC][wasm-gc] proposal aims to add efficient support for these
-high-level languages to WebAssembly.[^outdated] It extends the WebAssembly
-language, allowing Wasm programs to define their own `struct` and `array` types
-and subtyping relationships. The Wasm program needn't worry about managing these
-types' instances' lifetimes or manually deallocating them; the runtime handles
-all of that. Therefore, embedding your own garbage collector is unnecessary, and
-these toolchains can instead take advantage of the WebAssembly runtime's
-collector. This opens the door for many more languages to easily and efficiently
-target WebAssembly.
+The [Wasm GC][wasm-gc] proposal improves the situation, adding efficient support
+for these high-level languages to WebAssembly.[^outdated] It extends the
+WebAssembly language, allowing Wasm programs to define their own `struct` and
+`array` types and subtyping relationships. The Wasm program needn't worry about
+managing these types' instances' lifetimes or manually deallocating them; the
+runtime handles all of that. Therefore, embedding their own garbage collector is
+unnecessary, and these toolchains can instead take advantage of the WebAssembly
+runtime's collector. This opens the door for many more languages to easily and
+more efficiently target WebAssembly.
 
 [^outdated]: Note that the GC proposal has merged into the main WebAssembly
     specification, so the proposal page is now an archived snapshot of a
@@ -93,33 +94,32 @@ inside Wasm stack frames) are updated to point to the new locations. Allocation
 is a simple bump pointer within the active semi-space and the collector does not
 require any read or write barriers.
 
-WebAssembly promises to be fast, safe, and portable, but it is the runtime that
-must actually shoulder that responsibility in its implementation.
-
 We reuse WebAssembly linear memories under the covers to implement and sandbox
 the GC heap. A reference to a GC object is not a native pointer, it is a 32-bit
-index into the GC heap's underlying linear memory. This has a benefits in all
-three dimensions. Perhaps most obvious is the defense-in-depth safety
-implication: even in the face of collector bugs that corrupt the GC heap, a
-malicious Wasm program can't escape the sandbox to access host memory. As far as
-being fast goes, it lets us use virtual-memory guard pages to elide explicit
-bounds checks, just like we do for linear memories; we get tight integration
-with our pooling instance allocator, ensuring we preserve our 5-microsecond
-instantiation times; and, on 64-bit machines, 32-bit GC references are more
-compact than 64-bit pointers, more efficiently utilizing CPU caches. Finally,
-allocating, deallocating, and resetting large regions of memory quickly across
-many platforms (including bare metal!), each of which have subtly different
-capabilities, involves a lot of special-casing. Our existing implementation of
-linear memories is already portable across these platforms and already does that
-special-casing, so, by building our GC heap on top of a linear memory, we get a
-portable GC heap "for free" as well.
+index into the GC heap's underlying linear memory. WebAssembly promises to be
+fast, safe, and portable, but it is the runtime that must actually shoulder that
+responsibility in its implementation, and reusing linear memories for the GC
+heap has benefits in all three dimensions. Perhaps most obvious is the
+defense-in-depth safety implication: even in the face of collector bugs that
+corrupt the GC heap, a malicious Wasm program can't escape the sandbox to access
+host memory. As far as being fast goes, it lets us use virtual-memory guard
+pages to elide explicit bounds checks, just like we do for linear memories; we
+get tight integration with our pooling instance allocator, ensuring we preserve
+our 5-microsecond instantiation times; and, on 64-bit machines, 32-bit GC
+references are more compact than 64-bit pointers, more efficiently utilizing CPU
+caches. Finally, allocating, deallocating, and resetting large regions of memory
+quickly across many platforms (including bare metal!), each of which have subtly
+different capabilities, involves a lot of special-casing. Our existing
+implementation of linear memories is already portable across these platforms and
+already does that special-casing, so, by building our GC heap on top of a linear
+memory, we get a portable GC heap "for free" as well.
 
 To further ratchet up our confidence in the collector's correctness, we extended
 our fuzzing infrastructure to hammer on Wasm GC. First, we extended
 [`wasm-smith`] to support the GC proposal. It can, in theory, generate roughly
-any GC-using Wasm program, given enough time.[^wasm-smith-gc] But it might take
-a *looong* time to do that, which is why we supplemented it with two additional
-fuzzers:
+any GC-using Wasm program, given [enough time][fuzz-experiment].[^wasm-smith-gc]
+But it might take a *looong* time to do that, which is why we supplemented it
+with two additional fuzzers:
 
 1. One designed to [exercise][gc-ops-fuzzer] interesting and arbitrary object
    graphs, type references, and subtyping relationships
@@ -132,16 +132,16 @@ fuzzers:
 Lastly, a small note regarding performance to set expectations: we've mainly
 focused our engineering efforts on the correctness of our collector thus far,
 and less so on its performance. It's brand new, and hasn't benefited from
-decades of performance engineering, unlike collectors in, for example, V8 and
-SpiderMonkey. Our collector's throughput and latency won't match theirs
+decades of performance engineering, unlike collectors in, for example, [V8] and
+[SpiderMonkey]. Our collector's throughput and latency won't match theirs
 today. Additionally, we've been primarily designing the collector and its trade
 offs for the use cases where Wasmtime is used most in production: creating many
 small, disposable Wasm instances, each of which is processing a small handful of
 tasks before it, and its GC heap, are thrown away. The system is designed first
 to scale horizontally across many instances rather than focusing on
-single-instance performance above all else. This usage pattern looks very
-different from, say, one long-lived server process with indefinite lifetime, and
-tuning a collector for these different uses will look fairly different.
+single-instance performance above all else. This scenario is different from,
+say, a single long-lived server process with indefinite lifetime; tuning a
+collector for it will also be different.
 
 ## What's Next
 
@@ -174,8 +174,14 @@ goes.
 [exceptions proposal]: https://github.com/WebAssembly/exception-handling
 [`wasm-smith`]: https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasm-smith
 [gc-ops-fuzzer]: https://github.com/bytecodealliance/wasmtime/issues/10327
+[gc-access-fuzzer]: https://github.com/bytecodealliance/wasmtime/blob/86b242fcc4e508a2b4f7cd698063cad80d44f249/crates/fuzzing/src/generators/gc_access.rs
 [cheney-gc]: https://en.wikipedia.org/wiki/Cheney%27s_algorithm
 [gc-perf-issues]: https://github.com/bytecodealliance/wasmtime/issues?q=is%3Aissue%20state%3Aopen%20gc%20label%3Awasm-proposal%3Agc%20label%3Aperformance
 [gc-cm]: https://github.com/WebAssembly/component-model/issues/525
 [lazy value lowering]: https://github.com/WebAssembly/component-model/issues/383
 [zulip]: https://bytecodealliance.zulipchat.com/#narrow/stream/217126-wasmtime
+[fuzz-experiment]: https://fitzgen.com/2026/06/01/structure-aware-fuzzing-experiment.html
+[stack maps]: https://fitzgen.com/2024/09/10/new-stack-maps-for-wasmtime.html
+[ruby-setjmp]: https://docs.ruby-lang.org/capi/en/master/da/d7d/setjmp_8c_source.html
+[V8]: https://v8.dev/
+[SpiderMonkey]: https://spidermonkey.dev/

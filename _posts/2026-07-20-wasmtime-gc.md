@@ -153,7 +153,7 @@ alias, that is, they cannot occupy the same memory location, we can be more
 aggressive with these optimizations.
 
 The next big milestone, functionality-wise, is to prototype [GC integration with
-the component model][gc-cm], op top of [lazy value lowering]. This effort will
+the component model][gc-cm] on top of [lazy value lowering]. This effort will
 promote garbage-collected languages to first-class citizens in the component
 ecosystem, since they will no longer need otherwise-unused linear memories just
 to pass data across components.

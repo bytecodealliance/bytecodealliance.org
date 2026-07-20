@@ -5,7 +5,7 @@ github_name: fitzgen
 ---
 
 The Wasm GC and exceptions proposals are both enabled by default in today's
-Wasmtime 47 release! We are excited to help bring more languages to WebAssembly
+[Wasmtime 47 release]! We are excited to help bring more languages to WebAssembly
 and everywhere that Wasmtime runs. Getting to this point involved large Wasmtime
 changes and represents the culmination of years of engineering effort.
 
@@ -185,3 +185,4 @@ goes.
 [ruby-setjmp]: https://docs.ruby-lang.org/capi/en/master/da/d7d/setjmp_8c_source.html
 [V8]: https://v8.dev/
 [SpiderMonkey]: https://spidermonkey.dev/
+[Wasmtime 47 release]: https://github.com/bytecodealliance/wasmtime/releases/tag/v47.0.0

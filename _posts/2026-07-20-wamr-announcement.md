@@ -1,7 +1,7 @@
 ---
 title: "An Update on WAMR and the Bytecode Alliance"
 author: "The Bytecode Alliance"
-github_name: @bytecodealliance
+github_name: bytecodealliance
 ---
 
 We're writing to share some news about the future of the Bytecode Alliance and the WebAssembly Micro Runtime (WAMR).

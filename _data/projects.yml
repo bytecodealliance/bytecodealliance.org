@@ -36,6 +36,15 @@
   status: hosted
   labels: [dotnet]
 
+- name: componentize-go
+  description: A tool that creates Go WebAssembly components.
+  repo: https://github.com/bytecodealliance/componentize-go
+  site:
+  docs:
+  active: true
+  status: hosted
+  labels: [go]
+
 - name: ComponentizeJS
   description: ESM to WebAssembly component creator, via a SpiderMonkey JS engine embedding.
   repo: https://github.com/bytecodealliance/ComponentizeJS
@@ -54,6 +63,15 @@
   status: hosted
   labels: [python]
 
+- name: Endive
+  description: A JVM native WebAssembly runtime.
+  repo: https://github.com/bytecodealliance/endive
+  site: https://endive.run/
+  docs:
+  active: true
+  status: hosted
+  labels: [runtime, java]
+
 - name: Cranelift
   description: A compiler backend that translates a target-independent intermediate representation into executable machine code.
   repo: https://github.com/bytecodealliance/wasmtime/tree/main/cranelift
@@ -68,7 +86,7 @@
   repo: https://github.com/bytecodealliance/go-modules
   site: 
   docs: https://pkg.go.dev/go.bytecodealliance.org#section-readme
-  active: true
+  active: false
   status: hosted
   labels: [go]
 

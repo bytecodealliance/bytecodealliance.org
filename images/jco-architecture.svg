@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 362" style="font-family: system-ui, sans-serif; max-width: 100%; display: block; margin: 1.5em 0;">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a6090"/>
+    </marker>
+  </defs>
+
+  <!-- Outputs (top, green) -->
+  <rect x="40" y="10" width="295" height="45" rx="5" fill="#e8f4e8" stroke="#3a7a3a" stroke-width="1.5"/>
+  <text x="187" y="31" text-anchor="middle" font-size="12" font-weight="600" fill="#1a3a1a">Wasm component</text>
+  <text x="187" y="47" text-anchor="middle" font-size="10" fill="#4a5a4a">runs on any Component Model host</text>
+
+  <rect x="425" y="10" width="295" height="45" rx="5" fill="#e8f4e8" stroke="#3a7a3a" stroke-width="1.5"/>
+  <text x="572" y="31" text-anchor="middle" font-size="12" font-weight="600" fill="#1a3a1a">ES Module</text>
+  <text x="572" y="47" text-anchor="middle" font-size="10" fill="#4a5a4a">runs in any JS host supporting core Wasm</text>
+
+  <!-- Arrows: jco CLI → outputs (upward, arrowhead at outputs) -->
+  <line x1="187" y1="80" x2="187" y2="57" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="572" y1="80" x2="572" y2="57" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- jco CLI (middle, split with divider) -->
+  <rect x="40" y="82" width="680" height="65" rx="5" fill="#d0dbf5" stroke="#4a6090" stroke-width="1.5"/>
+  <!-- "jco CLI" parent label centered at top -->
+  <text x="380" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#1a2e5a" opacity="0.55">jco CLI</text>
+  <!-- Vertical dashed divider splitting guest / host -->
+  <line x1="380" y1="88" x2="380" y2="142" stroke="#4a6090" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Left: jco componentize + Guest workflows label -->
+  <text x="210" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2e5a">jco componentize</text>
+  <text x="210" y="131" text-anchor="middle" font-size="10" font-style="italic" fill="#4a5070">Guest workflows</text>
+  <!-- Right: jco transpile + Host workflows label -->
+  <text x="550" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2e5a">jco transpile</text>
+  <text x="550" y="131" text-anchor="middle" font-size="10" font-style="italic" fill="#4a5070">Host workflows</text>
+
+  <!-- Arrows: dep row 1 → jco CLI (upward, arrowhead at jco) -->
+  <line x1="187" y1="165" x2="187" y2="149" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="572" y1="165" x2="572" y2="149" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Dep row 1 -->
+  <rect x="40" y="167" width="295" height="65" rx="5" fill="#eef2fb" stroke="#4a6090" stroke-width="1.5"/>
+  <text x="187" y="189" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2e5a">componentize-js</text>
+  <text x="187" y="206" text-anchor="middle" font-size="10" fill="#4a5070">bundles JS source into StarlingMonkey,</text>
+  <text x="187" y="220" text-anchor="middle" font-size="10" fill="#4a5070">pre-initializes with Wizer</text>
+
+  <rect x="425" y="167" width="295" height="65" rx="5" fill="#eef2fb" stroke="#4a6090" stroke-width="1.5"/>
+  <text x="572" y="189" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2e5a">js-component-bindgen</text>
+  <text x="572" y="206" text-anchor="middle" font-size="10" fill="#4a5070">generates lifting &amp; lowering code;</text>
+  <text x="572" y="220" text-anchor="middle" font-size="10" fill="#4a5070">outputs core Wasm + JS glue</text>
+
+  <!-- Arrows: dep row 2 → dep row 1 (upward, arrowhead at dep row 1) -->
+  <line x1="187" y1="257" x2="187" y2="234" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="572" y1="257" x2="572" y2="234" stroke="#4a6090" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Dep row 2 -->
+  <rect x="40" y="259" width="295" height="68" rx="5" fill="#eef2fb" stroke="#4a6090" stroke-width="1.5"/>
+  <text x="187" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2e5a">StarlingMonkey</text>
+  <text x="187" y="297" text-anchor="middle" font-size="10" fill="#4a5070">SpiderMonkey compiled to WebAssembly;</text>
+  <text x="187" y="311" text-anchor="middle" font-size="10" fill="#4a5070">adds Component Model wiring</text>
+
+  <rect x="425" y="259" width="295" height="68" rx="5" fill="#eef2fb" stroke="#4a6090" stroke-width="1.5"/>
+  <text x="572" y="280" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2e5a">WASI shim packages</text>
+  <text x="572" y="297" text-anchor="middle" font-size="10" fill="#4a5070">JS implementations of WASI P2 + P3</text>
+  <text x="572" y="311" text-anchor="middle" font-size="10" fill="#4a5070">(filesystem, HTTP, clocks, …)</text>
+</svg>

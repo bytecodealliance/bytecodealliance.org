@@ -1,18 +1,18 @@
-# List of Bytecode Alliance projects 
+# List of Bytecode Alliance projects
 
 - name: cap-std
   description: Capability-based version of the Rust standard library.
   repo: https://github.com/bytecodealliance/cap-std
-  site: 
+  site:
   docs:
-  active: true 
+  active: true
   status: hosted
   labels: []
-  
+
 - name: cargo-component
   description: A cargo subcommand for building WebAssembly components according to the component model proposal.
   repo: https://github.com/bytecodealliance/cargo-component
-  site: 
+  site:
   docs:
   active: false
   status: hosted
@@ -21,7 +21,7 @@
 - name: cargo-wasi
   description: A lightweight Cargo subcommand to build code for the `wasm32-wasi` target.
   repo: https://github.com/bytecodealliance/cargo-wasi
-  site: 
+  site:
   docs:
   active: false
   status: hosted
@@ -30,8 +30,8 @@
 - name: componentize-dotnet
   description: A package to simplify development of C# Wasm components.
   repo: https://github.com/bytecodealliance/componentize-dotnet/
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dotnet]
@@ -48,8 +48,8 @@
 - name: ComponentizeJS
   description: ESM to WebAssembly component creator, via a SpiderMonkey JS engine embedding.
   repo: https://github.com/bytecodealliance/ComponentizeJS
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [javascript]
@@ -57,8 +57,8 @@
 - name: componentize-py
   description: A tool to convert a Python application to a WebAssembly component.
   repo: https://github.com/bytecodealliance/componentize-py
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [python]
@@ -84,7 +84,7 @@
 - name: go-modules
   description: A Go package hosted by the Bytecode Alliance that collects utilities for Go component development and binding generation.
   repo: https://github.com/bytecodealliance/go-modules
-  site: 
+  site:
   docs: https://pkg.go.dev/go.bytecodealliance.org#section-readme
   active: false
   status: hosted
@@ -93,8 +93,8 @@
 - name: Javy
   description: A JavaScript to WebAssembly toolchain.
   repo: https://github.com/bytecodealliance/javy
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [javascript]
@@ -102,7 +102,7 @@
 - name: jco
   description: JavaScript toolchain for working with WebAssembly components.
   repo: https://github.com/bytecodealliance/jco
-  site: 
+  site:
   docs: https://bytecodealliance.github.io/jco/
   active: true
   status: hosted
@@ -111,8 +111,8 @@
 - name: Lucet
   description: A native WebAssembly compiler and runtime designed to safely execute untrusted WebAssembly programs inside your application.
   repo: https://github.com/bytecodealliance/lucet
-  site: 
-  docs: 
+  site:
+  docs:
   active: false
   status: hosted
   labels: []
@@ -120,8 +120,8 @@
 - name: regalloc.rs
   description: A work-in-progress modular register allocation algorithm, implemented so as to be used in Cranelift.
   repo: https://github.com/bytecodealliance/regalloc.rs
-  site: 
-  docs: 
+  site:
+  docs:
   active: false
   status: hosted
   labels: []
@@ -129,8 +129,8 @@
 - name: regalloc2
   description: A register allocator.
   repo: https://github.com/bytecodealliance/regalloc2
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: []
@@ -138,8 +138,8 @@
 - name: rust-oci-wasm
   description: A Rust crate implementing the OCI Wasm Specification.
   repo: https://github.com/bytecodealliance/rust-oci-wasm
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [rust]
@@ -147,7 +147,7 @@
 - name: rustix
   description: Safe Rust bindings to POSIX/Unix/Linux/Winsock syscalls.
   repo: https://github.com/bytecodealliance/rustix
-  site: 
+  site:
   docs: https://docs.rs/rustix/latest/rustix/
   active: true
   status: hosted
@@ -156,8 +156,8 @@
 - name: sightglass
   description: A benchmarking suite and tooling for Wasmtime and Cranelift.
   repo: https://github.com/bytecodealliance/sightglass
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: []
@@ -165,8 +165,8 @@
 - name: StarlingMonkey
   description: A SpiderMonkey-based JS runtime on WebAssembly.
   repo: https://github.com/bytecodealliance/StarlingMonkey
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [starlingmonkey, javascript]
@@ -174,8 +174,8 @@
 - name: spidermonkey-wasi-embedding
   description: Scripts for building and downloading pre-built versions of SpiderMonkey, compiled to wasm32-wasi as a static library.
   repo: https://github.com/bytecodealliance/spidermonkey-wasi-embedding
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [starlingmonkey]
@@ -183,8 +183,8 @@
 - name: system-interface
   description: Extensions to the Rust standard library.
   repo: https://github.com/bytecodealliance/system-interface
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: []
@@ -192,8 +192,8 @@
 - name: target-lexicon
   description: A library for managing targets for compilers and related tools.
   repo: https://github.com/bytecodealliance/target-lexicon
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: []
@@ -210,8 +210,8 @@
 - name: VSCode-WIT
   description: A Visual Studio Code extension to recognize and highlight the WebAssembly Interface Type (WIT) Interface Definition Language (IDL).
   repo: https://github.com/bytecodealliance/vscode-wit
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools]
@@ -219,8 +219,8 @@
 - name: WebAssembly Compositions (WAC)
   description: A tool for composing WebAssembly components together.
   repo: https://github.com/bytecodealliance/wac
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools]
@@ -228,7 +228,7 @@
 - name: waffle
   description: An SSA IR compiler framework for Wasm-to-Wasm transforms, in Rust.
   repo: https://github.com/bytecodealliance/waffle
-  site: 
+  site:
   docs: https://docs.rs/waffle/latest/waffle/
   active: true
   status: hosted
@@ -237,8 +237,8 @@
 - name: warg
   description: The reference implementation of the Warg protocol, client, and server for distributing WebAssembly components and interfaces as well as core modules.
   repo: https://github.com/bytecodealliance/registry
-  site: 
-  docs: 
+  site:
+  docs:
   active: false
   status: hosted
   labels: []
@@ -246,7 +246,7 @@
 - name: wasi-rs
   description: WASI API Bindings for Rust.
   repo: https://github.com/bytecodealliance/wasi-rs
-  site: 
+  site:
   docs: https://docs.rs/wasi/latest/wasi/
   active: true
   status: hosted
@@ -255,62 +255,17 @@
 - name: WASI-Virt
   description: Virtualization component generator for WASI P2.
   repo: https://github.com/bytecodealliance/WASI-Virt
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools]
 
-- name: WebAssembly Micro Runtime (WAMR)
-  description: A lightweight standalone WebAssembly (Wasm) runtime for applications cross from embedded, IoT, edge to Trusted Execution Environment (TEE), smart contract, cloud native, and more.
-  repo: https://github.com/bytecodealliance/wasm-micro-runtime
-  site: https://bytecodealliance.github.io/wamr.dev/
-  docs: https://wamr.gitbook.io/document/wamr-in-practice/
-  active: true
-  status: hosted
-  labels: [runtime, wamr]
-
-- name: wamr-app-framework
-  description: A comprehensive framework for programming WebAssembly (Wasm) applications for device and IoT usages.
-  repo: https://github.com/bytecodealliance/wamr-app-framework
-  site: 
-  docs: 
-  active: true
-  status: hosted
-  labels: [wamr]
-
-- name: wamr-python
-  description: 
-  repo: https://github.com/bytecodealliance/wamr-python
-  site: 
-  docs: 
-  active: false
-  status: hosted
-  labels: [wamr, python]
-
-- name: wamr-rust-sdk
-  description: Provides Rust language bindings for WAMR.
-  repo: https://github.com/bytecodealliance/wamr-rust-sdk
-  site: 
-  docs: 
-  active: true
-  status: hosted
-  labels: [wamr, rust]
-
-- name: wamr.dev
-  description: Website for the WAMR project.
-  repo: https://github.com/bytecodealliance/wamr.dev
-  site: 
-  docs: 
-  active: true
-  status: hosted
-  labels: [wamr]
-
 - name: wasm-pkg-tools
   description: CLI and Rust libraries for fetching and publishing Wasm Components to OCI or Warg registries.
   repo: https://github.com/bytecodealliance/wasm-pkg-tools
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools, rust]
@@ -318,8 +273,8 @@
 - name: wasm-tools
   description: CLI and Rust libraries for low-level manipulation of WebAssembly modules.
   repo: https://github.com/bytecodealliance/wasm-tools
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools, rust]
@@ -336,8 +291,8 @@
 - name: wasmtime-cpp
   description: C++ embedding of Wasmtime.
   repo: https://github.com/bytecodealliance/wasmtime-cpp
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [wasmtime, c]
@@ -345,8 +300,8 @@
 - name: wasmtime-dotnet
   description: .NET embedding of Wasmtime.
   repo: https://github.com/bytecodealliance/wasmtime-dotnet
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [wasmtime, dotnet]
@@ -354,7 +309,7 @@
 - name: wasmtime-go
   description: Go embedding of Wasmtime.
   repo: https://github.com/bytecodealliance/wasmtime-go
-  site: 
+  site:
   docs: https://pkg.go.dev/github.com/bytecodealliance/wasmtime-go/
   active: true
   status: hosted
@@ -363,7 +318,7 @@
 - name: wasmtime-py
   description: Python embedding of Wasmtime.
   repo: https://github.com/bytecodealliance/wasmtime-py
-  site: 
+  site:
   docs: https://bytecodealliance.github.io/wasmtime-py/
   active: true
   status: hosted
@@ -372,8 +327,8 @@
 - name: wasmtime-rb
   description: Ruby embedding of Wasmtime.
   repo: https://github.com/bytecodealliance/wasmtime-rb
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [wasmtime, ruby]
@@ -381,17 +336,17 @@
 - name: wasmtime.dev
   description: Website for the Wasmtime project.
   repo: https://github.com/bytecodealliance/wasmtime.dev
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [wasmtime]
 
 - name: wasmtime-libfuzzer-corpus
-  description: 
+  description:
   repo: https://github.com/bytecodealliance/wasmtime-libfuzzer-corpus
-  site: 
-  docs: 
+  site:
+  docs:
   active: false
   status: hosted
   labels: [wasmtime]
@@ -399,7 +354,7 @@
 - name: weval
   description: weval Wasm partial evaluator.
   repo: https://github.com/bytecodealliance/weval
-  site: 
+  site:
   docs: https://docs.rs/crate/weval/latest
   active: true
   status: hosted
@@ -408,8 +363,8 @@
 - name: wit-bindgen
   description: Guest language bindings generator for WIT and the Component Model.
   repo: https://github.com/bytecodealliance/wit-bindgen
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: [dev-tools]
@@ -417,8 +372,8 @@
 - name: wit-deps
   description: A simple WIT dependency manager binary and Rust library.
   repo: https://github.com/bytecodealliance/wit-deps
-  site: 
-  docs: 
+  site:
+  docs:
   active: true
   status: hosted
   labels: []
@@ -426,7 +381,7 @@
 - name: Wizer
   description: A WebAssembly pre-initializer.
   repo: https://github.com/bytecodealliance/wizer
-  site: 
+  site:
   docs: https://docs.rs/wizer/latest/wizer/
   active: true
   status: hosted
@@ -435,7 +390,7 @@
 - name: wRPC
   description: Component-native transport-agnostic RPC protocol and framework based on WebAssembly Interface Types (WIT).
   repo: https://github.com/bytecodealliance/wrpc
-  site: 
+  site:
   docs: https://docs.rs/wrpc/latest/wrpc/
   active: true
   status: hosted
@@ -448,4 +403,4 @@
   docs: https://docs.rs/wstd
   active: true
   status: hosted
-  labels: [rust] 
+  labels: [rust]

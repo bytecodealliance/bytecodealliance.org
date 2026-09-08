@@ -8,7 +8,7 @@
 - name: Amazon
   logo: amazon.png
   homepage: https://aws.amazon.com
-  active: true
+  active: false
 
 - name: Anaconda
   logo: anaconda.png
@@ -88,7 +88,7 @@
 - name: Intel
   logo: intel.svg
   homepage: https://www.intel.com
-  active: true
+  active: false
 
 - name: DFINITY
   logo: internet-computer-dfinity.png

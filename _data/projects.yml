@@ -1,14 +1,5 @@
 # List of Bytecode Alliance projects
 
-- name: cap-std
-  description: Capability-based version of the Rust standard library.
-  repo: https://github.com/bytecodealliance/cap-std
-  site:
-  docs:
-  active: true
-  status: hosted
-  labels: []
-
 - name: cargo-component
   description: A cargo subcommand for building WebAssembly components according to the component model proposal.
   repo: https://github.com/bytecodealliance/cargo-component
@@ -179,15 +170,6 @@
   active: true
   status: hosted
   labels: [starlingmonkey]
-
-- name: system-interface
-  description: Extensions to the Rust standard library.
-  repo: https://github.com/bytecodealliance/system-interface
-  site:
-  docs:
-  active: true
-  status: hosted
-  labels: []
 
 - name: target-lexicon
   description: A library for managing targets for compilers and related tools.

@@ -7,7 +7,7 @@ excerpt_separator: <!--end_excerpt-->
 ---
 The Bytecode Alliance is pleased to invite you to the next installment in our ongoing Plumbers 
 Summits event series, each designed to bring our members and community together to collectively contribute 
-to the strategic planning for the upcoming year. Our next event will be held Wednesday October 28 2026. 
+to the strategic planning for the upcoming year. Our next event will be held Wednesday October 28, 2026. 
 This will be an all online event, supporting full remote participation for  anyone anywhere, with sessions 
 recorded so they can be watched anytime afterward via our
 [YouTube channel](https://www.youtube.com/@bytecodealliance)
@@ -18,8 +18,8 @@ Participants will include the maintainers of Bytecode Alliance hosted projects a
 
 ## Event Details
 **Date:** Wednesday October 28, 2026  
-**Time:** 8am to 1pm US Pacific Time 
-**Location:** Online via live video stream 
+**Time:** 8am to 1pm US Pacific Time  
+**Location:** Online via live video stream  
 
 The planned agenda for the event is now available via our general meeting information repository [here](https://github.com/bytecodealliance/meetings/tree/main/plumbers-summit/summit-oct26). 
 

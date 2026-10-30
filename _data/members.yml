@@ -5,30 +5,16 @@
 # files or lines of HTML.
 #
 # Used to generate the gallery of member logos on the Alliance home page
-- name: Amazon
-  logo: amazon.png
-  homepage: https://aws.amazon.com
-  active: false
+
+- name: Akamai
+  logo: akamai-logo-blue.svg
+  homepage: https://www.akamai.com
+  active: true
 
 - name: Anaconda
   logo: anaconda.png
   homepage: https://anaconda.com
   active: true
-
-- name: Arm
-  logo: arm.svg
-  homepage: https://arm.com
-  active: false
-
-- name: Candle
-  logo: candle.png
-  homepage: https://candle.dev
-  active: false
-
-- name: Cisco
-  logo: cisco.svg
-  homepage: https://cisco.com
-  active: false
 
 - name: Copia Wealth Studios
   logo: copia-wealth-studios.png
@@ -40,35 +26,21 @@
   homepage: https://cosmonic.com
   active: true
 
-- name: Docker
-  logo: docker.png
-  homepage: https://docker.com
-  active: false
-
-- name: Embark Studios
-  logo: embark-studios.png
-  homepage: https://embark-studios.com
-  active: false
-
-- name: Endor
-  logo: endor.png
-  homepage: https://endor.dev
-  active: true
-
 - name: Fastly
   logo: fastly.svg
   homepage: https://www.fastly.com
-  active: true
-
-- name: Fermyon
-  logo: fermyon.svg
-  homepage: https://www.fermyon.com
   active: true
 
 - name: Futurewei
   logo: futurewei.png
   homepage: https://www.futurewei.com
   active: true
+
+- name: Google
+  logo: GoogleLogo_RGB_Color.png
+  homepage: https://www.google.com
+  active: true
+  
 
 - name: Igalia
   logo: igalia.png
@@ -80,30 +52,15 @@
   homepage: https://www.imec-int.com/en
   active: true
 
-- name: InfinyOn
-  logo: infinyon.svg
-  homepage: https://infinyon.com
-  active: false
-
-- name: Intel
-  logo: intel.svg
-  homepage: https://www.intel.com
-  active: false
-
 - name: DFINITY
   logo: internet-computer-dfinity.png
   homepage: https://internetcomputer.org/
   active: true
 
-- name: JAF Labs
-  logo: jaf-labs.svg
-  homepage: https://jaflabs.com
+- name: F5
+  logo: f5-logo-rgb.svg
+  homepage: https://www.f5.com/
   active: true
-
-- name: Liquid Reply
-  logo: liquidreply.png
-  homepage: https://www.reply.com
-  active: false
 
 - name: Microsoft
   logo: microsoft.svg
@@ -125,40 +82,10 @@
   homepage: https://www.mozilla.org
   active: true
 
-- name: NGINX
-  logo: nginx.svg
-  homepage: https://www.nginx.com/
-  active: true
-
-- name: Nornor
-  logo: nor2.svg
-  homepage: https://nor2.io
-  active: false
-
-- name: Rackner
-  logo: rackner.svg
-  homepage: https://www.rackner.com
-  active: false
-
-- name: Redhat
-  logo: redhat.png
-  homepage: https://www.redhat.com
-  active: false
-
 - name: Shopify
   logo: shopify.svg
   homepage: https://www.shopify.com
   active: true
-
-- name: Siemens
-  logo: siemens.svg
-  homepage: https://www.siemens.com
-  active: false
-
-- name: SingleStore
-  logo: singlestore.svg
-  homepage: https://www.singlestore.com
-  active: false
 
 - name: StackBlitz
   logo: stackblitz.svg
@@ -170,16 +97,6 @@
   homepage: https://stellar.org
   active: true
 
-- name: Suborbital
-  logo: suborbital.svg
-  homepage: https://suborbital.dev
-  active: false
-
-- name: Tangram
-  logo: tangram.svg
-  homepage: https://www.tangram.dev
-  active: false
-
 - name: UCSD
   logo: ucsd.svg
   homepage: https://ucsd.edu
@@ -189,13 +106,3 @@
   logo: university_luxembourg_snt.png
   homepage: https://wwwen.uni.lu/snt
   active: true
-
-- name: VMware
-  logo: vmware.svg
-  homepage: https://www.vmware.com
-  active: false
-
-- name: Shanghai Wudun
-  logo: wudun.png
-  homepage: https://wudun.net
-  active: false

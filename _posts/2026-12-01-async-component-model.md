@@ -21,15 +21,15 @@ The async Component Model meets two goals:
 1. Introduce the platform needed for languages to build their own concurrency primitives when targeting Wasm.
 2. Allow async functions to be called across components without either side being aware of how concurrency is implemented on the other side.
 
-Note that the details of the async Component Model will be necessary for language implementers to target it, but application developers shouldn't _need_ to know any of the specifics - the whole point is to write code as you would for a "standard" OS!
+Note that the details of the async Component Model will be necessary for language implementers to target it, but application developers shouldn't _need_ to know any of the specifics - the whole point is to write code using the standard bindings for your language!
 
 ## What is introduced?
 
-The Component Model has a notion of component-level functions which are higher level than core Wasm functions. Core Wasm functions can be lifted into component functions, and component functions can be lowered to core Wasm functions. In both cases, the canonical options provided with the lift or lower can configure the translation between the two levels.
+First, a bit of background: The Component Model has an existing notion of component-level functions which are higher level than core Wasm functions, and use a type system which is more powerful than that of core Wasm. Core Wasm functions can be lifted into component functions, and component functions can be lowered to core Wasm functions. In both cases, the existing canonical options provided with the lift or lower can configure the translation between the two levels, and so there are multiple ways a single component-level function can be mapped to a core Wasm function. This gives guest languages the ability to choose the best core Wasm representation of a component function for them, independently of the choices other languages make.
 
-The basis of async support is a new `async` effect on _component-level_ function types, as well as an `async` _canonical option_ which can be added when lifting or lowering. The semantics of the `async` function type and `async` canonical options are described in the next two sections.
+Now, what's new for the async Component Model? The basis of async support is a new `async` effect on _component-level_ function types, as well as an `async` _canonical option_ which can be added when lifting or lowering. The semantics of the `async` function type and `async` canonical options are described in the next two sections.
 
-Waitable sets are introduced to provide an epoll-like interface. Various waitable objects can be added to a waitable set and then a function can suspend until something in the waitable set has completed.
+Waitable sets are introduced to provide an epoll-like interface. These sets are constructed from waitable objects which are obtained from in-flight async operations. The Component Model provides an intrinsic to suspend execution until something in the waitable set has made progress.
 
 Waitables and waitable sets are not passed around directly in core Wasm. Instead, each component instance has a _handle table_ holding these objects (along with resource handles), and core Wasm code refers to them by `i32` indices into that table.
 
@@ -69,7 +69,7 @@ Each time a component's export is called, a new _task_ is created. When one comp
 
 We've seen how an `async` component-level function is declared and blocks, but when this function is running as a subtask, how does the caller get back control when the subtask blocks? Control is transferred by transforming the callee into a core Wasm function which returns a status code instead of its "actual" result.
 
-When the function is lowered with the `async` keyword, its core Wasm type takes an additional out-parameter pointer argument and its return value is always an `i32`. When the callee blocks, a new subtask entry is created in the handle table of the caller. The caller will see that the core Wasm call has returned with the `i32` containing a bit packed status code along with the handle table index of this subtask. That index can then be added to a waitable set if the caller wants to wait for the call to complete. When the call has completed, the caller can read the result at the out-parameter it passed in.
+When the function is lowered with the `async` keyword, its core Wasm type takes an additional out-parameter pointer argument and its return value is always an `i32`. When the callee blocks, a new subtask entry is created in the handle table of the caller. The caller will see that the core Wasm call has returned with the `i32` containing a bit-packed status code along with the handle table index of this subtask. That index can then be added to a waitable set if the caller wants to wait for the call to complete. When the call has made progress, the caller can read the result at the out-parameter it passed in.
 
 When an async call blocks and control is transferred back to the caller, the caller can continue running and may choose to initiate more async calls. It can even choose to reenter the callee component by starting a new call to one of its exports.
 
@@ -289,6 +289,8 @@ In WIT interfaces, you'll see only `stream<T>` types. These always refer to the 
 ## Threads
 
 Each time an export of a component is called, it creates a new task, and that task runs in an implicit initial thread. If multiple concurrent calls to the export are made, there can be multiple threads running concurrently. These threads do _not_ run in parallel and the host _cannot_ preemptively interrupt them. Instead, only one thread runs at a time and the host can only switch to another thread when the current one blocks. A thread can voluntarily yield without waiting on anything with the `thread.yield` canonical builtin.
+
+Later versions of the Component Model will be able to support truly parallel threads, but this will rely on features from the [shared-everything threads](https://github.com/WebAssembly/shared-everything-threads) core Wasm proposal.
 
 The cooperative threads feature (denoted by 🧵 in the spec) additionally allows threads to be explicitly created via the `thread.new-indirect` canonical builtin. In this case, each thread is associated with the task within which it was created. There is no distinguished "main" thread: the task is alive as long as any of its threads hasn't exited, and any thread within the task can call `task.return` to return a value to the caller.
 

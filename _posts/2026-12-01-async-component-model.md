@@ -246,6 +246,8 @@ Here is an example of a component which uses an `async` import `get-random: asyn
 )
 ```
 
+The [full demo code](https://github.com/bytecodealliance/bytecodealliance.org/tree/gh-pages/articles/demos/async-component-model) includes this example, a simple implementation of `get-random`, and instructions for composing the two and running them with Wasmtime, so you can modify the example and run it yourself.
+
 One useful exercise is transforming `random-sum` to perform both calls to `get-random` concurrently. Try it out!
 
 <details>

@@ -15,7 +15,7 @@ We assume the reader already has some basic knowledge of the Component Model. Fo
 
 ## Why does the Component Model need async?
 
-The Component Model is designed to allow Wasm modules compiled from different languages to be packaged together into an executable and call into each other. Most languages have their own preferred method of concurrency, be it async/await, coroutines, green threads, pthreads, etc. Most of these cannot be built on top of core Wasm, and are hard to use across components.
+The Component Model is designed to allow Wasm modules compiled from different languages to be packaged together into an executable and call into each other. Most languages have their own preferred method of concurrency, be it async/await, coroutines, green threads, pthreads, etc. Each language will also need to make its own choices about how these abstractions are implemented in Wasm, and they shouldn't be constrained by or concerned with the implementations of other languages.
 
 The async Component Model meets two goals:
 1. Introduce the platform needed for languages to build their own concurrency primitives when targeting Wasm.
@@ -29,11 +29,11 @@ The Component Model has a notion of component-level functions which are higher l
 
 The basis of async support is a new `async` effect on _component-level_ function types, as well as an `async` _canonical option_ which can be added when lifting or lowering. The semantics of the `async` function type and `async` canonical options are described in the next two sections.
 
-Waitable sets are introduced to provide a poll-like interface. Various waitable objects can be added to a waitable set and then a function can suspend until something in the waitable set has completed.
+Waitable sets are introduced to provide an epoll-like interface. Various waitable objects can be added to a waitable set and then a function can suspend until something in the waitable set has completed.
 
 Waitables and waitable sets are not passed around directly in core Wasm. Instead, each component instance has a _handle table_ holding these objects (along with resource handles), and core Wasm code refers to them by `i32` indices into that table.
 
-Additionally, new canonical builtins are added for creating, reading from, and writing to streams and futures.
+Additionally, new component-level and WIT-level types are added for streams and futures. These can be used to asynchronously pass values between concurrently running components.
 
 The _cooperative threads_ feature will also add canonical builtins for creating and switching between threads which cooperatively yield to each other.
 
@@ -60,6 +60,8 @@ The `async` effect for component-level functions indicates that the function may
 The exact mechanism by which the callee waits on the waitable set is determined by the `async` canonical option - it can be set with or without an additional `callback` option.
 - When `callback` is absent, this is a _stackful_ async function which blocks by calling the `waitable-set.wait` canonical builtin on a waitable set. When this happens, the host is responsible for saving the Wasm stack and resuming it when something in the set has made progress. From the perspective of the core Wasm function, `waitable-set.wait` will just return an event code (and write which waitable made progress to memory), but in the meantime control has been passed back to the caller which may have performed other work.
 - When `callback` is present, this is a _stackless_ async function which blocks by returning a special `WAIT` exit code indicating that it is waiting on a waitable set (the index of the waitable set is bit packed into the exit code). The `callback` option is accompanied by a core Wasm function which is called by the host when the waitable set has made progress. The `callback` receives (as arguments) the same event information that `waitable-set.wait` returns in the _stackful_ case. Again, control is transferred to the caller when the initial call returns and the caller may perform additional work before the host schedules the `callback` to run. The `callback` is permitted to return with the `WAIT` exit code itself and it will then be called anew by the host when progress has been made in the waitable set.
+
+Note that the stackful ABI has not been released as of WASI 0.3.3, so when targeting WASI 0.3.3, a `callback` is still required.
 
 ## What happens when a function blocks?
 

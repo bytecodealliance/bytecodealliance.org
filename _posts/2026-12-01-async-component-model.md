@@ -5,7 +5,7 @@ date: "2026-12-01"
 github_name: "adamrk"
 excerpt_separator: <!--end_excerpt-->
 ---
-[WASI 0.3](https://bytecodealliance.org/articles/WASI-0.3) depends on the async features of the Component Model. These powerful new features allow languages to use their own native constructs for concurrency and still interoperate with components implemented in other languages! This post gives an overview of the core notions of the async Component Model and how they tie together to accomplish this goal.
+[WASI 0.3](https://bytecodealliance.org/articles/WASI-0.3) depends on the async features of the Component Model. These powerful new features allow languages to use their own native constructs for concurrency and still interoperate with components implemented in other languages! This post details the core notions of the async Component Model and how they tie together to accomplish this goal.
 
 <!--end_excerpt-->
 
@@ -270,7 +270,7 @@ Consider our example above of writing `random-sum: async func() -> u64` on top o
 
 When `random-sum` is lifted to an `async` component-level function, it can also _omit the `async` canonical option_, which means that concurrent calls to `random-sum` will queue up in the host and run sequentially. It would also be possible to lift `random-sum` to a sync component-level function, but sync functions are not permitted to block, so this would only work if the calls to `get-random` never actually blocked.
 
-So the async Component Model does suffer from function coloring in the sense that, at the component level, any export which calls `async` imports should probably be `async` itself. But this coloring doesn't leak into guest languages because the guest can choose to sync lower the imports and sync lift its export and then provide a purely sync implementation.
+So the async Component Model has made a considered tradeoff by having function coloring in the sense that, at the component level, any export which calls `async` imports should probably be `async` itself. But this coloring doesn't leak into guest languages because the guest can choose to sync lower the imports and sync lift its export and then provide a purely sync implementation. As a result, this sort of function coloring shouldn't have an impact on application developers.
 
 ## Streams and futures
 
@@ -310,7 +310,7 @@ The first goal is met by keeping the building blocks small and leaving the polic
 
 The second goal is met because each side's choices stay on its own side of the boundary. The component-level function type only says that a call is `async`, but whether the caller lowers it with or without the `async` option, and whether the callee is lifted stackful, stackless or without the `async` option at all, is invisible to the other component. As we saw with function coloring, this even means a guest written entirely in synchronous code can call async imports and still interoperate with components written in fully async languages.
 
-## Further reading
+## Further reading and complete specification
 
 The [Concurrency Explainer](https://github.com/WebAssembly/component-model/blob/main/design/mvp/Concurrency.md) in the Component Model spec goes into much more detail on everything covered in this post. Some particularly relevant sections are:
 
